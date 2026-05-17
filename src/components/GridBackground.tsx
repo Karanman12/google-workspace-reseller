@@ -10,17 +10,11 @@ export const GridBackground: React.FC<{ children?: React.ReactNode }> = ({ child
     <div 
       className="relative w-full min-h-screen overflow-hidden"
       style={{
-        background: '#EFEFED'
+        background: 'transparent'
       }}
     >
-      {/* 1. Subtle global grid lines (60px spacing, custom grid lines) */}
-      <div 
-        className="absolute inset-0 pointer-events-none z-0"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)',
-          backgroundSize: '40px 40px'
-        }}
-      />
+      {/* 1. Subtle global grid lines using the CSS class matching Hydroflow */}
+      <div className="absolute inset-0 pointer-events-none z-0 hero-grid" />
 
       {/* 2. Subtle noise texture overlay for high-end feel */}
       <div

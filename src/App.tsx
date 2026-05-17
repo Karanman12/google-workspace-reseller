@@ -1142,17 +1142,11 @@ export default function App() {
               filter: 'blur(15px)',
               transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } 
             }}
-            className="fixed inset-0 z-[999999] bg-[#EFEFED] flex flex-col items-center justify-center pointer-events-auto"
+            className="fixed inset-0 z-[999999] bg-[#E4E4E4] flex flex-col items-center justify-center pointer-events-auto"
             style={{ height: '100vh', width: '100vw' }}
           >
             {/* Elegant moving grid pattern lines to maintain visual theme */}
-            <div 
-              className="absolute inset-0 pointer-events-none opacity-[0.04]"
-              style={{
-                backgroundImage: 'linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px)',
-                backgroundSize: '40px 40px'
-              }}
-            />
+            <div className="absolute inset-0 pointer-events-none z-0 hero-grid opacity-80" />
 
             {/* Glowing background spotlight behind the text */}
             <motion.div
