@@ -1,0 +1,104 @@
+@import "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", sans-serif;
+
+  --color-google-blue: #1A73E8;
+  --color-google-red: #EA4335;
+  --color-google-yellow: #FBBC04;
+  --color-google-green: #34A853;
+  --color-navy: #0D1B2A;
+  
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+@layer base {
+  html {
+    font-size: 87.5%;
+  }
+  body {
+    @apply bg-[#EEEDEA] text-[#181C20] antialiased;
+  }
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Cinematic hero background utilities */
+@layer components {
+  .hero-glow-primary {
+    @apply absolute pointer-events-none mix-blend-screen;
+  }
+
+  .hero-glow-secondary {
+    @apply absolute pointer-events-none mix-blend-screen opacity-30;
+  }
+
+  .hero-depth-layer {
+    @apply absolute inset-0 pointer-events-none mix-blend-multiply;
+  }
+
+  /* Subtle float animation for glow elements */
+  @keyframes float-subtle {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+  }
+
+  .hero-float {
+    animation: float-subtle 6s ease-in-out infinite;
+  }
+
+  /* Grid pattern background */
+  .hero-grid {
+    background-image: 
+      linear-gradient(0deg, transparent 24%, rgba(0,0,0,.03) 25%, rgba(0,0,0,.03) 26%, transparent 27%, transparent 74%, rgba(0,0,0,.03) 75%, rgba(0,0,0,.03) 76%, transparent 77%, transparent),
+      linear-gradient(90deg, transparent 24%, rgba(0,0,0,.03) 25%, rgba(0,0,0,.03) 26%, transparent 27%, transparent 74%, rgba(0,0,0,.03) 75%, rgba(0,0,0,.03) 76%, transparent 77%, transparent);
+    background-size: 40px 40px;
+  }
+
+  /* Premium blur backdrop */
+  .blur-xl-premium {
+    filter: blur(40px);
+  }
+
+  .blur-2xl-premium {
+    filter: blur(80px);
+  }
+
+  .blur-3xl-premium {
+    filter: blur(120px);
+  }
+}
+
+/* Lenis Smooth Scroll Configuration */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

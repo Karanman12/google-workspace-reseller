@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Basic permissions for the requests collection
+    match /requests/{requestId} {
+      allow create: if true;
+      allow read, update, delete: if request.auth != null && request.auth.token.email == "karanmandal9654@gmail.com";
+    }
+    
+    // Allow connection testing
+    match /test/{docId} {
+      allow read: if true;
+    }
+  }
+}

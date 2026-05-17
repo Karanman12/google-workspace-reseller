@@ -1,0 +1,53 @@
+{
+  "entities": {
+    "quoteRequest": {
+      "title": "Quote Request",
+      "description": "Information submitted by a user requesting a quote.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Full name of the requester"
+        },
+        "businessName": {
+          "type": "string",
+          "description": "Name of the business"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Email address of the requester"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Phone number of the requester"
+        },
+        "numUsers": {
+          "type": "string",
+          "description": "Selected team size"
+        },
+        "planInterest": {
+          "type": "string",
+          "description": "Plan the user is interested in"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the request was submitted"
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "phone",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "requests": {
+      "schema": "quoteRequest",
+      "description": "Collection of quote requests submitted via the website."
+    }
+  }
+}
