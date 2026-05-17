@@ -30,8 +30,8 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.3,
+        staggerChildren: 0.1,
+        delayChildren: 0.15,
       }
     }
   };
@@ -44,8 +44,8 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
       y: 0,
       filter: 'blur(0px)',
       transition: {
-        duration: 0.6,
-        delay: 0.3,
+        duration: 0.5,
+        delay: 0.15,
         ease: [0.16, 1, 0.3, 1]
       }
     }
@@ -58,8 +58,8 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
       opacity: 1,
       filter: 'blur(0px)',
       transition: {
-        duration: 1.0,
-        delay: 0.45,
+        duration: 0.8,
+        delay: 0.25,
         ease: [0.16, 1, 0.3, 1]
       }
     }
@@ -73,8 +73,8 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
       filter: 'blur(0px)',
       scale: 1,
       transition: {
-        duration: 1.0,
-        delay: 0.6,
+        duration: 0.8,
+        delay: 0.35,
         ease: [0.16, 1, 0.3, 1]
       }
     }
@@ -87,8 +87,8 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
       y: 0,
       filter: 'blur(0px)',
       transition: {
-        duration: 0.8,
-        delay: 0.75,
+        duration: 0.65,
+        delay: 0.45,
         ease: [0.16, 1, 0.3, 1]
       }
     }
@@ -101,8 +101,8 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
       y: 0,
       filter: 'blur(0px)',
       transition: {
-        duration: 0.8,
-        delay: 0.9,
+        duration: 0.65,
+        delay: 0.55,
         ease: [0.16, 1, 0.3, 1]
       }
     }

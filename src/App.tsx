@@ -122,7 +122,7 @@ const Navbar = ({ startAnimation = true }: { startAnimation?: boolean }) => {
     <motion.div
       initial={{ opacity: 0, y: -60, filter: 'blur(8px)' }}
       animate={startAnimation ? { opacity: 1, y: 0, filter: 'blur(0px)' } : { opacity: 0, y: -60, filter: 'blur(8px)' }}
-      transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.65, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
       className="fixed inset-x-0 top-0 z-50 pointer-events-none"
     >
       {/* Floating pill navbar - Desktop */}
@@ -360,7 +360,7 @@ const Hero = ({ startAnimation = true }: { startAnimation?: boolean }) => {
                 className="flex flex-col sm:flex-row items-center gap-4 justify-center mb-16"
                 initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
                 animate={startAnimation ? { opacity: 1, y: 0, filter: 'blur(0px)' } : { opacity: 0, y: 20, filter: 'blur(4px)' }}
-                transition={{ duration: 0.8, delay: 0.95, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.65, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
                 <a 
                   href="https://wa.me/919654387865?text=Hi%2C%20I%20came%20from%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services."
@@ -389,8 +389,8 @@ const Hero = ({ startAnimation = true }: { startAnimation?: boolean }) => {
                   visible: {
                     opacity: 1,
                     transition: {
-                      staggerChildren: 0.15,
-                      delayChildren: 1.1
+                      staggerChildren: 0.1,
+                      delayChildren: 0.7
                     }
                   }
                 }}
@@ -1119,7 +1119,7 @@ export default function App() {
     // Solid loading screen hold duration
     const timer = setTimeout(() => {
       setIsLoadingIntro(false);
-    }, 900);
+    }, 600);
     return () => clearTimeout(timer);
   }, []);
 
@@ -1140,7 +1140,7 @@ export default function App() {
             exit={{ 
               opacity: 0,
               filter: 'blur(15px)',
-              transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } 
+              transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } 
             }}
             className="fixed inset-0 z-[999999] bg-[#EFEFED] flex flex-col items-center justify-center pointer-events-auto"
             style={{ height: '100vh', width: '100vw' }}
@@ -1219,7 +1219,7 @@ export default function App() {
               <motion.div
                 initial={{ left: '-100%' }}
                 animate={{ left: '0%' }}
-                transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute inset-0 bg-[#E65A28] rounded-full"
               />
             </div>
