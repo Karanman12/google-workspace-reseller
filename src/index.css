@@ -1,18 +1,22 @@
-@import "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap";
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "Space Grotesk", sans-serif;
 
   --color-google-blue: #1A73E8;
   --color-google-red: #EA4335;
   --color-google-yellow: #FBBC04;
   --color-google-green: #34A853;
-  --color-navy: #0D1B2A;
+  --color-navy: #1B1B1B;
+  --color-brand-dark: #1B1B1B;
+  --color-solar-orange: #FF7120;
+  --color-concrete-gray: #E4E4E4;
   
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
+  --radius-xl: 10px;
+  --radius-2xl: 12px;
 }
 
 @layer base {
@@ -88,6 +92,67 @@
 
   .blur-3xl-premium {
     filter: blur(120px);
+  }
+
+  /* Concrete glass tactile cards inspiried by Hydroflow */
+  .card-concrete-glass {
+    background-color: rgba(246, 246, 246, 0.45);
+    backdrop-filter: blur(10px);
+    border: 1px solid #1B1B1B;
+    border-radius: 12px;
+    box-shadow: none !important;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  .card-concrete-glass:hover {
+    border-color: #FF7120;
+    background-color: rgba(246, 246, 246, 0.6);
+  }
+
+  /* Flat crisp brutalist cards */
+  .card-flat-brutalist {
+    background-color: #FFFFFF;
+    border: 1px solid #1B1B1B;
+    border-radius: 12px;
+    box-shadow: none !important;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .card-flat-brutalist:hover {
+    border-color: #FF7120;
+  }
+
+  /* Premium buttons inspired by Hydroflow */
+  .btn-solar-orange {
+    background-color: #FF7120;
+    color: #FFFFFF;
+    border: 1px solid #FF7120;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .btn-solar-orange:hover {
+    background-color: transparent;
+    color: #1B1B1B;
+    border-color: #1B1B1B;
+  }
+
+  .btn-solar-dark {
+    background-color: #1B1B1B;
+    color: #FFFFFF;
+    border: 1px solid #1B1B1B;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .btn-solar-dark:hover {
+    background-color: transparent;
+    color: #FF7120;
+    border-color: #FF7120;
   }
 }
 

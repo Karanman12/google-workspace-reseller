@@ -130,16 +130,18 @@ const Navbar = ({ startAnimation = true }: { startAnimation?: boolean }) => {
         className="hidden md:flex items-center justify-between pointer-events-auto transition-all duration-300"
         style={{
           position: 'fixed',
-          top: '16px',
-          left: '120px',
-          right: '120px',
-          backgroundColor: '#FFFFFF',
-          borderRadius: '12px',
-          padding: '6px 6px 6px 20px',
+          top: '2.5vh',
+          left: '10%',
+          width: '80%',
+          height: '56px',
+          backgroundColor: '#F6F6F6',
+          backdropFilter: 'blur(2px)',
+          borderRadius: '10px',
+          padding: '0 8px 0 24px',
           display: isMobile ? 'none' : 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          border: '1px solid rgba(0,0,0,0.08)',
+          border: 'none',
           boxShadow: 'none',
           zIndex: 1000,
         }}
@@ -147,65 +149,54 @@ const Navbar = ({ startAnimation = true }: { startAnimation?: boolean }) => {
         <div className="flex items-center gap-4 flex-shrink-0">
           <motion.button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-[8px] hover:bg-black/[0.02] transition-all group cursor-pointer"
+            className="flex items-center gap-2 rounded-[10px] hover:bg-black/[0.02] transition-all group cursor-pointer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
             <div className="flex gap-1">
-              <motion.div className="w-1.5 h-1.5 rounded-full bg-google-blue" whileHover={{ scale: 1.2 }} />
-              <motion.div className="w-1.5 h-1.5 rounded-full bg-google-red" whileHover={{ scale: 1.2 }} />
-              <motion.div className="w-1.5 h-1.5 rounded-full bg-google-yellow" whileHover={{ scale: 1.2 }} />
-              <motion.div className="w-1.5 h-1.5 rounded-full bg-google-green" whileHover={{ scale: 1.2 }} />
+              <motion.div className="w-1.5 h-1.5 rounded-full bg-google-blue" />
+              <motion.div className="w-1.5 h-1.5 rounded-full bg-google-red" />
+              <motion.div className="w-1.5 h-1.5 rounded-full bg-google-yellow" />
+              <motion.div className="w-1.5 h-1.5 rounded-full bg-google-green" />
             </div>
-            <span className="font-display font-bold text-[15px] tracking-tight text-[#1D1D1F] hidden sm:inline">
-              Workspace<span className="text-[#E65A28]">Bay</span>
+            <span className="font-display font-extrabold text-[15px] tracking-tight text-[#1B1B1B] uppercase">
+              Workspace<span className="text-[#FF7120]">Bay</span>
             </span>
           </motion.button>
         </div>
 
-        <div className="flex-1 flex justify-center">
-          <div className="flex items-center" style={{ gap: '40px' }}>
-            {navItems.map((item) => (
-              <motion.a
-                key={item}
-                href={`#${item.toLowerCase().replace(' ', '-')}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  const id = item.toLowerCase().replace(' ', '-');
-                  setActiveNav(id);
-                  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="text-[15px] font-medium tracking-wide px-4 py-2 rounded-lg text-navy/70 relative transition-all"
-                whileHover={{ backgroundColor: 'rgba(0, 0, 0, 0.025)', color: '#E65A28' }}
-                animate={{
-                  backgroundColor: activeNav === item.toLowerCase().replace(' ', '-') 
-                    ? 'rgba(0, 0, 0, 0.035)' 
-                    : 'transparent',
-                  color: activeNav === item.toLowerCase().replace(' ', '-') 
-                    ? '#E65A28' 
-                    : 'rgba(29, 29, 31, 0.7)'
-                }}
-              >
-                <span className="relative z-10">{item}</span>
-              </motion.a>
-            ))}
-          </div>
+        {/* Center Links perfectly aligned inside the viewport */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-6">
+          {navItems.map((item) => (
+            <motion.a
+              key={item}
+              href={`#${item.toLowerCase().replace(' ', '-')}`}
+              onClick={(e) => {
+                e.preventDefault();
+                const id = item.toLowerCase().replace(' ', '-');
+                setActiveNav(id);
+                document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="text-[13px] font-mono tracking-wider px-3 py-1.5 text-brand-dark transition-all cursor-pointer hover:opacity-50"
+              animate={{
+                color: activeNav === item.toLowerCase().replace(' ', '-') 
+                  ? '#FF7120' 
+                  : '#1B1B1B'
+              }}
+            >
+              <span>{item.toUpperCase()}</span>
+            </motion.a>
+          ))}
         </div>
 
         <div className="flex-shrink-0">
           <motion.button
             onClick={scrollToContact}
-            className="font-display font-medium text-[15px] text-white bg-[#E65A28] hover:bg-[#D54B1A] transition-all relative overflow-hidden group shadow-[0_1px_2px_rgba(230,90,40,0.15)] cursor-pointer flex items-center justify-center"
-            style={{
-              padding: '6px 16px',
-              borderRadius: '8px',
-              color: '#FFFFFF',
-              backgroundColor: '#E65A28',
-            }}
+            className="font-mono font-bold text-[13px] bg-solar-orange text-brand-dark border border-solar-orange hover:bg-transparent transition-all duration-300 cursor-pointer flex items-center justify-center h-[40px] px-6 rounded-[10px]"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <span className="relative">Setup</span>
+            <span>SETUP</span>
           </motion.button>
         </div>
       </motion.nav>
@@ -215,13 +206,14 @@ const Navbar = ({ startAnimation = true }: { startAnimation?: boolean }) => {
         className="md:hidden flex items-center justify-between pointer-events-auto"
         style={{
           position: 'fixed',
-          top: '16px',
-          left: '24px',
-          right: '24px',
-          backgroundColor: '#FFFFFF',
-          borderRadius: '12px',
-          padding: '10px 10px 10px 24px',
-          border: '1px solid rgba(0,0,0,0.08)',
+          top: '5vw',
+          left: '10%',
+          width: '80%',
+          height: '48px',
+          backgroundColor: '#F6F6F6',
+          borderRadius: '10px',
+          padding: '8px 12px 8px 16px',
+          border: 'none',
           boxShadow: 'none',
           zIndex: 1000,
         }}
@@ -231,25 +223,26 @@ const Navbar = ({ startAnimation = true }: { startAnimation?: boolean }) => {
           className="flex items-center gap-2 flex-1"
         >
           <div className="flex gap-1">
-            <div className="w-2 h-2 rounded-full bg-google-blue" />
-            <div className="w-2 h-2 rounded-full bg-google-red" />
-            <div className="w-2 h-2 rounded-full bg-google-yellow" />
-            <div className="w-2 h-2 rounded-full bg-google-green" />
+            <div className="w-1.5 h-1.5 rounded-full bg-google-blue" />
+            <div className="w-1.5 h-1.5 rounded-full bg-google-red" />
+            <div className="w-1.5 h-1.5 rounded-full bg-google-yellow" />
+            <div className="w-1.5 h-1.5 rounded-full bg-google-green" />
           </div>
-          <span className="font-display font-bold text-xs tracking-tight text-navy">
-            Workspace<span className="text-[#E65A28]">Bay</span>
+          <span className="font-display font-extrabold text-xs tracking-tight text-brand-dark uppercase">
+            Workspace<span className="text-[#FF7120]">Bay</span>
           </span>
         </button>
 
         <motion.button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="text-navy p-1 ml-auto"
+          className="text-brand-dark p-1 ml-auto cursor-pointer"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
         >
-          {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
         </motion.button>
       </motion.div>
+
 
       {/* Mobile Menu - Floating */}
       <AnimatePresence>
@@ -366,17 +359,17 @@ const Hero = ({ startAnimation = true }: { startAnimation?: boolean }) => {
                   href="https://wa.me/919654387865?text=Hi%2C%20I%20came%20from%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto bg-[#E65A28] text-white px-8 py-4 rounded-xl font-display font-bold text-lg flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-[#E65A28]/10 transition-all group"
+                  className="w-full sm:w-auto btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
                 >
                   <MessageCircle size={20} />
-                  WhatsApp (Fastest Response)
+                  WHATSAPP (FASTEST RESPONSE)
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </a>
                 <button 
                   onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="w-full sm:w-auto bg-white text-[#E65A28] border-2 border-[#E65A28]/10 px-8 py-4 rounded-xl font-display font-bold text-lg hover:bg-[#E65A28]/0.03 transition-all"
+                  className="w-full sm:w-auto btn-solar-dark px-8 py-4 text-base shadow-none cursor-pointer"
                 >
-                  View Pricing Plans
+                  VIEW PRICING PLANS
                 </button>
               </motion.div>
 
@@ -534,8 +527,8 @@ const Features = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-sm font-bold text-[#EA580C] uppercase tracking-widest mb-3">What's Included</h2>
-            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-navy mb-6">Everything your team needs to work smarter</h3>
+            <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">WHAT'S INCLUDED</h2>
+            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-brand-dark mb-6 uppercase tracking-[0.02em] leading-tight">Everything your team needs to work smarter</h3>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">The full Google Workspace suite — professional email, cloud storage, video calls, and collaborative documents.</p>
           </motion.div>
         </div>
@@ -544,12 +537,12 @@ const Features = () => {
           {features.map((feature, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: i * 0.05 }}
-              whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(0,0,0,0.05)' }}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.05, duration: 0.4 }}
+              whileHover={{ y: -6 }}
               viewport={{ once: true }}
-              className="p-8 rounded-2xl border border-gray-100 hover:border-google-blue/20 transition-all duration-300 bg-[#FBFBFE]"
+              className="p-8 card-concrete-glass"
             >
               <div className={`w-14 h-14 rounded-xl ${feature.bg} ${feature.color} flex items-center justify-center mb-6`}>
                 <feature.icon size={28} />
@@ -617,10 +610,10 @@ const Pricing = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-sm font-bold text-[#EA580C] uppercase tracking-widest mb-3">Simple Pricing</h2>
-            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-navy mb-6">
+            <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">SIMPLE PRICING</h2>
+            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-brand-dark mb-6 uppercase tracking-[0.02em] leading-tight">
               Transparent pricing, no hidden fees 
-              <span className="ml-4 inline-block bg-google-yellow text-navy px-3 py-1 rounded-full text-xs font-bold align-middle">Save up to 30%</span>
+              <span className="ml-4 inline-block bg-white border border-brand-dark text-brand-dark px-3 py-1 rounded-full text-xs font-mono font-bold align-middle">SAVE UP TO 30%</span>
             </h3>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">All plans include INR billing and dedicated WhatsApp support.</p>
           </motion.div>
@@ -634,28 +627,30 @@ const Pricing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-              className={`relative p-10 rounded-2xl bg-white border ${
-                plan.popular ? 'border-[#111111] shadow-2xl scale-105 z-10' : 'border-gray-200'
+              whileHover={{ y: -6 }}
+              className={`relative p-10 ${
+                plan.popular 
+                  ? 'card-flat-brutalist border-2 border-brand-dark scale-105 z-10' 
+                  : 'card-concrete-glass'
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#111111] text-white px-4 py-1 rounded-full text-xs font-bold flex items-center gap-1">
-                  <Star size={12} fill="currentColor" /> MOST POPULAR
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-dark text-white px-4 py-1.5 rounded-full text-xs font-mono tracking-wider flex items-center gap-1.5">
+                  <Star size={12} fill="currentColor" className="text-solar-orange" /> MOST POPULAR
                 </div>
               )}
-              <h4 className="font-display font-bold text-xl text-navy mb-2">{plan.name}</h4>
+              <h4 className="font-display font-bold text-xl text-brand-dark mb-2 uppercase tracking-wide">{plan.name}</h4>
               <div className="flex items-baseline gap-1 mb-2">
-                <span className="font-display text-4xl font-extrabold text-[#111111]">{plan.price}</span>
-                <span className="text-gray-400 text-sm">/user/month</span>
+                <span className="font-display text-4xl font-extrabold text-brand-dark">{plan.price}</span>
+                <span className="text-brand-dark/50 font-mono text-xs">/user/month</span>
               </div>
-              <p className="text-gray-500 text-sm mb-8 leading-relaxed">{plan.tagline}</p>
+              <p className="text-brand-dark/60 text-sm mb-8 leading-relaxed font-sans">{plan.tagline}</p>
               
-              <div className="h-px bg-gray-100 w-full mb-8" />
+              <div className="h-px bg-brand-dark/10 w-full mb-8" />
               
               <ul className="space-y-4 mb-10">
                 {plan.features.map((feature, j) => (
-                  <li key={j} className="flex items-start gap-3 text-sm text-gray-600">
+                  <li key={j} className="flex items-start gap-3 text-sm text-brand-dark/70 font-sans">
                     <CheckCircle2 size={18} className="text-google-green shrink-0 mt-0.5" />
                     {feature}
                   </li>
@@ -664,12 +659,11 @@ const Pricing = () => {
 
               <button 
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className={`w-full py-4 rounded-xl font-display font-bold transition-all ${
-                plan.popular 
-                ? 'bg-[#111111] text-white hover:bg-black' 
-                : 'bg-white text-[#111111] border-2 border-[#111111]/10 hover:bg-gray-50'
-              }`}>
-                Get Started
+                className={`w-full py-4 text-base cursor-pointer font-bold ${
+                  plan.popular ? 'btn-solar-dark' : 'btn-solar-orange'
+                }`}
+              >
+                GET STARTED
               </button>
             </motion.div>
           ))}
@@ -696,8 +690,8 @@ const WhyUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-sm font-bold text-[#EA580C] uppercase tracking-widest mb-3">Why Choose Us</h2>
-            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-navy">The smartest way to get Google Workspace in India</h3>
+            <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">WHY CHOOSE US</h2>
+            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-brand-dark uppercase tracking-[0.02em] leading-tight">The smartest way to get Google Workspace in India</h3>
           </motion.div>
         </div>
 
@@ -705,17 +699,18 @@ const WhyUs = () => {
           {reasons.map((reason, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="flex items-start gap-6 p-8 rounded-2xl border border-gray-50 bg-[#FBFBFE] hover:shadow-lg transition-shadow"
+              whileHover={{ y: -4 }}
+              className="flex items-start gap-6 p-8 card-concrete-glass"
             >
-              <div className={`w-16 h-16 rounded-2xl ${reason.bg} ${reason.color} flex items-center justify-center shrink-0`}>
+              <div className="w-16 h-16 rounded-xl border border-brand-dark flex items-center justify-center shrink-0 bg-white text-solar-orange">
                 <reason.icon size={28} />
               </div>
               <div>
-                <h4 className="font-display font-bold text-xl text-navy mb-2">{reason.title}</h4>
-                <p className="text-gray-500 leading-relaxed">{reason.desc}</p>
+                <h4 className="font-display font-bold text-xl text-brand-dark mb-2 uppercase tracking-wide">{reason.title}</h4>
+                <p className="text-brand-dark/70 leading-relaxed font-sans">{reason.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -741,13 +736,13 @@ const HowItWorks = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-sm font-bold text-[#EA580C] uppercase tracking-widest mb-3">How It Works</h2>
-            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-navy">Up and running in 3 simple steps</h3>
+            <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">HOW IT WORKS</h2>
+            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-brand-dark uppercase tracking-[0.02em] leading-tight">Up and running in 3 simple steps</h3>
           </motion.div>
         </div>
 
         <div className="flex flex-col md:flex-row items-start justify-between gap-12 relative">
-          <div className="hidden md:block absolute top-[40px] left-[10%] right-[10%] h-0.5 bg-gray-200" />
+          <div className="hidden md:block absolute top-[32px] left-[15%] right-[15%] h-[1px] bg-brand-dark/20" />
           
           {steps.map((step, i) => (
             <motion.div
@@ -758,11 +753,11 @@ const HowItWorks = () => {
               viewport={{ once: true }}
               className="flex-1 text-center relative z-10"
             >
-              <div className="w-20 h-20 rounded-full bg-[#111111] text-white font-display font-extrabold text-3xl flex items-center justify-center mx-auto mb-6 shadow-xl shadow-black/20 ring-8 ring-[#EFEFED]">
+              <div className="w-16 h-16 rounded-full bg-brand-dark text-white font-display font-extrabold text-2xl flex items-center justify-center mx-auto mb-6 ring-8 ring-concrete-gray border border-brand-dark">
                 {i + 1}
               </div>
-              <h4 className="font-display font-bold text-xl text-navy mb-4">{step.title}</h4>
-              <p className="text-gray-500 leading-relaxed max-w-xs mx-auto">{step.desc}</p>
+              <h4 className="font-display font-bold text-xl text-brand-dark mb-4 uppercase tracking-wide">{step.title}</h4>
+              <p className="text-brand-dark/70 leading-relaxed max-w-xs mx-auto font-sans">{step.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -787,8 +782,8 @@ const Commitment = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-sm font-bold text-[#EA580C] uppercase tracking-widest mb-3">Our Commitment</h2>
-            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-navy mb-6">Our Commitment to You</h3>
+            <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">OUR COMMITMENT</h2>
+            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-brand-dark mb-6 uppercase tracking-[0.02em] leading-tight">Our Commitment to You</h3>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg italic">"Starting your Google Workspace journey with a partner who cares about your growth."</p>
           </motion.div>
         </div>
@@ -798,13 +793,13 @@ const Commitment = () => {
             <motion.div
               key={i}
               whileHover={{ y: -5 }}
-              className="p-8 rounded-2xl border border-gray-100 bg-[#FBFBFE] text-center"
+              className="p-8 card-concrete-glass text-center"
             >
-              <div className={`w-12 h-12 rounded-xl ${point.bg} ${point.color} flex items-center justify-center mx-auto mb-6`}>
+              <div className="w-12 h-12 rounded-xl border border-brand-dark flex items-center justify-center mx-auto mb-6 bg-white text-solar-orange">
                 <point.icon size={24} />
               </div>
-              <h4 className="font-display font-bold text-xl text-navy mb-3">{point.title}</h4>
-              <p className="text-gray-500 leading-relaxed text-sm">{point.desc}</p>
+              <h4 className="font-display font-bold text-xl text-brand-dark mb-3 uppercase tracking-wide">{point.title}</h4>
+              <p className="text-brand-dark/70 leading-relaxed text-sm font-sans">{point.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -869,8 +864,8 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-sm font-bold text-[#EA580C] uppercase tracking-widest mb-3">Get In Touch</h2>
-            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-navy mb-6">Request a Custom Quote</h3>
+            <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">GET IN TOUCH</h2>
+            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-brand-dark mb-6 uppercase tracking-[0.02em] leading-tight">Request a Custom Quote</h3>
             <p className="text-gray-500 text-lg mb-10 leading-relaxed">
               We respond within 2 hours on business days. Tell us your team size and we'll help you start your setup immediately.
             </p>
@@ -900,14 +895,14 @@ const Contact = () => {
                   href={item.link} 
                   target={item.link?.startsWith('http') ? "_blank" : undefined}
                   rel={item.link?.startsWith('http') ? "noopener noreferrer" : undefined}
-                  className={`flex items-center gap-6 p-4 bg-white rounded-xl border border-gray-100 shadow-sm group transition-colors ${item.link ? 'cursor-pointer hover:border-[#EA580C]' : ''}`}
+                  className={`flex items-center gap-6 p-4 card-concrete-glass group transition-colors ${item.link ? 'cursor-pointer hover:border-[#FF7120]' : ''}`}
                 >
-                  <div className={`w-12 h-12 rounded-full ${item.bg} ${item.color} flex items-center justify-center shrink-0`}>
+                  <div className="w-12 h-12 rounded-xl border border-brand-dark flex items-center justify-center shrink-0 bg-white text-solar-orange">
                     <item.icon size={24} />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-gray-400 uppercase">{item.label}</div>
-                    <div className="text-sm font-bold text-navy">{item.value}</div>
+                    <div className="text-xs font-mono tracking-wider text-brand-dark/50 uppercase">{item.label}</div>
+                    <div className="text-sm font-bold text-brand-dark font-sans">{item.value}</div>
                   </div>
                 </a>
               ))}
@@ -918,7 +913,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white p-10 rounded-2xl shadow-xl border border-gray-100"
+            className="card-concrete-glass p-10"
           >
             <h4 className="font-display font-bold text-2xl text-navy mb-8">Start Your Setup</h4>
             
@@ -944,62 +939,62 @@ const Contact = () => {
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 uppercase mb-2">Your Name</label>
+                    <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase mb-2">Your Name</label>
                     <input 
                       required
                       type="text" 
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 focus:bg-white focus:border-google-blue focus:ring-4 focus:ring-google-blue/5 outline-none transition-all placeholder:text-gray-300" 
+                      className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all placeholder:text-brand-dark/20 font-sans shadow-none" 
                       placeholder="Ravi Kumar" 
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 uppercase mb-2">Business Name</label>
+                    <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase mb-2">Business Name</label>
                     <input 
                       type="text" 
                       name="businessName"
                       value={formData.businessName}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 focus:bg-white focus:border-google-blue focus:ring-4 focus:ring-google-blue/5 outline-none transition-all placeholder:text-gray-300" 
+                      className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all placeholder:text-brand-dark/20 font-sans shadow-none" 
                       placeholder="Acme Pvt Ltd" 
                     />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 uppercase mb-2">Email</label>
+                    <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase mb-2">Email</label>
                     <input 
                       required
                       type="email" 
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 focus:bg-white focus:border-google-blue focus:ring-4 focus:ring-google-blue/5 outline-none transition-all placeholder:text-gray-300" 
+                      className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all placeholder:text-brand-dark/20 font-sans shadow-none" 
                       placeholder="ravi@company.com" 
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-400 uppercase mb-2">Phone</label>
+                    <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase mb-2">Phone</label>
                     <input 
                       required
                       type="tel" 
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 focus:bg-white focus:border-google-blue focus:ring-4 focus:ring-google-blue/5 outline-none transition-all placeholder:text-gray-300" 
+                      className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all placeholder:text-brand-dark/20 font-sans shadow-none" 
                       placeholder="+91 96543 87865" 
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 uppercase mb-2">Number of Users</label>
+                  <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase mb-2">Number of Users</label>
                   <select 
                     name="numUsers"
                     value={formData.numUsers}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 focus:bg-white focus:border-google-blue focus:ring-4 focus:ring-google-blue/5 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all font-sans shadow-none"
                   >
                     <option value="">Select team size</option>
                     <option value="1–5 users">1–5 users</option>
@@ -1010,12 +1005,12 @@ const Contact = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-400 uppercase mb-2">Plan Interest</label>
+                  <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase mb-2">Plan Interest</label>
                   <select 
                     name="planInterest"
                     value={formData.planInterest}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-100 bg-gray-50 focus:bg-white focus:border-google-blue focus:ring-4 focus:ring-google-blue/5 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all font-sans shadow-none"
                   >
                     <option value="">Select a plan</option>
                     <option value="Business Starter">Business Starter — ₹200/user</option>
@@ -1031,15 +1026,15 @@ const Contact = () => {
 
                 <button 
                   disabled={status === 'submitting'}
-                  className="w-full py-4 bg-google-blue text-white rounded-xl font-display font-bold text-lg hover:bg-navy hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full py-4 btn-solar-orange text-base cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-none font-bold uppercase tracking-wide"
                 >
                   {status === 'submitting' ? (
                     <>
                       <Loader2 className="animate-spin" size={20} />
-                      Sending...
+                      SENDING...
                     </>
                   ) : (
-                    'Start My Setup →'
+                    'START MY SETUP →'
                   )}
                 </button>
               </form>

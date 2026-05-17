@@ -215,9 +215,9 @@ export const HeroTypographySplit: React.FC<{
     >
       {badge && (
         <motion.div variants={lineVariants} className="mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-google-blue text-xs font-bold tracking-widest uppercase">
-            <div className="w-1.5 h-1.5 rounded-full bg-google-blue animate-pulse" />
-            {badge}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-brand-dark text-brand-dark text-xs font-mono tracking-[0.2em] uppercase">
+            <div className="w-1.5 h-1.5 rounded-full bg-solar-orange" />
+            {badge.toUpperCase()}
           </div>
         </motion.div>
       )}
@@ -230,7 +230,7 @@ export const HeroTypographySplit: React.FC<{
             variants={lineVariants}
             className="overflow-hidden"
           >
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold text-navy leading-[1.05] tracking-tight">
+            <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold text-brand-dark leading-[0.95] tracking-[0.02em] uppercase">
               {line}
             </h1>
           </motion.div>
@@ -240,7 +240,7 @@ export const HeroTypographySplit: React.FC<{
       {description && (
         <motion.p
           variants={lineVariants}
-          className="text-gray-600 text-lg sm:text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto mb-10 font-light"
+          className="text-brand-dark/70 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10 font-normal font-sans"
         >
           {description}
         </motion.p>
