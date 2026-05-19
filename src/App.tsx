@@ -1170,7 +1170,7 @@ const Footer = () => {
           </div>
           <div className="flex gap-10">
             {['Pricing', 'Features', 'Why Us', 'Contact'].map((link) => (
-              <a key={link} href={`#${link.toLowerCase()}`} className="text-sm font-semibold hover:text-google-blue transition-colors">{link}</a>
+              <a key={link} href={`#${link.toLowerCase().replace(/\s+/g, '-')}`} className="text-sm font-semibold hover:text-google-blue transition-colors">{link}</a>
             ))}
           </div>
         </div>
