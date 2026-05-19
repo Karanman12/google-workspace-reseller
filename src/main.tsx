@@ -6,10 +6,11 @@ import Lenis from 'lenis';
 
 // Initialize Lenis global smooth scrolling
 const lenis = new Lenis({
-  duration: 1.8,
-  lerp: 0.08,
+  duration: 1.2,
+  lerp: 0.1,
   infinite: false,
 });
+(window as any).lenis = lenis;
 
 function raf(time: number) {
   lenis.raf(time);

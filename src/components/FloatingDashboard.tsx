@@ -21,14 +21,15 @@ export const FloatingDashboard: React.FC<{ startAnimation?: boolean }> = ({ star
           <div className="absolute top-0 right-0 w-32 h-32 bg-google-blue/5 rounded-full blur-2xl pointer-events-none" />
           <div>
             <div className="flex items-center justify-between mb-6">
-              <div className="flex gap-1">
+              <div className="flex gap-1.5 items-center">
                 <div className="w-2 h-2 rounded-full bg-[#1A73E8]" />
                 <div className="w-2 h-2 rounded-full bg-[#EA4335]" />
                 <div className="w-2 h-2 rounded-full bg-[#FBBC04]" />
                 <div className="w-2 h-2 rounded-full bg-[#34A853]" />
+                <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-brand-dark/40 ml-1">Official Reseller</span>
               </div>
-              <span className="text-[10px] font-mono font-bold text-google-blue uppercase tracking-widest bg-google-blue/10 px-2.5 py-1 rounded-full border border-google-blue/20">
-                Google Workspace
+              <span className="text-[10px] font-mono font-bold text-google-blue uppercase tracking-widest bg-google-blue/10 px-2.5 py-1 rounded-full border border-google-blue/20 flex items-center gap-1.5">
+                <ShieldCheck size={11} /> Google Partner
               </span>
             </div>
             
@@ -43,8 +44,8 @@ export const FloatingDashboard: React.FC<{ startAnimation?: boolean }> = ({ star
               {[
                 { icon: Mail, text: "Professional Gmail on your business domain" },
                 { icon: Cloud, text: "Google Drive secure cloud storage (30GB to 5TB+)" },
-                { icon: Video, text: "Crystal-clear HD Meet video conferences" },
-                { icon: Users, text: "Real-time Docs, Sheets & Slides collaboration" }
+                { icon: ShieldCheck, text: "Advanced deliverability setup (SPF, DKIM & DMARC)" },
+                { icon: Video, text: "Crystal-clear HD Meet video conferences" }
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm text-brand-dark/70 font-sans">
                   <item.icon size={18} className="text-google-blue shrink-0 mt-0.5" />
@@ -65,14 +66,15 @@ export const FloatingDashboard: React.FC<{ startAnimation?: boolean }> = ({ star
           <div className="absolute top-0 right-0 w-32 h-32 bg-solar-orange/5 rounded-full blur-2xl pointer-events-none" />
           <div>
             <div className="flex items-center justify-between mb-6">
-              <div className="flex gap-1">
+              <div className="flex gap-1.5 items-center">
                 <div className="w-2 h-2 rounded-full bg-[#E65A28]" />
                 <div className="w-2 h-2 rounded-full bg-[#1A73E8]" />
                 <div className="w-2 h-2 rounded-full bg-[#34A853]" />
                 <div className="w-2 h-2 rounded-full bg-[#FBBC04]" />
+                <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-brand-dark/40 ml-1">Official Reseller</span>
               </div>
-              <span className="text-[10px] font-mono font-bold text-solar-orange uppercase tracking-widest bg-solar-orange/10 px-2.5 py-1 rounded-full border border-solar-orange/20">
-                Zoho Workplace
+              <span className="text-[10px] font-mono font-bold text-solar-orange uppercase tracking-widest bg-solar-orange/10 px-2.5 py-1 rounded-full border border-solar-orange/20 flex items-center gap-1.5">
+                <ShieldCheck size={11} /> Zoho Partner
               </span>
             </div>
             
@@ -87,8 +89,8 @@ export const FloatingDashboard: React.FC<{ startAnimation?: boolean }> = ({ star
               {[
                 { icon: Mail, text: "Professional Zoho Mail with custom domain" },
                 { icon: Cloud, text: "Zoho WorkDrive collaborative cloud storage" },
-                { icon: MessageCircle, text: "Instant team chat & communication via Zoho Cliq" },
-                { icon: Users, text: "Writer, Sheet & Show real-time document editor" }
+                { icon: ShieldCheck, text: "100% spam-free DNS routing (SPF, DKIM & DMARC)" },
+                { icon: MessageCircle, text: "Instant team chat & communication via Zoho Cliq" }
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm text-brand-dark/70 font-sans">
                   <item.icon size={18} className="text-solar-orange shrink-0 mt-0.5" />
@@ -126,7 +128,7 @@ export const FloatingDashboard: React.FC<{ startAnimation?: boolean }> = ({ star
         <div className="flex flex-wrap md:flex-nowrap gap-4 shrink-0 z-10 w-full md:w-auto">
           {[
             { icon: CreditCard, label: "INR Auto-Billing", sub: "Official business invoices" },
-            { icon: Zap, label: "24h Active Setup", sub: "MX/DNS fully configured" }
+            { icon: ShieldCheck, label: "Anti-Spam Setup", sub: "SPF, DKIM & DMARC ready" }
           ].map((item, idx) => (
             <div key={idx} className="flex items-center gap-3 p-3.5 bg-white/60 border border-brand-dark/5 rounded-[12px] flex-1 md:flex-initial min-w-[160px]">
               <div className="w-8 h-8 rounded-[8px] bg-brand-dark/5 flex items-center justify-center text-brand-dark shrink-0">

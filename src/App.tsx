@@ -107,16 +107,26 @@ const Navbar = ({ startAnimation = true }: { startAnimation?: boolean }) => {
     };
   }, []);
 
-  const scrollToContact = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
+  const handleScrollTo = (id: string) => {
+    const lenisInstance = (window as any).lenis;
+    if (lenisInstance) {
+      lenisInstance.scrollTo(id === 'top' ? 0 : `#${id}`, { duration: 1.2 });
+    } else {
+      if (id === 'top') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
-  const navItems = ['Pricing', 'Features', 'Why Us', 'Contact'];
+  const scrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    handleScrollTo('contact');
+    setIsMenuOpen(false);
+  };
+
+  const navItems = ['Features', 'Pricing', 'Why Us', 'Contact'];
 
   return (
     <motion.div
@@ -148,7 +158,7 @@ const Navbar = ({ startAnimation = true }: { startAnimation?: boolean }) => {
       >
         <div className="flex items-center gap-4 flex-shrink-0">
           <motion.button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => handleScrollTo('top')}
             className="flex items-center gap-2 rounded-[10px] hover:bg-black/[0.02] transition-all group cursor-pointer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -175,7 +185,7 @@ const Navbar = ({ startAnimation = true }: { startAnimation?: boolean }) => {
                 e.preventDefault();
                 const id = item.toLowerCase().replace(' ', '-');
                 setActiveNav(id);
-                document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+                handleScrollTo(id);
               }}
               className="text-[13px] font-mono tracking-wider px-3 py-1.5 text-brand-dark transition-all cursor-pointer hover:opacity-50"
               animate={{
@@ -219,7 +229,7 @@ const Navbar = ({ startAnimation = true }: { startAnimation?: boolean }) => {
         }}
       >
         <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={() => handleScrollTo('top')}
           className="flex items-center gap-2 flex-1"
         >
           <div className="flex gap-1">
@@ -273,8 +283,8 @@ const Navbar = ({ startAnimation = true }: { startAnimation?: boolean }) => {
                     setIsMenuOpen(false);
                     setTimeout(() => {
                       const id = item.toLowerCase().replace(' ', '-');
-                      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
+                      handleScrollTo(id);
+                    }, 80);
                   }}
                   className="text-sm font-medium px-4 py-2 rounded-lg text-navy/70 hover:bg-white/10 hover:text-[#E65A28] transition-all"
                   initial={{ opacity: 0, x: -20 }}
@@ -286,7 +296,9 @@ const Navbar = ({ startAnimation = true }: { startAnimation?: boolean }) => {
                 </motion.a>
               ))}
               <motion.button
-                onClick={scrollToContact}
+                onClick={(e) => {
+                  scrollToContact(e);
+                }}
                 className="w-full mt-2 py-2.5 px-4 rounded-lg font-display font-semibold text-sm text-white bg-[#E65A28] hover:bg-[#D54B1A] hover:shadow-lg transition-all"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -707,16 +719,19 @@ const Pricing = () => {
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -6 }}
-              className={`relative p-10 ${
+              className={`relative p-10 card-concrete-glass transition-all duration-300 ${
                 plan.popular 
-                  ? 'card-flat-brutalist border-2 border-brand-dark scale-105 z-10' 
-                  : 'card-concrete-glass'
+                  ? 'border-solar-orange border-2 scale-105 z-10 bg-white/60 shadow-[0_20px_50px_rgba(255,113,32,0.04)]' 
+                  : 'hover:border-brand-dark/30'
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-dark text-white px-4 py-1.5 rounded-full text-xs font-mono tracking-wider flex items-center gap-1.5">
-                  <Star size={12} fill="currentColor" className="text-solar-orange" /> MOST POPULAR
-                </div>
+                <>
+                  <div className="absolute inset-0 bg-solar-orange/[0.01] rounded-[12px] pointer-events-none" />
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-solar-orange text-white px-4 py-1.5 rounded-full text-xs font-mono tracking-wider flex items-center gap-1.5 border border-solar-orange/15 shadow-sm">
+                    <Star size={12} fill="currentColor" /> MOST POPULAR
+                  </div>
+                </>
               )}
               <h4 className="font-display font-bold text-xl text-brand-dark mb-2 uppercase tracking-wide">{plan.name}</h4>
               <div className="flex items-baseline gap-1 mb-2">
@@ -1017,8 +1032,8 @@ const Contact = () => {
             ) : (
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase mb-2">Your Name</label>
+                  <div className="group flex flex-col gap-2">
+                    <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Your Name</label>
                     <input 
                       required
                       type="text" 
@@ -1029,8 +1044,8 @@ const Contact = () => {
                       placeholder="Ravi Kumar" 
                     />
                   </div>
-                  <div>
-                    <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase mb-2">Business Name</label>
+                  <div className="group flex flex-col gap-2">
+                    <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Business Name</label>
                     <input 
                       type="text" 
                       name="businessName"
@@ -1042,8 +1057,8 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase mb-2">Email</label>
+                  <div className="group flex flex-col gap-2">
+                    <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Email</label>
                     <input 
                       required
                       type="email" 
@@ -1054,8 +1069,8 @@ const Contact = () => {
                       placeholder="ravi@company.com" 
                     />
                   </div>
-                  <div>
-                    <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase mb-2">Phone</label>
+                  <div className="group flex flex-col gap-2">
+                    <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Phone</label>
                     <input 
                       required
                       type="tel" 
@@ -1067,8 +1082,8 @@ const Contact = () => {
                     />
                   </div>
                 </div>
-                <div>
-                  <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase mb-2">Number of Users</label>
+                <div className="group flex flex-col gap-2">
+                  <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Number of Users</label>
                   <select 
                     name="numUsers"
                     value={formData.numUsers}
@@ -1083,8 +1098,8 @@ const Contact = () => {
                     <option value="50+ users">50+ users</option>
                   </select>
                 </div>
-                <div>
-                  <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase mb-2">Plan Interest</label>
+                <div className="group flex flex-col gap-2">
+                  <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Plan Interest</label>
                   <select 
                     name="planInterest"
                     value={formData.planInterest}
@@ -1108,7 +1123,7 @@ const Contact = () => {
 
                 <button 
                   disabled={status === 'submitting'}
-                  className="w-full py-4 btn-solar-orange text-base cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-none font-bold uppercase tracking-wide"
+                  className="w-full py-4 btn-solar-orange text-base cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-none font-bold uppercase tracking-wide active:scale-[0.98] transition-all duration-150"
                 >
                   {status === 'submitting' ? (
                     <>
@@ -1331,7 +1346,7 @@ export default function App() {
           animate={{ scale: 1, opacity: 1 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="fixed bottom-8 right-8 z-[60] w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:shadow-[0_0_30px_rgba(37,211,102,0.4)] transition-shadow"
+          className="fixed bottom-8 right-8 z-[60] w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:shadow-[0_0_30px_rgba(37,211,102,0.4)] transition-all pulse-whatsapp"
         >
           <MessageCircle size={32} />
           <div className="absolute -top-1 -right-1 w-5 h-5 bg-google-red rounded-full flex items-center justify-center text-[10px] font-bold animate-bounce shadow-lg">1</div>
