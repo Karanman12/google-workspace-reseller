@@ -118,18 +118,21 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
       {/* Badge */}
       {badge && (
         <motion.div variants={badgeVariants} className="mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-blue-50 border border-blue-100 text-google-blue text-xs font-bold tracking-widest uppercase">
-            <div className="w-1.5 h-1.5 rounded-full bg-google-blue animate-pulse" />
-            {badge}
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-brand-dark/[0.03] backdrop-blur-md border border-brand-dark/[0.08] text-brand-dark text-[11px] font-mono tracking-[0.2em] uppercase shadow-xs">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-solar-orange opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-solar-orange"></span>
+            </span>
+            <span>{badge}</span>
           </div>
         </motion.div>
       )}
 
       {/* Main Headline */}
-      <div className="overflow-hidden py-1 mb-2">
+      <div className="overflow-hidden py-1 mb-4">
         <motion.h1
           variants={headlineVariants}
-          className="font-display text-[3.5rem] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[6.5rem] xl:text-[7.5rem] 2xl:text-[8.5rem] font-extrabold text-[#111111] leading-[1.05] tracking-tight"
+          className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5rem] 2xl:text-[5.5rem] font-extrabold text-[#111111] leading-[1.1] tracking-tight"
         >
           {headline}
         </motion.h1>
@@ -137,10 +140,10 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
 
       {/* Subheadline (Orange Highlight Text) */}
       {subheadline && (
-        <div className="overflow-hidden py-1 mb-12">
+        <div className="overflow-hidden py-1 mb-10">
           <motion.h2
             variants={subheadlineVariants}
-            className="font-display text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.5rem] xl:text-[4rem] font-black bg-gradient-to-r from-[#E65A28] via-orange-500 to-[#E65A28] bg-clip-text text-transparent leading-[1.1] tracking-tight"
+            className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] xl:text-[3.25rem] 2xl:text-[3.75rem] font-black bg-gradient-to-r from-[#E65A28] via-orange-500 to-[#E65A28] bg-clip-text text-transparent leading-[1.1] tracking-tight"
             style={{
               textShadow: '0 0 40px rgba(230, 90, 40, 0.15)'
             }}

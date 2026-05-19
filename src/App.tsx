@@ -160,7 +160,7 @@ const Navbar = ({ startAnimation = true }: { startAnimation?: boolean }) => {
               <motion.div className="w-1.5 h-1.5 rounded-full bg-google-green" />
             </div>
             <span className="font-display font-extrabold text-[15px] tracking-tight text-[#1B1B1B] uppercase">
-              Workspace<span className="text-[#FF7120]">Bay</span>
+              Workspace<span className="text-[#FF7120]">Bays</span>
             </span>
           </motion.button>
         </div>
@@ -229,7 +229,7 @@ const Navbar = ({ startAnimation = true }: { startAnimation?: boolean }) => {
             <div className="w-1.5 h-1.5 rounded-full bg-google-green" />
           </div>
           <span className="font-display font-extrabold text-xs tracking-tight text-brand-dark uppercase">
-            Workspace<span className="text-[#FF7120]">Bay</span>
+            Workspace<span className="text-[#FF7120]">Bays</span>
           </span>
         </button>
 
@@ -304,7 +304,7 @@ const Navbar = ({ startAnimation = true }: { startAnimation?: boolean }) => {
 };
 
 const Typewriter = () => {
-  const words = ['Growing Companies', 'Your Startup', 'Your Team', 'Your Business'];
+  const words = ['Growing Companies', 'Indian Enterprises', 'Startups', 'Remote Teams'];
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [reverse, setReverse] = useState(false);
@@ -343,10 +343,10 @@ const Hero = ({ startAnimation = true }: { startAnimation?: boolean }) => {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex flex-col items-center text-center min-h-[80vh] justify-center">
             <HeroTypography
-              badge="GOOGLE WORKSPACE RESELLER"
-              headline="Google Workspace for"
+              badge="GOOGLE & ZOHO WORKSPACE PARTNER"
+              headline="Your Harbor for Cloud Workspace."
               subheadline={<Typewriter />}
-              description="Premium Gmail, Drive, Meet & more — at the best prices in India. INR billing, official invoice, setup in 24 hours."
+              description="Premium Google Workspace & Zoho Workplace — INR billing, official invoice, setup in 24 hours."
               startAnimation={startAnimation}
             >
               <motion.div 
@@ -426,8 +426,8 @@ const Hero = ({ startAnimation = true }: { startAnimation?: boolean }) => {
 
 const Stats = () => {
   const stats = [
-    { value: 'Official Partner', label: 'Authorized Google Workspace reseller in India.' },
-    { value: 'Instant INR Billing', label: 'Save 30% with GST invoices and UPI/NEFT options.' },
+    { value: 'Official Partner', label: 'Authorized Google Workspace & Zoho partner in India.' },
+    { value: 'Instant INR Billing', label: 'Save 30% with official business invoices and UPI/NEFT options.' },
     { value: '24-Hour Setup', label: 'Guaranteed rapid domain deployment and migration.' },
     { value: 'Priority Support', label: 'Direct, personal human help via WhatsApp and email.' }
   ];
@@ -460,14 +460,14 @@ const Stats = () => {
             viewport={{ once: true }}
             className="text-[11px] font-bold text-[#E65A28] uppercase tracking-[0.25em] mb-4"
           >
-            Authorized Partner
+            AUTHORIZED PARTNER
           </motion.p>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             viewport={{ once: true }}
-            className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[#FAF9F6] leading-[1.1] mb-6"
+            className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-[#FAF9F6] leading-[1.1] mb-6"
           >
             The premium standard for business collaboration.
           </motion.h2>
@@ -478,7 +478,7 @@ const Stats = () => {
             viewport={{ once: true }}
             className="text-base md:text-lg text-[#FAF9F6]/60 font-medium leading-relaxed"
           >
-            We deploy fully-managed, high-performance Google Workspace setups optimized for Indian enterprises. Genuine licenses, absolute security, and zero complexity.
+            We deploy fully-managed Google Workspace and Zoho Workplace setups optimized for Indian enterprises. Genuine licenses, absolute security, and zero complexity.
           </motion.p>
         </div>
 
@@ -510,12 +510,12 @@ const Stats = () => {
 
 const Features = () => {
   const features = [
-    { icon: Mail, title: 'Professional Gmail', desc: 'Get yourname@yourcompany.com — professional email that builds trust.', color: 'text-google-red', bg: 'bg-google-red/10' },
-    { icon: HardDrive, title: 'Google Drive 2TB+', desc: 'Secure cloud storage. Access files from any device. Share and collaborate.', color: 'text-google-green', bg: 'bg-google-green/10' },
-    { icon: Video, title: 'Google Meet HD', desc: 'Crystal-clear video calls with up to 500 participants and recording.', color: 'text-[#111111]', bg: 'bg-[#E8E8E6]' },
-    { icon: FileText, title: 'Docs, Sheets, Slides', desc: 'Create, edit and collaborate on documents in real time. Full office compatibility.', color: 'text-google-yellow', bg: 'bg-google-yellow/10' },
+    { icon: Mail, title: 'Professional Email', desc: 'Get yourname@yourcompany.com — professional email that builds trust.', color: 'text-google-red', bg: 'bg-google-red/10' },
+    { icon: HardDrive, title: 'Cloud Storage 2TB+', desc: 'Secure cloud storage. Access files from any device. Share and collaborate.', color: 'text-google-green', bg: 'bg-google-green/10' },
+    { icon: Video, title: 'Video Conferencing HD', desc: 'Crystal-clear video calls with up to 500 participants and recording.', color: 'text-[#111111]', bg: 'bg-[#E8E8E6]' },
+    { icon: FileText, title: 'Docs, Sheets & Slides', desc: 'Create, edit and collaborate on documents in real time. Full office compatibility.', color: 'text-google-yellow', bg: 'bg-google-yellow/10' },
     { icon: ShieldCheck, title: 'Admin Control Panel', desc: 'Full admin console to manage users, security policies, and permissions.', color: 'text-purple-600', bg: 'bg-purple-50' },
-    { icon: Calendar, title: 'Google Calendar', desc: 'Shared calendars, smart scheduling, and one-click Meet integration.', color: 'text-orange-600', bg: 'bg-orange-50' }
+    { icon: Calendar, title: 'Shared Calendar', desc: 'Shared calendars, smart scheduling, and one-click video meeting integration.', color: 'text-orange-600', bg: 'bg-orange-50' }
   ];
 
   return (
@@ -528,8 +528,8 @@ const Features = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">WHAT'S INCLUDED</h2>
-            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-brand-dark mb-6 uppercase tracking-[0.02em] leading-tight">Everything your team needs to work smarter</h3>
-            <p className="text-gray-500 max-w-2xl mx-auto text-lg">The full Google Workspace suite — professional email, cloud storage, video calls, and collaborative documents.</p>
+            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Everything your team needs to work smarter</h3>
+            <p className="text-gray-500 max-w-2xl mx-auto text-lg">The full Google Workspace & Zoho Workplace suite — professional email, cloud storage, video calls, and collaborative documents.</p>
           </motion.div>
         </div>
 
@@ -558,9 +558,11 @@ const Features = () => {
 };
 
 const Pricing = () => {
-  const plans = [
+  const [activeTab, setActiveTab] = useState<'google' | 'zoho'>('google');
+
+  const googlePlans = [
     {
-      name: 'Business Starter',
+      name: 'Starter',
       price: '₹200',
       tagline: 'Perfect for small teams getting started',
       features: [
@@ -573,7 +575,7 @@ const Pricing = () => {
       ]
     },
     {
-      name: 'Business Standard',
+      name: 'Standard',
       price: '₹250',
       tagline: 'Ideal for growing businesses',
       popular: true,
@@ -587,7 +589,7 @@ const Pricing = () => {
       ]
     },
     {
-      name: 'Business Plus',
+      name: 'Plus',
       price: '₹300',
       tagline: 'For enterprises needing advanced features',
       features: [
@@ -601,6 +603,51 @@ const Pricing = () => {
     }
   ];
 
+  const zohoPlans = [
+    {
+      name: 'Starter',
+      price: '₹200',
+      tagline: 'Perfect for small teams getting started',
+      features: [
+        'Professional Mail (your domain)',
+        'Zoho WorkDrive — 10GB/user',
+        'Zoho Meeting — 100 participants',
+        'Writer, Sheet, Show (Docs)',
+        'Admin control panel',
+        'INR Billing + Official Invoice'
+      ]
+    },
+    {
+      name: 'Standard',
+      price: '₹250',
+      tagline: 'Ideal for growing businesses',
+      popular: true,
+      features: [
+        'Everything in Starter',
+        'Zoho WorkDrive — 100GB/user',
+        'Meeting recording + webinars',
+        'Zoho Meeting — 250 participants',
+        'Secure business chat (Cliq)',
+        'Shared work drives'
+      ]
+    },
+    {
+      name: 'Plus',
+      price: '₹300',
+      tagline: 'For enterprises needing advanced features',
+      features: [
+        'Everything in Standard',
+        'Zoho WorkDrive — 1TB/user',
+        'Advanced email retention & eDiscovery',
+        'Zoho Meeting — 1000 participants',
+        'Advanced custom branding',
+        'Priority Zoho Support SLA'
+      ]
+    }
+  ];
+
+  const plans = activeTab === 'google' ? googlePlans : zohoPlans;
+
   return (
     <section id="pricing" className="py-24 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -610,8 +657,8 @@ const Pricing = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">SIMPLE PRICING</h2>
-            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-brand-dark mb-6 uppercase tracking-[0.02em] leading-tight">
+            <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">PRICING</h2>
+            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">
               Transparent pricing, no hidden fees 
               <span className="ml-4 inline-block bg-white border border-brand-dark text-brand-dark px-3 py-1 rounded-full text-xs font-mono font-bold align-middle">SAVE UP TO 30%</span>
             </h3>
@@ -619,7 +666,39 @@ const Pricing = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Tab Switcher */}
+        <div className="flex justify-center mb-12">
+          <div className="inline-flex p-1 bg-[#F6F6F6] border border-brand-dark/10 rounded-[10px]">
+            <button
+              onClick={() => setActiveTab('google')}
+              className={`px-6 py-2.5 rounded-[8px] text-xs font-mono font-bold uppercase transition-all cursor-pointer ${
+                activeTab === 'google'
+                  ? 'bg-[#1B1B1B] text-white shadow-sm'
+                  : 'text-[#1B1B1B]/60 hover:text-[#1B1B1B]'
+              }`}
+            >
+              Google Workspace
+            </button>
+            <button
+              onClick={() => setActiveTab('zoho')}
+              className={`px-6 py-2.5 rounded-[8px] text-xs font-mono font-bold uppercase transition-all cursor-pointer ${
+                activeTab === 'zoho'
+                  ? 'bg-[#1B1B1B] text-white shadow-sm'
+                  : 'text-[#1B1B1B]/60 hover:text-[#1B1B1B]'
+              }`}
+            >
+              Zoho Workplace
+            </button>
+          </div>
+        </div>
+
+        <motion.div 
+          key={activeTab}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
           {plans.map((plan, i) => (
             <motion.div
               key={i}
@@ -667,7 +746,7 @@ const Pricing = () => {
               </button>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -675,9 +754,9 @@ const Pricing = () => {
 
 const WhyUs = () => {
   const reasons = [
-    { title: 'Save 30% vs Direct Google', desc: 'Get the same genuine licenses at significantly lower rates than buying direct.', icon: Wallet, color: 'text-[#111111]', bg: 'bg-[#E8E8E6]' },
+    { title: 'Save 30% vs Direct', desc: 'Get the same genuine licenses at significantly lower rates than buying direct.', icon: Wallet, color: 'text-[#111111]', bg: 'bg-[#E8E8E6]' },
     { title: 'INR Billing', desc: 'Pay in Indian Rupees via UPI, NEFT, or bank transfer. Official invoice issued instantly.', icon: CreditCard, color: 'text-green-600', bg: 'bg-green-50' },
-    { title: '24-Hour Activation Guarantee', desc: 'Once payment is confirmed, your team is ready within 24 hours.', icon: Zap, color: 'text-yellow-600', bg: 'bg-yellow-50' },
+    { title: '24-Hour Activation', desc: 'Once payment is confirmed, your team is ready within 24 hours.', icon: Zap, color: 'text-yellow-600', bg: 'bg-yellow-50' },
     { title: 'Dedicated WhatsApp Support', desc: 'Direct WhatsApp access to your account manager for any help.', icon: MessageCircle, color: 'text-red-500', bg: 'bg-red-50' }
   ];
 
@@ -691,7 +770,7 @@ const WhyUs = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">WHY CHOOSE US</h2>
-            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-brand-dark uppercase tracking-[0.02em] leading-tight">The smartest way to get Google Workspace in India</h3>
+            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark tracking-tight leading-tight">The smartest way to get Google & Zoho in India</h3>
           </motion.div>
         </div>
 
@@ -722,7 +801,7 @@ const WhyUs = () => {
 
 const HowItWorks = () => {
   const steps = [
-    { title: 'Choose Your Plan', desc: 'Select the plan that fits your team size and features you need.' },
+    { title: 'Choose Your Plan', desc: 'Select Google Workspace or Zoho Workplace and the plan that fits your team.' },
     { title: 'Pay Securely', desc: 'Pay via UPI, NEFT, or bank transfer in INR. Receive your invoice immediately.' },
     { title: 'Get Your Workspace', desc: 'Receive your logins within 24 hours. We handle the complete setup.' }
   ];
@@ -737,7 +816,7 @@ const HowItWorks = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">HOW IT WORKS</h2>
-            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-brand-dark uppercase tracking-[0.02em] leading-tight">Up and running in 3 simple steps</h3>
+            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark tracking-tight leading-tight">Up and running in 3 simple steps</h3>
           </motion.div>
         </div>
 
@@ -783,7 +862,7 @@ const Commitment = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">OUR COMMITMENT</h2>
-            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-brand-dark mb-6 uppercase tracking-[0.02em] leading-tight">Our Commitment to You</h3>
+            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Our Commitment to You</h3>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg italic">"Starting your Google Workspace journey with a partner who cares about your growth."</p>
           </motion.div>
         </div>
@@ -865,7 +944,7 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">GET IN TOUCH</h2>
-            <h3 className="font-display text-3xl md:text-5xl font-extrabold text-brand-dark mb-6 uppercase tracking-[0.02em] leading-tight">Request a Custom Quote</h3>
+            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Request a Custom Quote</h3>
             <p className="text-gray-500 text-lg mb-10 leading-relaxed">
               We respond within 2 hours on business days. Tell us your team size and we'll help you start your setup immediately.
             </p>
@@ -1013,9 +1092,12 @@ const Contact = () => {
                     className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all font-sans shadow-none"
                   >
                     <option value="">Select a plan</option>
-                    <option value="Business Starter">Business Starter — ₹200/user</option>
-                    <option value="Business Standard">Business Standard — ₹250/user</option>
-                    <option value="Business Plus">Business Plus — ₹300/user</option>
+                    <option value="Google Workspace Starter">Google Workspace Starter — ₹200/user</option>
+                    <option value="Google Workspace Standard">Google Workspace Standard — ₹250/user</option>
+                    <option value="Google Workspace Plus">Google Workspace Plus — ₹300/user</option>
+                    <option value="Zoho Workplace Starter">Zoho Workplace Starter — ₹200/user</option>
+                    <option value="Zoho Workplace Standard">Zoho Workplace Standard — ₹250/user</option>
+                    <option value="Zoho Workplace Plus">Zoho Workplace Plus — ₹300/user</option>
                     <option value="Not sure yet">Not sure yet</option>
                   </select>
                 </div>
@@ -1065,10 +1147,10 @@ const Footer = () => {
                 <div className="w-2 h-2 rounded-full bg-google-green" />
               </div>
               <span className="font-display font-bold text-2xl tracking-tight">
-                Workspace<span className="text-google-blue">Bay</span>
+                Workspace<span className="text-google-blue">Bays</span>
               </span>
             </div>
-            <p className="text-white/50 text-sm max-w-xs font-medium uppercase tracking-widest">Google Workspace Reseller</p>
+            <p className="text-white/50 text-sm max-w-xs font-medium uppercase tracking-widest">GOOGLE & ZOHO WORKSPACE RESELLER</p>
           </div>
           <div className="flex gap-10">
             {['Pricing', 'Features', 'Why Us', 'Contact'].map((link) => (
@@ -1078,8 +1160,8 @@ const Footer = () => {
         </div>
         <div className="text-center">
           <p className="text-white/30 text-xs font-medium">
-            © {new Date().getFullYear()} WorkspaceBay. All rights reserved. <br className="md:hidden" />
-            Google Workspace™ is a trademark of Google LLC.
+            © {new Date().getFullYear()} WorkspaceBays. All rights reserved. <br className="md:hidden" />
+            Google Workspace™ and Zoho Workplace™ are trademarks of their respective owners.
           </p>
         </div>
       </div>
@@ -1198,7 +1280,7 @@ export default function App() {
                     fontWeight: 900
                   }}
                 >
-                  Workspace<span className="text-[#E65A28]">Bay</span>
+                  Workspace<span className="text-[#E65A28]">Bays</span>
                 </span>
               </motion.div>
             </div>

@@ -1,166 +1,144 @@
 /**
- * Floating Glassmorphism Dashboard Mockup
- * Premium SaaS dashboard with floating animation, depth layering, and cinematic effects
+ * Premium Integration Grid Showcase
+ * Authentic, clean bento-grid presentation of genuine Google Workspace & Zoho Workplace features
  */
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { Mail, FileText, Users, Calendar, Cloud, LayoutGrid, Search, Bell, CheckCircle2 } from 'lucide-react';
+import { Mail, Cloud, Video, Users, CheckCircle2, ShieldCheck, CreditCard, Zap, MessageCircle } from 'lucide-react';
 
 export const FloatingDashboard: React.FC<{ startAnimation?: boolean }> = ({ startAnimation = true }) => {
   return (
     <motion.div
-      className="relative w-full h-full flex items-center justify-center py-20"
-      initial={{ opacity: 0, y: 80, scale: 0.95, filter: 'blur(10px)' }}
-      animate={startAnimation ? { opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' } : { opacity: 0, y: 80, scale: 0.95, filter: 'blur(10px)' }}
-      transition={{ duration: 1.4, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
+      className="w-full max-w-5xl mx-auto px-4 py-8"
+      initial={{ opacity: 0, y: 30 }}
+      animate={startAnimation ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
     >
-      {/* Cinematic Ambient Glow (Amber) */}
-      <div
-        className="absolute inset-0 w-[800px] h-[800px] mx-auto pointer-events-none"
-        style={{
-          background: `radial-gradient(circle, rgba(230, 90, 40, 0.04) 0%, transparent 60%)`,
-          filter: 'blur(80px)',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-        }}
-      />
-
-      {/* Main Single Centered Window */}
-      <div className="relative w-full max-w-5xl mx-auto px-4" style={{ perspective: '2500px' }}>
-        <motion.div
-          className="relative w-full bg-white/50 backdrop-blur-3xl rounded-[24px] md:rounded-[32px] border border-white/60 shadow-[0_40px_120px_rgba(0,0,0,0.06),0_10px_30px_rgba(230,90,40,0.02)] overflow-hidden"
-          animate={{ y: [0, -8, 0], rotateX: [0.5, 1.5, 0.5], rotateY: [-0.5, 0.5, -0.5] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        >
-          {/* Main Glass Reflection */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/10 to-transparent pointer-events-none" />
-
-          {/* Window Header (Mac Style) */}
-          <div className="relative h-14 bg-white/40 border-b border-white/40 flex items-center px-4 md:px-6">
-            <div className="flex gap-2">
-              <div className="w-3 h-3 rounded-full bg-[#FF5F57] border border-black/5" />
-              <div className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-black/5" />
-              <div className="w-3 h-3 rounded-full bg-[#28C840] border border-black/5" />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch mb-6">
+        {/* Google Workspace Card */}
+        <div className="card-concrete-glass p-8 flex flex-col justify-between relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-google-blue/5 rounded-full blur-2xl pointer-events-none" />
+          <div>
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex gap-1">
+                <div className="w-2 h-2 rounded-full bg-[#1A73E8]" />
+                <div className="w-2 h-2 rounded-full bg-[#EA4335]" />
+                <div className="w-2 h-2 rounded-full bg-[#FBBC04]" />
+                <div className="w-2 h-2 rounded-full bg-[#34A853]" />
+              </div>
+              <span className="text-[10px] font-mono font-bold text-google-blue uppercase tracking-widest bg-google-blue/10 px-2.5 py-1 rounded-full border border-google-blue/20">
+                Google Workspace
+              </span>
             </div>
             
-            {/* Search / Address Bar Mockup */}
-            <div className="mx-auto w-48 md:w-64 h-8 bg-white/60 rounded-full border border-white/50 flex items-center justify-center shadow-sm">
-              <Search size={12} className="text-gray-400 mr-2" />
-              <div className="w-20 md:w-24 h-1.5 bg-gray-300 rounded-full opacity-50" />
-            </div>
+            <h3 className="font-display font-extrabold text-2xl text-brand-dark mb-3 tracking-tight">
+              Enterprise Google Suite
+            </h3>
+            <p className="text-sm text-brand-dark/60 leading-relaxed mb-6 font-sans">
+              The industry standard for secure cloud collaboration, business communication, and enterprise domain tools.
+            </p>
 
-            <div className="flex gap-4">
-              <div className="w-7 h-7 rounded-full bg-white/60 flex items-center justify-center border border-white/50 text-gray-500 shadow-sm hidden sm:flex">
-                <Bell size={12} />
+            <ul className="space-y-4 mb-8">
+              {[
+                { icon: Mail, text: "Professional Gmail on your business domain" },
+                { icon: Cloud, text: "Google Drive secure cloud storage (30GB to 5TB+)" },
+                { icon: Video, text: "Crystal-clear HD Meet video conferences" },
+                { icon: Users, text: "Real-time Docs, Sheets & Slides collaboration" }
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-sm text-brand-dark/70 font-sans">
+                  <item.icon size={18} className="text-google-blue shrink-0 mt-0.5" />
+                  <span>{item.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div className="pt-4 border-t border-brand-dark/5 flex items-center justify-between">
+            <span className="text-xs font-mono text-brand-dark/50">Fully-managed Setup</span>
+            <span className="text-xs font-mono font-bold text-google-blue">100% Genuine Licenses</span>
+          </div>
+        </div>
+
+        {/* Zoho Workplace Card */}
+        <div className="card-concrete-glass p-8 flex flex-col justify-between relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-solar-orange/5 rounded-full blur-2xl pointer-events-none" />
+          <div>
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex gap-1">
+                <div className="w-2 h-2 rounded-full bg-[#E65A28]" />
+                <div className="w-2 h-2 rounded-full bg-[#1A73E8]" />
+                <div className="w-2 h-2 rounded-full bg-[#34A853]" />
+                <div className="w-2 h-2 rounded-full bg-[#FBBC04]" />
               </div>
+              <span className="text-[10px] font-mono font-bold text-solar-orange uppercase tracking-widest bg-solar-orange/10 px-2.5 py-1 rounded-full border border-solar-orange/20">
+                Zoho Workplace
+              </span>
             </div>
+            
+            <h3 className="font-display font-extrabold text-2xl text-brand-dark mb-3 tracking-tight">
+              Modern Zoho Suite
+            </h3>
+            <p className="text-sm text-brand-dark/60 leading-relaxed mb-6 font-sans">
+              A powerful, feature-rich office environment built for modern remote teams seeking optimal collaboration efficiency.
+            </p>
+
+            <ul className="space-y-4 mb-8">
+              {[
+                { icon: Mail, text: "Professional Zoho Mail with custom domain" },
+                { icon: Cloud, text: "Zoho WorkDrive collaborative cloud storage" },
+                { icon: MessageCircle, text: "Instant team chat & communication via Zoho Cliq" },
+                { icon: Users, text: "Writer, Sheet & Show real-time document editor" }
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-sm text-brand-dark/70 font-sans">
+                  <item.icon size={18} className="text-solar-orange shrink-0 mt-0.5" />
+                  <span>{item.text}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Window Body */}
-          <div className="relative flex flex-col md:flex-row min-h-[500px]">
-            {/* Sidebar */}
-            <div className="w-64 bg-white/30 border-r border-white/40 p-6 hidden md:flex flex-col gap-8">
-              <div className="space-y-3">
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest pl-2 mb-4">Workspace</p>
-                <div className="flex items-center gap-3 px-3 py-2 bg-white/70 rounded-[12px] shadow-sm border border-white/60 text-[#1D1D1F]">
-                  <LayoutGrid size={18} className="text-[#E65A28]" />
-                  <span className="text-[13px] font-semibold">Overview</span>
-                </div>
-                <div className="flex items-center gap-3 px-3 py-2 text-gray-500 hover:bg-white/40 rounded-[12px] transition-colors cursor-pointer">
-                  <Mail size={18} />
-                  <span className="text-[13px] font-medium">Gmail</span>
-                </div>
-                <div className="flex items-center gap-3 px-3 py-2 text-gray-500 hover:bg-white/40 rounded-[12px] transition-colors cursor-pointer">
-                  <FileText size={18} />
-                  <span className="text-[13px] font-medium">Drive</span>
-                </div>
-                <div className="flex items-center gap-3 px-3 py-2 text-gray-500 hover:bg-white/40 rounded-[12px] transition-colors cursor-pointer">
-                  <Calendar size={18} />
-                  <span className="text-[13px] font-medium">Calendar</span>
-                </div>
-              </div>
-              
-              <div className="mt-auto bg-gradient-to-br from-[#E65A28]/10 to-transparent p-4 rounded-[16px] border border-[#E65A28]/20">
-                 <p className="text-[11px] font-bold text-[#E65A28] mb-2">Premium Plan</p>
-                 <div className="w-full bg-white/60 h-1.5 rounded-full mb-2 overflow-hidden">
-                   <div className="w-2/3 h-full bg-[#E65A28] rounded-full" />
-                 </div>
-                 <p className="text-[10px] text-gray-500 font-medium">2.4 TB / 5 TB Used</p>
-              </div>
-            </div>
-
-            {/* Main Content Area */}
-            <div className="flex-1 p-6 md:p-8 bg-gradient-to-br from-white/20 to-transparent">
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-8 gap-4">
-                <div>
-                  <h2 className="text-2xl font-bold text-[#1D1D1F] tracking-tight mb-1">Good morning, Team</h2>
-                  <p className="text-[13px] text-gray-500 font-medium">Here's what's happening across your workspace today.</p>
-                </div>
-                <div className="flex -space-x-2 sm:-space-x-3">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-indigo-100 flex items-center justify-center text-[10px] sm:text-xs font-bold text-indigo-500 shadow-sm z-30">SJ</div>
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-emerald-100 flex items-center justify-center text-[10px] sm:text-xs font-bold text-emerald-500 shadow-sm z-20">MR</div>
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-[#E65A28]/10 flex items-center justify-center text-[10px] sm:text-xs font-bold text-[#E65A28] shadow-sm z-10">+4</div>
-                </div>
-              </div>
-
-              {/* Grid of abstract product tiles */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-                {/* Large Featured Tile (Drive/Docs) */}
-                <div className="col-span-1 md:col-span-2 md:row-span-2 bg-white/60 backdrop-blur-md rounded-[20px] border border-white/50 p-6 shadow-[0_8px_24px_rgba(0,0,0,0.02)] relative overflow-hidden group">
-                  <div className="absolute -top-10 -right-10 w-64 h-64 bg-gradient-to-bl from-[#E65A28]/10 to-transparent rounded-full blur-3xl" />
-                  <div className="relative h-full flex flex-col justify-between">
-                    <div>
-                      <div className="w-12 h-12 rounded-[14px] bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6 border border-blue-500/20 shadow-sm">
-                        <Cloud size={24} />
-                      </div>
-                      <h3 className="text-lg md:text-xl font-bold text-[#1D1D1F] mb-2 tracking-tight">Q3 Global Strategy Sync</h3>
-                      <p className="text-[13px] text-gray-500 mb-8 max-w-sm">Live collaborative document. 8 team members currently viewing and editing.</p>
-                    </div>
-                    
-                    <div className="flex flex-wrap items-center gap-4 mt-auto">
-                      <div className="px-5 py-2.5 bg-white/80 backdrop-blur-md rounded-full border border-white/60 flex items-center justify-center shadow-[0_2px_10px_rgba(0,0,0,0.04)] text-[12px] font-bold text-[#1D1D1F] hover:bg-white transition-colors cursor-pointer">
-                        Open Document
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                        <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Live Editing</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Smaller Tiles */}
-                <div className="bg-white/60 backdrop-blur-md rounded-[20px] border border-white/50 p-5 shadow-[0_8px_24px_rgba(0,0,0,0.02)] flex flex-col justify-between">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="w-10 h-10 rounded-[12px] bg-red-500/10 flex items-center justify-center text-red-500 border border-red-500/20 shadow-sm">
-                      <Mail size={18} />
-                    </div>
-                    <div className="w-6 h-6 rounded-full bg-[#E65A28] text-white flex items-center justify-center text-[10px] font-bold shadow-md shadow-[#E65A28]/20">3</div>
-                  </div>
-                  <div>
-                    <h4 className="text-[14px] font-bold text-[#1D1D1F] mb-1">Unread Mail</h4>
-                    <p className="text-[11px] text-gray-500 font-medium">Important client updates</p>
-                  </div>
-                </div>
-
-                <div className="bg-white/60 backdrop-blur-md rounded-[20px] border border-white/50 p-5 shadow-[0_8px_24px_rgba(0,0,0,0.02)] flex flex-col justify-between">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="w-10 h-10 rounded-[12px] bg-green-500/10 flex items-center justify-center text-green-500 border border-green-500/20 shadow-sm">
-                      <Users size={18} />
-                    </div>
-                    <span className="text-[10px] font-bold text-gray-400 bg-white/50 px-2 py-0.5 rounded-full border border-white/60">14:00</span>
-                  </div>
-                  <div>
-                    <h4 className="text-[14px] font-bold text-[#1D1D1F] mb-1">Weekly All-Hands</h4>
-                    <p className="text-[11px] text-gray-500 font-medium">Google Meet Video</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="pt-4 border-t border-brand-dark/5 flex items-center justify-between">
+            <span className="text-xs font-mono text-brand-dark/50">Fully-managed Setup</span>
+            <span className="text-xs font-mono font-bold text-solar-orange">Premium Features Included</span>
           </div>
-        </motion.div>
+        </div>
+      </div>
+
+      {/* Unified Platform Banner */}
+      <div className="card-concrete-glass p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-solar-orange/[0.02] to-google-blue/[0.02] pointer-events-none" />
+        <div className="flex flex-col gap-1 z-10">
+          <div className="flex items-center gap-2 mb-1.5">
+            <ShieldCheck size={18} className="text-google-green" />
+            <span className="text-[10px] font-mono font-bold text-brand-dark/40 uppercase tracking-widest">
+              Unified Reseller Benefits
+            </span>
+          </div>
+          <h4 className="font-display font-extrabold text-xl text-brand-dark tracking-tight">
+            Why setup your company workspace via WorkspaceBays?
+          </h4>
+          <p className="text-xs text-brand-dark/60 max-w-xl font-sans mt-0.5">
+            Get official company billing invoices, save up to 30% compared to direct billing, and enjoy rapid 24-hour setup support.
+          </p>
+        </div>
+
+        <div className="flex flex-wrap md:flex-nowrap gap-4 shrink-0 z-10 w-full md:w-auto">
+          {[
+            { icon: CreditCard, label: "INR Auto-Billing", sub: "Official business invoices" },
+            { icon: Zap, label: "24h Active Setup", sub: "MX/DNS fully configured" }
+          ].map((item, idx) => (
+            <div key={idx} className="flex items-center gap-3 p-3.5 bg-white/60 border border-brand-dark/5 rounded-[12px] flex-1 md:flex-initial min-w-[160px]">
+              <div className="w-8 h-8 rounded-[8px] bg-brand-dark/5 flex items-center justify-center text-brand-dark shrink-0">
+                <item.icon size={16} />
+              </div>
+              <div>
+                <p className="text-[11px] font-mono font-bold text-brand-dark uppercase tracking-wider leading-none mb-1">{item.label}</p>
+                <p className="text-[9px] font-sans text-brand-dark/50 leading-none">{item.sub}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </motion.div>
   );
