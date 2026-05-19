@@ -11,8 +11,8 @@ export const FloatingDashboard: React.FC<{ startAnimation?: boolean }> = ({ star
   return (
     <motion.div
       className="w-full max-w-5xl mx-auto px-4 py-8"
-      initial={{ opacity: 0, y: 30 }}
-      animate={startAnimation ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      initial={{ opacity: 0, x: 50 }}
+      animate={startAnimation ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
       transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch mb-6">

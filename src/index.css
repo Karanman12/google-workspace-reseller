@@ -14,7 +14,7 @@
   --color-brand-dark: #1B1B1B;
   --color-solar-orange: #FF7120;
   --color-concrete-gray: #E4E4E4;
-  
+
   --radius-xl: 10px;
   --radius-2xl: 12px;
 }
@@ -22,10 +22,14 @@
 @layer base {
   html {
     font-size: 87.5%;
+    scroll-behavior: smooth;
   }
-  body, #root {
+
+  body,
+  #root {
     background-color: #E4E4E4;
   }
+
   body {
     @apply text-[#181C20] antialiased;
   }
@@ -55,9 +59,12 @@
 
   /* Subtle float animation for glow elements */
   @keyframes float-subtle {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0px);
     }
+
     50% {
       transform: translateY(8px);
     }
@@ -69,9 +76,9 @@
 
   /* Grid pattern background */
   .hero-grid {
-    background-image: 
-      linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 0),
-      linear-gradient(180deg, rgba(0,0,0,0.05) 1px, transparent 0);
+    background-image:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 0),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.05) 1px, transparent 0);
     background-size: 2.5vw 2.5vw;
   }
 
@@ -94,19 +101,19 @@
     filter: blur(120px);
   }
 
-  /* Concrete glass tactile cards inspiried by Hydroflow */
+  /* Concrete glass tactile cards - exact Hydroflow values */
   .card-concrete-glass {
-    background-color: rgba(246, 246, 246, 0.45);
-    backdrop-filter: blur(10px);
+    background-color: #f6f6f675;
+    backdrop-filter: blur(1px);
     border: 1px solid #1B1B1B;
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: none !important;
     transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  
+
   .card-concrete-glass:hover {
     border-color: #FF7120;
-    background-color: rgba(246, 246, 246, 0.6);
+    background-color: #f6f6f6a0;
   }
 
   /* Flat crisp brutalist cards */
@@ -157,9 +164,12 @@
 
   /* Glowing breathing pulse animations */
   @keyframes pulse-soft {
-    0%, 100% {
+
+    0%,
+    100% {
       box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
     }
+
     50% {
       box-shadow: 0 0 24px 6px rgba(37, 211, 102, 0.2);
     }
@@ -171,7 +181,8 @@
 }
 
 /* Lenis Smooth Scroll Configuration */
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 

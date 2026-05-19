@@ -221,6 +221,7 @@ const Navbar = ({ startAnimation = true }: { startAnimation?: boolean }) => {
           width: '80%',
           height: '48px',
           backgroundColor: '#F6F6F6',
+          backdropFilter: 'blur(2px)',
           borderRadius: '10px',
           padding: '8px 12px 8px 16px',
           border: 'none',
@@ -363,8 +364,8 @@ const Hero = ({ startAnimation = true }: { startAnimation?: boolean }) => {
             >
               <motion.div 
                 className="flex flex-col sm:flex-row items-center gap-4 justify-center mb-16"
-                initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
-                animate={startAnimation ? { opacity: 1, y: 0, filter: 'blur(0px)' } : { opacity: 0, y: 20, filter: 'blur(4px)' }}
+                initial={{ opacity: 0, x: 30, filter: 'blur(4px)' }}
+                animate={startAnimation ? { opacity: 1, x: 0, filter: 'blur(0px)' } : { opacity: 0, x: 30, filter: 'blur(4px)' }}
                 transition={{ duration: 0.65, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
                 <a 
@@ -408,10 +409,10 @@ const Hero = ({ startAnimation = true }: { startAnimation?: boolean }) => {
                   <motion.div 
                     key={i}
                     variants={{
-                      hidden: { opacity: 0, y: 15, filter: 'blur(2px)' },
+                      hidden: { opacity: 0, x: 20, filter: 'blur(2px)' },
                       visible: { 
                         opacity: 1, 
-                        y: 0, 
+                        x: 0, 
                         filter: 'blur(0px)',
                         transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
                       }
@@ -918,7 +919,7 @@ const Contact = () => {
     setStatus('submitting');
     
     try {
-      const requestsRef = collection(db, 'requests');
+      const requestsRef = collection(db, 'contacts');
       await addDoc(requestsRef, {
         ...formData,
         createdAt: serverTimestamp()
@@ -935,7 +936,7 @@ const Contact = () => {
     } catch (error) {
       setStatus('error');
       try {
-        handleFirestoreError(error, OperationType.WRITE, 'requests');
+        handleFirestoreError(error, OperationType.WRITE, 'contacts');
       } catch (innerError) {
         // Error already logged and re-thrown
       }
@@ -1162,7 +1163,7 @@ const Footer = () => {
                 <div className="w-2 h-2 rounded-full bg-google-green" />
               </div>
               <span className="font-display font-bold text-2xl tracking-tight">
-                Workspace<span className="text-google-blue">Bays</span>
+                Workspace<span className="text-[#FF7120]">Bays</span>
               </span>
             </div>
             <p className="text-white/50 text-sm max-w-xs font-medium uppercase tracking-widest">GOOGLE & ZOHO WORKSPACE RESELLER</p>
@@ -1211,104 +1212,42 @@ export default function App() {
     // Solid loading screen hold duration
     const timer = setTimeout(() => {
       setIsLoadingIntro(false);
-    }, 600);
+      setStartHomepageAnimation(true); // Triggers homepage reveal concurrently for a gorgeous cross-fade!
+    }, 800); // Hold for 800ms to show the brand name before vanishing
     return () => clearTimeout(timer);
   }, []);
 
-  const handleIntroExitComplete = () => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0);
-    }
-    setStartHomepageAnimation(true); // Triggers fresh homepage reveal ONLY after the overlay exit completes!
-  };
-
   return (
     <>
-      <AnimatePresence mode="wait" onExitComplete={handleIntroExitComplete}>
+      <AnimatePresence>
         {isLoadingIntro && (
           <motion.div
             key="intro-loader"
             initial={{ opacity: 1 }}
             exit={{ 
               opacity: 0,
-              filter: 'blur(15px)',
-              transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } 
+              transition: { duration: 0.25, ease: 'easeInOut' } // Matches Hydroflow's 0.25s fade-out
             }}
             className="fixed inset-0 z-[999999] bg-[#E4E4E4] flex flex-col items-center justify-center pointer-events-auto"
             style={{ height: '100vh', width: '100vw' }}
           >
-            {/* Elegant moving grid pattern lines to maintain visual theme */}
-            <div className="absolute inset-0 pointer-events-none z-0 hero-grid opacity-80" />
-
-            {/* Glowing background spotlight behind the text */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2, ease: 'easeOut' }}
-              className="absolute pointer-events-none mix-blend-multiply w-[500px] h-[500px] rounded-full"
-              style={{
-                background: 'radial-gradient(circle, rgba(230, 90, 40, 0.06) 0%, transparent 70%)',
-                filter: 'blur(50px)',
-              }}
-            />
-
-            {/* Centered Text Wrapper */}
-            <div className="relative overflow-hidden px-10 py-6">
-              <motion.div
-                initial={{ y: '100%', opacity: 0, filter: 'blur(12px)' }}
-                animate={{ y: '0%', opacity: 1, filter: 'blur(0px)' }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="flex items-center gap-4"
-              >
-                {/* 4 dots brand logo visual */}
-                <div className="flex gap-1.5 flex-shrink-0">
-                  <motion.div 
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.25, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                    className="w-2.5 h-2.5 rounded-full bg-google-blue" 
-                  />
-                  <motion.div 
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.35, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                    className="w-2.5 h-2.5 rounded-full bg-google-red" 
-                  />
-                  <motion.div 
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.45, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                    className="w-2.5 h-2.5 rounded-full bg-google-yellow" 
-                  />
-                  <motion.div 
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.55, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                    className="w-2.5 h-2.5 rounded-full bg-google-green" 
-                  />
-                </div>
-
-                <span 
-                  className="font-display font-black text-4xl sm:text-5xl md:text-6xl tracking-tight text-[#1D1D1F]"
-                  style={{
-                    letterSpacing: '-0.03em',
-                    fontWeight: 900
-                  }}
-                >
-                  Workspace<span className="text-[#E65A28]">Bays</span>
-                </span>
-              </motion.div>
-            </div>
+            {/* Minimalist grid pattern matching Hydroflow's blank loading screen */}
+            <div className="absolute inset-0 pointer-events-none z-0 hero-grid" />
             
-            {/* Tiny refined bottom progress bar indicator */}
-            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-48 h-[2px] bg-black/[0.04] rounded-full overflow-hidden">
-              <motion.div
-                initial={{ left: '-100%' }}
-                animate={{ left: '0%' }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute inset-0 bg-[#E65A28] rounded-full"
-              />
-            </div>
+            {/* Clean, minimalist brand logo reveal */}
+            <motion.div
+              initial={{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }}
+              animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+              className="relative z-10 flex items-center justify-center"
+            >
+              <span 
+                className="font-display font-black text-4xl tracking-tight text-[#1D1D1F]"
+                style={{ letterSpacing: '-0.03em', fontWeight: 900 }}
+              >
+                Workspace<span className="text-[#E65A28]">Bays</span>
+              </span>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

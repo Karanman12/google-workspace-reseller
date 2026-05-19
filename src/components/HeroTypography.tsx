@@ -37,11 +37,11 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
   };
 
   const badgeVariants = {
-    hidden: { opacity: 0, scale: 0.95, y: 15, filter: 'blur(4px)' },
+    hidden: { opacity: 0, scale: 0.95, x: 30, filter: 'blur(4px)' },
     visible: {
       opacity: 1,
       scale: 1,
-      y: 0,
+      x: 0,
       filter: 'blur(0px)',
       transition: {
         duration: 0.5,
@@ -52,9 +52,9 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
   };
 
   const headlineVariants = {
-    hidden: { y: '100%', opacity: 0, filter: 'blur(8px)' },
+    hidden: { x: '10vw', opacity: 0, filter: 'blur(8px)' },
     visible: {
-      y: '0%',
+      x: '0vw',
       opacity: 1,
       filter: 'blur(0px)',
       transition: {
@@ -66,9 +66,9 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
   };
 
   const subheadlineVariants = {
-    hidden: { y: '80%', opacity: 0, filter: 'blur(6px)', scale: 0.98 },
+    hidden: { x: '8vw', opacity: 0, filter: 'blur(6px)', scale: 0.98 },
     visible: {
-      y: '0%',
+      x: '0vw',
       opacity: 1,
       filter: 'blur(0px)',
       scale: 1,
@@ -81,10 +81,10 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
   };
 
   const descriptionVariants = {
-    hidden: { opacity: 0, y: 20, filter: 'blur(4px)' },
+    hidden: { opacity: 0, x: 30, filter: 'blur(4px)' },
     visible: {
       opacity: 1,
-      y: 0,
+      x: 0,
       filter: 'blur(0px)',
       transition: {
         duration: 0.65,
@@ -95,10 +95,10 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
   };
 
   const childrenVariants = {
-    hidden: { opacity: 0, y: 20, filter: 'blur(4px)' },
+    hidden: { opacity: 0, x: 30, filter: 'blur(4px)' },
     visible: {
       opacity: 1,
-      y: 0,
+      x: 0,
       filter: 'blur(0px)',
       transition: {
         duration: 0.65,
