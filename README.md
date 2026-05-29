@@ -3,6 +3,9 @@
 # 🌐 WorkspaceBays
 
 ### Google Workspace & Zoho Workplace Reseller — India
+[![Live Demo](https://img.shields.io/badge/Live-Demo-FF7120?style=flat&logo=vercel&logoColor=white)](https://workspacebays-in.vercel.app/)
+
+![WorkspaceBays Preview](./preview.png)
 
 Premium, fully-managed cloud workspace licenses at the best prices in India with 24/7 support and 24-hour setup.
 
