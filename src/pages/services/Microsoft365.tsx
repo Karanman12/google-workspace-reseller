@@ -27,23 +27,26 @@ const Microsoft365 = () => {
   const plans = [
     {
       name: 'Basic',
-      price: '₹250',
-      tagline: 'Web & mobile Office apps only',
-      features: ['Web & mobile Office apps', '1TB OneDrive storage', 'Exchange email (50GB)'],
+      price: '₹140*',
+      tagline: 'Per User / Month + Tax',
+      desc: 'Essential cloud tools for email, collaboration, and secure online work.',
+      features: ['Professional business email with custom domain', 'Web and mobile versions of Office apps', 'Microsoft Teams chat and meetings', '1 TB cloud storage per user', 'Basic security and spam protection', 'File sharing and collaboration tools'],
       popular: false
     },
     {
       name: 'Standard',
-      price: '₹350',
-      tagline: 'Ideal for growing businesses',
-      features: ['Desktop Office apps', 'Teams meetings recording', 'SharePoint intranet'],
+      price: '₹765*',
+      tagline: 'Per User / Month + Tax',
+      desc: 'Complete productivity package with desktop apps and advanced collaboration tools.',
+      features: ['Everything in Business Basic', 'Desktop versions of Word, Excel, PowerPoint and Outlook', 'Business-class email and calendar', 'Microsoft Teams meetings and collaboration', '1 TB cloud storage per user', 'Additional productivity applications'],
       popular: true
     },
     {
       name: 'Premium',
-      price: '₹500',
-      tagline: 'Advanced security for enterprises',
-      features: ['Advanced threat protection', 'Device management', 'Azure Information Protection'],
+      price: '₹1825*',
+      tagline: 'Per User / Month + Tax',
+      desc: 'Advanced business protection with premium productivity and security features.',
+      features: ['Everything in Business Standard', 'Advanced identity and access management', 'Enhanced security and threat protection', 'Device management controls', 'Data protection features', 'Premium support options'],
       popular: false
     }
   ];
@@ -188,7 +191,8 @@ const Microsoft365 = () => {
           <div className="text-center mb-16">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">PRICING</h2>
-              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Microsoft 365 Plans</h3>
+              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-4 tracking-tight leading-tight">Our Pricing</h3>
+              <p className="text-brand-dark/60 text-base sm:text-lg font-sans">Free Trial For One Month For New Users Only</p>
             </motion.div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -204,7 +208,8 @@ const Microsoft365 = () => {
                   <span className="font-display text-4xl font-extrabold text-brand-dark">{plan.price}</span>
                   <span className="text-brand-dark/50 font-mono text-xs">/user/mo</span>
                 </div>
-                <p className="text-brand-dark/60 text-sm mb-8 leading-relaxed font-sans">{plan.tagline}</p>
+                <p className="text-brand-dark/60 text-sm mb-4 leading-relaxed font-sans">{plan.tagline}</p>
+                <p className="text-brand-dark/70 text-sm mb-8 leading-relaxed font-sans">{plan.desc}</p>
                 <div className="h-px bg-brand-dark/10 w-full mb-8" />
                 <ul className="space-y-4 mb-10">
                   {plan.features.map((feature, j) => (
@@ -220,6 +225,10 @@ const Microsoft365 = () => {
               </motion.div>
             ))}
           </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-5xl mx-auto mt-16 p-8 card-concrete-glass text-sm text-brand-dark/60 font-sans leading-relaxed space-y-3">
+            <p>Microsoft 365 plans help businesses improve productivity, communication, and security with reliable cloud-based tools.</p>
+            <p>Plans are suitable for organizations of different sizes. Pricing may vary based on subscription terms and applicable taxes.</p>
+          </motion.div>
         </div>
       </section>
 

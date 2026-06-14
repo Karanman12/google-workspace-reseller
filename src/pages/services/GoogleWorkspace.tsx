@@ -40,23 +40,23 @@ const GoogleWorkspace = () => {
   const plans = [
     {
       name: 'Starter',
-      price: '₹200',
-      tagline: 'Perfect for small teams getting started',
-      features: ['30GB storage', '100 Meet participants', 'Basic admin control'],
+      price: '₹140*',
+      tagline: 'Per User / Month + Tax',
+      features: ['Professional business email with custom domain', 'Google Meet video meetings for up to 100 participants', '30 GB cloud storage per user', 'Security and admin management controls', 'Standard customer support', 'Google Gemini AI productivity features'],
       popular: false
     },
     {
       name: 'Standard',
-      price: '₹250',
-      tagline: 'Ideal for growing businesses',
-      features: ['2TB storage', '150 Meet participants', 'Meeting recording', 'Shared drives'],
+      price: '₹845*',
+      tagline: 'Per User / Month + Tax',
+      features: ['Secure business email with custom domain', 'Google Meet meetings for up to 150 participants with recording', '2 TB cloud storage per user', 'Advanced security and management controls', 'Standard support with optional Enhanced Support upgrade', 'Gemini AI assistance across Gmail, Docs, Meet, and more'],
       popular: true
     },
     {
       name: 'Plus',
-      price: '₹300',
-      tagline: 'For enterprises needing advanced features',
-      features: ['5TB storage', '500 Meet participants', 'Vault & eDiscovery', 'Enhanced SLA'],
+      price: '₹1645*',
+      tagline: 'Per User / Month + Tax',
+      features: ['Secure business email with advanced eDiscovery and retention features', 'Google Meet meetings for up to 500 participants with recording and attendance tracking', '5 TB cloud storage per user', 'Enhanced security controls including Vault and advanced endpoint management', 'Standard support with optional Enhanced Support upgrade', 'Advanced Gemini AI and productivity tools'],
       popular: false
     }
   ];
@@ -201,7 +201,8 @@ const GoogleWorkspace = () => {
           <div className="text-center mb-16">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">PRICING</h2>
-              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Google Workspace Plans</h3>
+              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-4 tracking-tight leading-tight">Our Pricing</h3>
+              <p className="text-brand-dark/60 text-base sm:text-lg font-sans">Free Trial For One Month For New Users Only</p>
             </motion.div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -233,6 +234,21 @@ const GoogleWorkspace = () => {
               </motion.div>
             ))}
           </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-5xl mx-auto mt-16 space-y-6">
+            <div className="p-8 card-concrete-glass">
+              <h4 className="font-display font-bold text-lg text-brand-dark mb-4 tracking-tight">Pricing Information</h4>
+              <div className="text-sm text-brand-dark/60 font-sans leading-relaxed space-y-3">
+                <p>Choose the right Google Workspace plan for your business needs. Business Starter, Business Standard, and Business Plus plans support teams up to 300 users, while Enterprise plans are available for organizations requiring advanced flexibility.</p>
+                <p>New customers may receive promotional benefits and additional features for a limited period.</p>
+              </div>
+            </div>
+            <div className="p-8 card-concrete-glass">
+              <h4 className="font-display font-bold text-lg text-brand-dark mb-4 tracking-tight">Special Offer Details</h4>
+              <div className="text-sm text-brand-dark/60 font-sans leading-relaxed space-y-3">
+                <p>Eligible new Google Workspace customers can enjoy introductory pricing for the first 20 users for up to 12 months. After the promotional period ends, regular pricing will apply. Customers can upgrade, modify, or cancel their plan whenever required.</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

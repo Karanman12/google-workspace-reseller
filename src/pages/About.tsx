@@ -12,7 +12,8 @@ const About = () => {
     { icon: Briefcase, title: 'Microsoft 365 Plans', desc: 'Industry-standard Office apps and Teams collaboration.' },
     { icon: ArrowRightLeft, title: 'Email Migration Services', desc: 'Seamless, zero-downtime transition from any provider.' },
     { icon: ShieldCheck, title: 'Website Security & Recovery', desc: 'Fast recovery and protection for hacked websites.' },
-    { icon: Globe, title: 'SSL & Website Design', desc: 'Complete web presence and security solutions.' }
+    { icon: Globe, title: 'SSL & Website Design', desc: 'Complete web presence and security solutions.' },
+    { icon: Monitor, title: 'IT Setup & Business Support', desc: 'Complete setup assistance for email, cloud tools, security, and productivity solutions.' }
   ];
 
   const values = [
