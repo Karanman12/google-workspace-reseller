@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { useOutletContext } from 'react-router-dom';
 import SEO from '../components/seo/SEO';
+import { SITE_URL } from '../config/constants';
 import { HeroBackground } from '../components/HeroBackground';
 import { HeroTypography } from '../components/HeroTypography';
 import { FloatingDashboard } from '../components/FloatingDashboard';
@@ -246,9 +247,35 @@ const ContactCTA = () => {
 const Home = () => {
   const { startAnimation } = useOutletContext<any>() || { startAnimation: true };
 
+  const schemas = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'WorkspaceBays',
+      url: SITE_URL,
+      logo: `${SITE_URL}/logo.png`,
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+91-9654387865',
+        contactType: 'customer service'
+      }
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'WorkspaceBays',
+      url: SITE_URL
+    }
+  ];
+
   return (
     <>
-      <SEO title="WorkspaceBays | Google Workspace & Microsoft 365 Reseller India" description="Premium, fully-managed Google Workspace and Microsoft 365 licenses at the best prices in India with 24/7 support and 24-hour setup." />
+      <SEO 
+        title="WorkspaceBays | Google Workspace & Microsoft 365 Reseller India" 
+        description="Premium, fully-managed Google Workspace and Microsoft 365 licenses at the best prices in India with 24/7 support and 24-hour setup." 
+        canonical="/"
+        schema={schemas}
+      />
       <Hero startAnimation={startAnimation} />
       
       <div id="services">

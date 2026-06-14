@@ -44,12 +44,30 @@ const EmailMigration = () => {
     { q: 'Will I lose any emails during migration?', a: 'Absolutely not. We guarantee 100% data integrity and run verification checks after completion.' },
     { q: 'Can you migrate from any email provider?', a: 'Yes, we can migrate from virtually any IMAP/POP3 enabled provider, Microsoft 365, GoDaddy, cPanel, and more.' },
     { q: 'Do you handle DNS and MX record changes?', a: 'Yes, our experts handle the complete technical DNS switch so you do not have to worry about the technical details.' },
-    { q: 'What happens to my old email account?', a: 'Your old email account data will be synced over. Once the MX records switch, new emails will flow to your new workspace.' }
+    { q: 'What happens if there is an error during migration?', a: 'Our migration tools provide detailed logs. We rerun the migration for any failed items until 100% of the data is successfully transferred.' }
   ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a
+      }
+    }))
+  };
 
   return (
     <>
-      <SEO title="Email Migration | WorkspaceBays" description="Seamless Email Migration — Zero Downtime, Zero Data Loss. Moving to Google Workspace or Microsoft 365." />
+      <SEO 
+        title="Email Migration | WorkspaceBays" 
+        description="Seamless Email Migration — Zero Downtime, Zero Data Loss. Moving to Google Workspace or Microsoft 365." 
+        canonical="/email-migration"
+        schema={faqSchema}
+      />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-transparent">
@@ -57,8 +75,8 @@ const EmailMigration = () => {
           <div className="max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">EMAIL MIGRATION</h2>
-              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Seamless Email Migration — Zero Downtime, Zero Data Loss</h1>
-              <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl">Moving to Google Workspace or Microsoft 365? We handle the complete migration of your emails, contacts, calendars, and files — with zero downtime and zero data loss.</p>
+              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Zero-Downtime Email Migration Services</h1>
+              <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl">Moving to a new email platform? Our experts handle the entire technical transition from cPanel, GoDaddy, or Yahoo. Whether moving to <Link to="/google-workspace" className="text-solar-orange hover:underline font-medium">Google Workspace</Link> or <Link to="/microsoft-365" className="text-solar-orange hover:underline font-medium">Microsoft 365</Link>, we ensure zero downtime and zero data loss.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="https://wa.me/919654387865?text=Hi%2C%20I%20need%20help%20with%20email%20migration."

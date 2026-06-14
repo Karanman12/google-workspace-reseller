@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/seo/SEO';
+import RelatedPosts from '../../components/blog/RelatedPosts';
 import { 
   MessageCircle, ArrowRight, ShieldCheck, Search, Globe, Trash2, Database, Lock, AlertTriangle, UserX, AlertCircle, Clock, ChevronDown
 } from 'lucide-react';
@@ -45,9 +46,27 @@ const FixHackedWebsite = () => {
     { q: 'Do you provide ongoing security monitoring?', a: 'Yes, we set up robust firewalls and offer ongoing maintenance plans to prevent future breaches.' }
   ];
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a
+      }
+    }))
+  };
+
   return (
     <>
-      <SEO title="Fix Hacked Website | WorkspaceBays" description="Website hacked? We clean malware, remove backdoors, and restore your website to a secure state — usually within 24 hours." />
+      <SEO 
+        title="Fix Hacked Website | WorkspaceBays" 
+        description="Website hacked? We clean malware, remove backdoors, and restore your website to a secure state — usually within 24 hours." 
+        canonical="/fix-hacked-website"
+        schema={faqSchema}
+      />
       
       <section className="pt-32 pb-20 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -55,7 +74,7 @@ const FixHackedWebsite = () => {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">WEBSITE SECURITY</h2>
               <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Fix Your Hacked Website — Fast Recovery & Protection</h1>
-              <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl">Website hacked? Blacklisted by Google? Showing spam content? We clean malware, remove backdoors, and restore your website to a secure state — usually within 24 hours.</p>
+              <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl">Website hacked? Blacklisted by Google? Showing spam content? We clean malware, remove backdoors, and restore your website to a secure state — usually within 24 hours. After recovery, secure your site with an <Link to="/ssl-certificate" className="text-solar-orange hover:underline">SSL Certificate</Link> or upgrade your <Link to="/website-design" className="text-solar-orange hover:underline">Website Design</Link> for better security.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="https://wa.me/919654387865?text=Emergency:%20My%20website%20is%20hacked."
@@ -193,6 +212,9 @@ const FixHackedWebsite = () => {
           </div>
         </div>
       </section>
+
+      {/* Related Blogs Section */}
+      <RelatedPosts category="IT & Security" />
 
       <section className="relative py-24 overflow-hidden text-white text-center" style={{ background: '#161616' }}>
         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8">

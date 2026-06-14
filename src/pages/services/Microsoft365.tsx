@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/seo/SEO';
+import RelatedPosts from '../../components/blog/RelatedPosts';
 import { 
   MessageCircle, ArrowRight, ArrowUpRight, Mail, Users, FileText, HardDrive, Globe, ShieldCheck, Wallet, Zap, ChevronDown, CheckCircle2, Star
 } from 'lucide-react';
@@ -60,12 +61,30 @@ const Microsoft365 = () => {
     { q: 'How do I migrate from Google Workspace to Microsoft 365?', a: 'Our migration experts handle the complete transition of your emails, files, and calendars with zero downtime.' },
     { q: 'What payment methods are available?', a: 'We support all major Indian payment methods including UPI, NEFT, RTGS, and direct bank transfers.' },
     { q: 'Do you handle the complete setup?', a: 'Yes, we handle everything from domain verification to user creation and policy configuration.' },
-    { q: 'Is there a minimum number of users?', a: 'No, you can start with a single user and scale up as your business grows.' }
+    { q: 'Do you offer technical support for Microsoft 365 issues?', a: 'Yes! As an authorized partner, we provide direct administrative support for your tenant, avoiding long queues with Microsoft.' }
   ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a
+      }
+    }))
+  };
 
   return (
     <>
-      <SEO title="Microsoft 365 Reseller India | Buy Office 365 Plans | WorkspaceBays" description="Empower your team with Microsoft 365. Access Outlook, Teams, OneDrive, and Office Apps with seamless email migration and local INR billing." />
+      <SEO 
+        title="Microsoft 365 Reseller India | Buy Office 365 Plans | WorkspaceBays" 
+        description="Empower your team with Microsoft 365. Access Outlook, Teams, OneDrive, and Office Apps with seamless email migration and local INR billing." 
+        canonical="/microsoft-365"
+        schema={faqSchema}
+      />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-transparent">
@@ -87,9 +106,9 @@ const Microsoft365 = () => {
                     WHATSAPP US
                     <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                   </a>
-                  <Link to="/contact" className="btn-solar-dark px-8 py-4 text-base shadow-none cursor-pointer flex items-center justify-center">
+                  <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' }); }} className="btn-solar-dark px-8 py-4 text-base shadow-none cursor-pointer flex items-center justify-center">
                     VIEW PLANS
-                  </Link>
+                  </a>
                 </div>
               </motion.div>
             </div>
@@ -164,7 +183,7 @@ const Microsoft365 = () => {
       </section>
 
       {/* Plans Section */}
-      <section className="py-24 bg-transparent border-t border-brand-dark/5">
+      <section id="pricing" className="py-24 bg-transparent border-t border-brand-dark/5">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -251,45 +270,13 @@ const Microsoft365 = () => {
       </section>
 
       {/* Related Blogs Section */}
-      <section className="py-24 bg-transparent border-t border-brand-dark/5">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">RESOURCES</h2>
-              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-dark tracking-tight leading-tight">Related Articles</h3>
-            </motion.div>
-            <Link to="/blog" className="text-solar-orange font-bold hover:underline flex items-center gap-1 shrink-0">
-              View All Posts <ArrowRight size={16} />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { category: 'TUTORIAL', title: 'Maximizing Team Collaboration with Microsoft Teams', date: 'December 05, 2024' },
-              { category: 'TIPS', title: 'How to Manage Multiple Email Aliases in Outlook', date: 'November 20, 2024' },
-              { category: 'COMPARISON', title: 'Google Workspace vs Microsoft 365: Pricing & Features Compared', date: 'October 12, 2024' }
-            ].map((post, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }}>
-                <Link to="/blog" className="group block h-full p-8 card-concrete-glass hover:border-brand-dark/30 transition-all duration-300 flex flex-col">
-                  <span className="text-[11px] font-mono font-bold tracking-widest text-solar-orange uppercase mb-4">{post.category}</span>
-                  <h4 className="font-display text-xl font-bold text-brand-dark mb-3 leading-snug group-hover:text-solar-orange transition-colors">{post.title}</h4>
-                  <div className="mt-auto pt-6 border-t border-brand-dark/10 flex items-center justify-between">
-                    <span className="text-xs font-mono text-brand-dark/40">{post.date}</span>
-                    <span className="text-solar-orange font-bold text-sm hover:underline flex items-center gap-1">
-                      Read Article <ArrowUpRight size={14} />
-                    </span>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <RelatedPosts category="Microsoft 365" />
 
       {/* CTA Section */}
       <section className="relative py-24 overflow-hidden text-white text-center" style={{ background: '#161616' }}>
         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8">
-          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[#FAF9F6] mb-6">Ready to Switch to Microsoft 365?</h2>
-          <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">We handle the complete setup. WhatsApp us now for the fastest response.</p>
+          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[#FAF9F6] mb-6">Ready to Move to Microsoft 365?</h2>
+          <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Upgrade your team's productivity today. WhatsApp us to get started. Ensure your infrastructure is fully secure with our <Link to="/ssl-certificate" className="text-solar-orange hover:underline font-medium">SSL Certificates</Link>.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="https://wa.me/919654387865?text=Hi%2C%20I%20am%20ready%20to%20get%20started%20with%20Microsoft%20365."

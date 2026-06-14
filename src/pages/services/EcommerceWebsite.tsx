@@ -62,9 +62,27 @@ const EcommerceWebsite = () => {
     { q: 'Do you charge a percentage of my sales?', a: 'No. We only charge for the development and hosting. You keep 100% of your sales revenue (minus standard payment gateway fees).' }
   ];
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a
+      }
+    }))
+  };
+
   return (
     <>
-      <SEO title="E-commerce Website Development | WorkspaceBays" description="Professional Online Store Development, Product Catalogs, Payment Gateways, and Mobile Commerce solutions." />
+      <SEO 
+        title="E-commerce Website Development | WorkspaceBays" 
+        description="Professional Online Store Development, Product Catalogs, Payment Gateways, and Mobile Commerce solutions." 
+        canonical="/ecommerce-website"
+        schema={faqSchema}
+      />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-transparent">
@@ -73,7 +91,7 @@ const EcommerceWebsite = () => {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">E-COMMERCE</h2>
               <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Start Selling Online with Powerful E-commerce</h1>
-              <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl">Launch a robust, secure, and high-converting online store. We provide complete e-commerce solutions including product catalogs, secure payment gateways, and seamless order management.</p>
+              <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl">Launch a robust, secure, and high-converting online store. We provide complete e-commerce solutions including product catalogs, secure payment gateways, and seamless order management. Pair your store with <Link to="/google-workspace" className="text-solar-orange hover:underline">Google Workspace</Link> for professional email, and secure it with our <Link to="/ssl-certificate" className="text-solar-orange hover:underline">SSL Certificates</Link>.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="https://wa.me/919654387865?text=Hi%2C%20I%20want%20to%20build%20an%20ecommerce%20website."

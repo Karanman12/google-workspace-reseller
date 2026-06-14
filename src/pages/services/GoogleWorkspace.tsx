@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/seo/SEO';
+import RelatedPosts from '../../components/blog/RelatedPosts';
 import { 
   MessageCircle, 
   ArrowRight, 
@@ -73,12 +74,30 @@ const GoogleWorkspace = () => {
     { q: 'Can I migrate my existing emails?', a: 'Yes! We offer comprehensive email migration services to move your data from cPanel, Microsoft 365, or other platforms to Google Workspace with zero downtime.' },
     { q: 'What payment methods do you accept?', a: 'We accept all major Indian payment methods including UPI, NEFT, IMPS, RTGS, and direct bank transfers.' },
     { q: 'How long does setup take?', a: 'Standard setups are completed within 24 hours of payment confirmation. Migration timelines depend on data size but are planned to ensure zero downtime.' },
-    { q: 'Do you provide ongoing support?', a: 'Yes, we provide continuous support via WhatsApp and email for all our Google Workspace customers.' }
+    { q: 'What happens if I need help later?', a: 'We provide dedicated support via phone, email, and WhatsApp for all our Google Workspace clients at no extra cost.' }
   ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a
+      }
+    }))
+  };
 
   return (
     <>
-      <SEO title="Google Workspace Reseller India | Buy Google Workspace Plans | WorkspaceBays" description="Get professional business email with Google Workspace. Expert email migration support, local INR billing, and 24/7 dedicated support. Save up to 30% today." />
+      <SEO 
+        title="Google Workspace Reseller India | Buy Google Workspace Plans | WorkspaceBays" 
+        description="Get professional business email with Google Workspace. Expert email migration support, local INR billing, and 24/7 dedicated support. Save up to 30% today." 
+        canonical="/google-workspace"
+        schema={faqSchema}
+      />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-transparent">
@@ -100,9 +119,9 @@ const GoogleWorkspace = () => {
                     WHATSAPP US
                     <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                   </a>
-                  <Link to="/pricing" className="btn-solar-dark px-8 py-4 text-base shadow-none cursor-pointer flex items-center justify-center">
+                  <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' }); }} className="btn-solar-dark px-8 py-4 text-base shadow-none cursor-pointer flex items-center justify-center">
                     VIEW PRICING PLANS
-                  </Link>
+                  </a>
                 </div>
               </motion.div>
             </div>
@@ -177,7 +196,7 @@ const GoogleWorkspace = () => {
       </section>
 
       {/* Plans Section */}
-      <section className="py-24 bg-transparent border-t border-brand-dark/5">
+      <section id="pricing" className="py-24 bg-transparent border-t border-brand-dark/5">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -264,45 +283,13 @@ const GoogleWorkspace = () => {
       </section>
 
       {/* Related Blogs Section */}
-      <section className="py-24 bg-transparent border-t border-brand-dark/5">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">RESOURCES</h2>
-              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-dark tracking-tight leading-tight">Related Articles</h3>
-            </motion.div>
-            <Link to="/blog" className="text-solar-orange font-bold hover:underline flex items-center gap-1 shrink-0">
-              View All Posts <ArrowRight size={16} />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { category: 'GUIDE', title: 'How to Set Up Google Workspace for Your Team in 30 Minutes', date: 'November 28, 2024' },
-              { category: 'SECURITY', title: '5 Essential Security Settings Every Google Workspace Admin Should Enable', date: 'November 15, 2024' },
-              { category: 'COMPARISON', title: 'Google Workspace vs Microsoft 365: Pricing & Features Compared', date: 'October 12, 2024' }
-            ].map((post, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }}>
-                <Link to="/blog" className="group block h-full p-8 card-concrete-glass hover:border-brand-dark/30 transition-all duration-300 flex flex-col">
-                  <span className="text-[11px] font-mono font-bold tracking-widest text-solar-orange uppercase mb-4">{post.category}</span>
-                  <h4 className="font-display text-xl font-bold text-brand-dark mb-3 leading-snug group-hover:text-solar-orange transition-colors">{post.title}</h4>
-                  <div className="mt-auto pt-6 border-t border-brand-dark/10 flex items-center justify-between">
-                    <span className="text-xs font-mono text-brand-dark/40">{post.date}</span>
-                    <span className="text-solar-orange font-bold text-sm hover:underline flex items-center gap-1">
-                      Read Article <ArrowUpRight size={14} />
-                    </span>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <RelatedPosts category="Google Workspace" />
 
       {/* CTA Section */}
       <section className="relative py-24 overflow-hidden text-white text-center" style={{ background: '#161616' }}>
         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8">
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[#FAF9F6] mb-6">Ready to Get Started with Google Workspace?</h2>
-          <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Setup takes less than 24 hours. WhatsApp us now for the fastest response.</p>
+          <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Setup takes less than 24 hours. WhatsApp us now for the fastest response. Don't forget to protect your domains with our <Link to="/ssl-certificate" className="text-solar-orange hover:underline font-medium">SSL Certificates</Link>.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="https://wa.me/919654387865?text=Hi%2C%20I%20am%20ready%20to%20get%20started%20with%20Google%20Workspace."

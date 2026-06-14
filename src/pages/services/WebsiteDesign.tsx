@@ -59,12 +59,31 @@ const WebsiteDesign = () => {
     { q: 'Do you provide domain and hosting?', a: 'Yes, we can manage your entire infrastructure, including domain registration, premium cloud hosting, and SSL certificates.' },
     { q: 'Can I update the content myself?', a: 'Yes, we integrate easy-to-use Content Management Systems (CMS) so you can update text and images without coding knowledge.' },
     { q: 'Is SEO included in the design package?', a: 'Basic on-page SEO (meta tags, optimized structure, fast loading) is included. Advanced SEO campaigns are offered separately.' },
-    { q: 'What is the payment structure?', a: 'We typically require a 50% advance to start the project, and the remaining 50% upon successful completion and launch.' }
+    { q: 'What is the payment structure?', a: 'We typically require a 50% advance to start the project, and the remaining 50% upon successful completion and launch.' },
+    { q: 'Do you provide website maintenance?', a: 'Yes. We offer ongoing maintenance packages that include hosting, security updates, backups, and content changes.' }
   ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a
+      }
+    }))
+  };
 
   return (
     <>
-      <SEO title="Website Design | WorkspaceBays" description="Professional Business Websites, Responsive Design, Fast Loading, and SEO-Friendly Structure." />
+      <SEO 
+        title="Website Design | WorkspaceBays" 
+        description="Professional Business Websites, Responsive Design, Fast Loading, and SEO-Friendly Structure." 
+        canonical="/website-design"
+        schema={faqSchema}
+      />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-transparent">
@@ -72,8 +91,8 @@ const WebsiteDesign = () => {
           <div className="max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">WEB DESIGN</h2>
-              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Websites that Drive Business Growth</h1>
-              <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl">We build stunning, responsive, and blazing-fast websites engineered to convert visitors into leads. Perfect for modern Indian businesses.</p>
+              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">High-Performance Business Websites</h1>
+              <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl">Beautiful, fast-loading, and SEO-optimized websites engineered specifically to convert visitors into customers. We also offer powerful <Link to="/ecommerce-website" className="text-solar-orange hover:underline">E-commerce</Link> features and <Link to="/ssl-certificate" className="text-solar-orange hover:underline">SSL Certificates</Link> to build trust. Perfect for modern Indian businesses.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="https://wa.me/919654387865?text=Hi%2C%20I%20need%20a%20new%20website%20for%20my%20business."

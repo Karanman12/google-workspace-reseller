@@ -2,23 +2,19 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/seo/SEO';
-import { 
-  MessageCircle, ArrowRight, ArrowUpRight
-} from 'lucide-react';
+import { MessageCircle, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { blogs } from '../data/blogs';
+import BlogCard from '../components/blog/BlogCard';
+import BlogCategory from '../components/blog/BlogCategory';
 
 const Blog = () => {
-  const posts = [
-    { category: 'GUIDE', title: 'How to Set Up Google Workspace for Your Team in 30 Minutes', date: 'November 28, 2024' },
-    { category: 'SECURITY', title: '5 Essential Security Settings Every Google Workspace Admin Should Enable', date: 'November 15, 2024' },
-    { category: 'MIGRATION', title: 'Complete Guide to Migrating from cPanel Email to Google Workspace', date: 'October 30, 2024' },
-    { category: 'TIPS', title: 'Google Workspace vs Microsoft 365: Pricing & Features Compared for Indian SMBs', date: 'October 12, 2024' },
-    { category: 'BUSINESS', title: 'Why Every Indian Startup Needs a Professional Business Email', date: 'September 25, 2024' },
-    { category: 'TUTORIAL', title: 'How to Configure SPF, DKIM & DMARC for Google Workspace', date: 'September 10, 2024' }
-  ];
+  // Use the first post as the featured post
+  const featuredPost = blogs[0];
+  const gridPosts = blogs.slice(1);
 
   return (
     <>
-      <SEO title="Blog & Insights | WorkspaceBays" description="Tips, tutorials, and industry insights to help your business get the most out of cloud tools like Google Workspace and Microsoft 365." />
+      <SEO title="Blog & Insights | WorkspaceBays" description="Tips, tutorials, and industry insights to help your business get the most out of cloud tools like Google Workspace and Microsoft 365." canonical="/blog" />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-transparent">
@@ -34,53 +30,45 @@ const Blog = () => {
       </section>
 
       {/* Featured Post */}
-      <section className="py-12 bg-transparent">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <Link to="#" className="group block p-8 md:p-12 card-concrete-glass hover:border-solar-orange/30 transition-all duration-300">
-              <div className="flex flex-col md:flex-row gap-8 items-center justify-between">
-                <div className="flex-1 space-y-4">
-                  <span className="text-xs font-mono font-bold tracking-widest text-solar-orange uppercase">COMPARISON</span>
-                  <h3 className="font-display text-2xl md:text-4xl font-extrabold text-brand-dark leading-tight group-hover:text-solar-orange transition-colors">
-                    Google Workspace vs Microsoft 365: Which is Right for Your Business in 2025?
-                  </h3>
-                  <p className="text-brand-dark/70 text-lg leading-relaxed max-w-3xl">
-                    A comprehensive comparison of features, pricing, and suitability for Indian businesses looking to upgrade their cloud infrastructure.
-                  </p>
-                  <div className="flex items-center gap-4 pt-4">
-                    <span className="text-sm font-mono text-brand-dark/40">December 15, 2024</span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-dark/20" />
-                    <span className="text-sm font-bold text-brand-dark flex items-center gap-1 group-hover:text-solar-orange transition-colors">
-                      Read Article <ArrowUpRight size={16} />
-                    </span>
+      {featuredPost && (
+        <section className="py-12 bg-transparent">
+          <div className="max-w-7xl mx-auto px-4 md:px-8">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <Link to={`/blog/${featuredPost.slug}`} className="group block p-8 md:p-12 card-concrete-glass hover:border-solar-orange/30 transition-all duration-300">
+                <div className="flex flex-col md:flex-row gap-8 items-center justify-between">
+                  <div className="flex-1 space-y-4">
+                    <div className="flex gap-2">
+                      {featuredPost.categories.map(cat => (
+                        <BlogCategory key={cat} category={cat} />
+                      ))}
+                    </div>
+                    <h3 className="font-display text-2xl md:text-4xl font-extrabold text-brand-dark leading-tight group-hover:text-solar-orange transition-colors">
+                      {featuredPost.title}
+                    </h3>
+                    <p className="text-brand-dark/70 text-lg leading-relaxed max-w-3xl">
+                      {featuredPost.excerpt}
+                    </p>
+                    <div className="flex items-center gap-4 pt-4">
+                      <span className="text-sm font-mono text-brand-dark/40">{featuredPost.date}</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-brand-dark/20" />
+                      <span className="text-sm font-bold text-brand-dark flex items-center gap-1 group-hover:text-solar-orange transition-colors">
+                        Read Article <ArrowUpRight size={16} />
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* Blog Grid */}
       <section className="py-12 pb-24 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }}>
-                <Link to="#" className="group block h-full p-8 card-concrete-glass hover:border-brand-dark/30 transition-all duration-300 flex flex-col">
-                  <span className="text-[11px] font-mono font-bold tracking-widest text-solar-orange uppercase mb-4">{post.category}</span>
-                  <h4 className="font-display text-xl font-bold text-brand-dark mb-3 leading-snug group-hover:text-solar-orange transition-colors">{post.title}</h4>
-                  <p className="text-brand-dark/70 text-sm leading-relaxed mb-6 flex-1">
-                    Discover the best practices and detailed walkthroughs to optimize your workflow.
-                  </p>
-                  <div className="flex items-center justify-between mt-auto pt-6 border-t border-brand-dark/10">
-                    <span className="text-xs font-mono text-brand-dark/40">{post.date}</span>
-                    <span className="text-solar-orange font-bold text-sm hover:underline flex items-center gap-1">
-                      Read More <ArrowRight size={14} />
-                    </span>
-                  </div>
-                </Link>
-              </motion.div>
+            {gridPosts.map((post, i) => (
+              <BlogCard key={post.slug} post={post} index={i} />
             ))}
           </div>
         </div>

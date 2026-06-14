@@ -23,7 +23,7 @@ const About = () => {
 
   return (
     <>
-      <SEO title="About Us | WorkspaceBays" description="India's Trusted Google Workspace & Cloud Services Partner. We help businesses get set up with professional cloud tools." />
+      <SEO title="About Us | WorkspaceBays" description="India's Trusted Google Workspace & Cloud Services Partner. We help businesses get set up with professional cloud tools." canonical="/about" />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-transparent">

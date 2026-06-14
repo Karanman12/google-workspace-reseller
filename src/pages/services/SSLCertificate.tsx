@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/seo/SEO';
+import RelatedPosts from '../../components/blog/RelatedPosts';
 import { 
   MessageCircle, ArrowRight, ShieldCheck, Lock, Globe, CheckCircle2, Star, ShieldAlert, CreditCard, Zap, ChevronDown
 } from 'lucide-react';
@@ -62,9 +63,27 @@ const SSLCertificate = () => {
     { q: 'What happens when my certificate expires?', a: 'We will send you renewal reminders 30 days in advance to ensure your website never shows a "Not Secure" warning.' }
   ];
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a
+      }
+    }))
+  };
+
   return (
     <>
-      <SEO title="SSL Certificates | WorkspaceBays" description="Secure your website with DV, OV, and EV SSL Certificates. HTTPS Security, Browser Trust, and Free Installation." />
+      <SEO 
+        title="SSL Certificates | WorkspaceBays" 
+        description="Secure your website with DV, OV, and EV SSL Certificates. HTTPS Security, Browser Trust, and Free Installation." 
+        canonical="/ssl-certificate"
+        schema={faqSchema}
+      />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-transparent">
@@ -73,7 +92,7 @@ const SSLCertificate = () => {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">SECURITY</h2>
               <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Secure Your Website with Premium SSL</h1>
-              <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl">Build customer trust, encrypt sensitive data, and boost your Google rankings. We offer DV, OV, and EV certificates from top global authorities with free installation.</p>
+              <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl">Build customer trust, encrypt sensitive data, and boost your Google rankings. We offer DV, OV, and EV certificates with free installation. Essential for <Link to="/ecommerce-website" className="text-solar-orange hover:underline">E-commerce</Link> and professional <Link to="/website-design" className="text-solar-orange hover:underline">Website Design</Link>.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="https://wa.me/919654387865?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20SSL%20Certificates."
@@ -234,6 +253,9 @@ const SSLCertificate = () => {
           </div>
         </div>
       </section>
+
+      {/* Related Blogs Section */}
+      <RelatedPosts category="IT & Security" />
 
       {/* CTA Section */}
       <section className="relative py-24 overflow-hidden text-white text-center" style={{ background: '#161616' }}>

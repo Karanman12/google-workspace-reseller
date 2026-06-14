@@ -61,12 +61,30 @@ const Contact = () => {
     { q: 'Can I call instead of WhatsApp?', a: 'Yes! The phone number listed is also available for direct calls during business hours.' },
     { q: 'Do you offer demos before purchase?', a: 'We can arrange a screen-sharing session to walk you through the admin console and features.' },
     { q: 'What information should I have ready?', a: 'It helps to know if you already have a domain name, how many users you need, and if you have existing emails to migrate.' },
-    { q: 'Do you provide support after setup?', a: 'Absolutely. We provide dedicated support via WhatsApp and email for all active clients.' }
+    { q: 'Do you offer emergency support?', a: 'Yes, for critical issues like hacked websites or server downtime, we offer 24/7 emergency WhatsApp support.' }
   ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a
+      }
+    }))
+  };
 
   return (
     <>
-      <SEO title="Contact Us | WorkspaceBays" description="Contact WorkspaceBays for Google Workspace, Microsoft 365, and Cloud Services. We respond within 2 hours." />
+      <SEO 
+        title="Contact Us | WorkspaceBays" 
+        description="Contact WorkspaceBays for Google Workspace, Microsoft 365, and Cloud Services. We respond within 2 hours." 
+        canonical="/contact"
+        schema={faqSchema}
+      />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-transparent">
