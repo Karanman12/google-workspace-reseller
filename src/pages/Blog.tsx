@@ -1,0 +1,115 @@
+import React from 'react';
+import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
+import SEO from '../components/seo/SEO';
+import { 
+  MessageCircle, ArrowRight, ArrowUpRight
+} from 'lucide-react';
+
+const Blog = () => {
+  const posts = [
+    { category: 'GUIDE', title: 'How to Set Up Google Workspace for Your Team in 30 Minutes', date: 'November 28, 2024' },
+    { category: 'SECURITY', title: '5 Essential Security Settings Every Google Workspace Admin Should Enable', date: 'November 15, 2024' },
+    { category: 'MIGRATION', title: 'Complete Guide to Migrating from cPanel Email to Google Workspace', date: 'October 30, 2024' },
+    { category: 'TIPS', title: 'Google Workspace vs Microsoft 365: Pricing & Features Compared for Indian SMBs', date: 'October 12, 2024' },
+    { category: 'BUSINESS', title: 'Why Every Indian Startup Needs a Professional Business Email', date: 'September 25, 2024' },
+    { category: 'TUTORIAL', title: 'How to Configure SPF, DKIM & DMARC for Google Workspace', date: 'September 10, 2024' }
+  ];
+
+  return (
+    <>
+      <SEO title="Blog & Insights | WorkspaceBays" description="Tips, tutorials, and industry insights to help your business get the most out of cloud tools like Google Workspace and Microsoft 365." />
+      
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 bg-transparent">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="max-w-3xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+              <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">BLOG</h2>
+              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Insights & Guides for Modern Businesses</h1>
+              <p className="text-gray-500 text-lg leading-relaxed max-w-2xl">Tips, tutorials, and industry insights to help your business get the most out of cloud tools like Google Workspace and Microsoft 365.</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Post */}
+      <section className="py-12 bg-transparent">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <Link to="#" className="group block p-8 md:p-12 card-concrete-glass hover:border-solar-orange/30 transition-all duration-300">
+              <div className="flex flex-col md:flex-row gap-8 items-center justify-between">
+                <div className="flex-1 space-y-4">
+                  <span className="text-xs font-mono font-bold tracking-widest text-solar-orange uppercase">COMPARISON</span>
+                  <h3 className="font-display text-2xl md:text-4xl font-extrabold text-brand-dark leading-tight group-hover:text-solar-orange transition-colors">
+                    Google Workspace vs Microsoft 365: Which is Right for Your Business in 2025?
+                  </h3>
+                  <p className="text-brand-dark/70 text-lg leading-relaxed max-w-3xl">
+                    A comprehensive comparison of features, pricing, and suitability for Indian businesses looking to upgrade their cloud infrastructure.
+                  </p>
+                  <div className="flex items-center gap-4 pt-4">
+                    <span className="text-sm font-mono text-brand-dark/40">December 15, 2024</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-dark/20" />
+                    <span className="text-sm font-bold text-brand-dark flex items-center gap-1 group-hover:text-solar-orange transition-colors">
+                      Read Article <ArrowUpRight size={16} />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Blog Grid */}
+      <section className="py-12 pb-24 bg-transparent">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.map((post, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }}>
+                <Link to="#" className="group block h-full p-8 card-concrete-glass hover:border-brand-dark/30 transition-all duration-300 flex flex-col">
+                  <span className="text-[11px] font-mono font-bold tracking-widest text-solar-orange uppercase mb-4">{post.category}</span>
+                  <h4 className="font-display text-xl font-bold text-brand-dark mb-3 leading-snug group-hover:text-solar-orange transition-colors">{post.title}</h4>
+                  <p className="text-brand-dark/70 text-sm leading-relaxed mb-6 flex-1">
+                    Discover the best practices and detailed walkthroughs to optimize your workflow.
+                  </p>
+                  <div className="flex items-center justify-between mt-auto pt-6 border-t border-brand-dark/10">
+                    <span className="text-xs font-mono text-brand-dark/40">{post.date}</span>
+                    <span className="text-solar-orange font-bold text-sm hover:underline flex items-center gap-1">
+                      Read More <ArrowRight size={14} />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative py-24 overflow-hidden text-white text-center" style={{ background: '#161616' }}>
+        <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8">
+          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[#FAF9F6] mb-6">Need Help Choosing the Right Plan?</h2>
+          <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Our team can help you find the perfect workspace solution.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://wa.me/919654387865?text=Hi%2C%20I%20need%20help%20choosing%20a%20plan."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
+            >
+              <MessageCircle size={20} />
+              WHATSAPP US
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <Link to="/contact" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 text-base rounded-[10px] font-bold font-mono tracking-wide transition-all cursor-pointer flex items-center justify-center">
+              CONTACT US
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Blog;

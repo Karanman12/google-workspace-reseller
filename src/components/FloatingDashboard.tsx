@@ -1,11 +1,11 @@
 /**
  * Premium Integration Grid Showcase
- * Authentic, clean bento-grid presentation of genuine Google Workspace & Zoho Workplace features
+ * Authentic, clean bento-grid presentation of genuine Google Workspace & Microsoft 365 features
  */
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { Mail, Cloud, Video, Users, CheckCircle2, ShieldCheck, CreditCard, Zap, MessageCircle } from 'lucide-react';
+import { Mail, Cloud, Video, Users, CheckCircle2, ShieldCheck, CreditCard, Zap, MessageCircle, MonitorSmartphone } from 'lucide-react';
 
 export const FloatingDashboard: React.FC<{ startAnimation?: boolean }> = ({ startAnimation = true }) => {
   return (
@@ -61,7 +61,7 @@ export const FloatingDashboard: React.FC<{ startAnimation?: boolean }> = ({ star
           </div>
         </div>
 
-        {/* Zoho Workplace Card */}
+        {/* Microsoft 365 Card */}
         <div className="card-concrete-glass p-8 flex flex-col justify-between relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-solar-orange/5 rounded-full blur-2xl pointer-events-none" />
           <div>
@@ -74,12 +74,12 @@ export const FloatingDashboard: React.FC<{ startAnimation?: boolean }> = ({ star
                 <span className="text-[9px] font-mono font-bold uppercase tracking-wider text-brand-dark/40 ml-1">Official Reseller</span>
               </div>
               <span className="text-[10px] font-mono font-bold text-solar-orange uppercase tracking-widest bg-solar-orange/10 px-2.5 py-1 rounded-full border border-solar-orange/20 flex items-center gap-1.5">
-                <ShieldCheck size={11} /> Zoho Partner
+                <ShieldCheck size={11} /> Microsoft Partner
               </span>
             </div>
             
             <h3 className="font-display font-extrabold text-2xl text-brand-dark mb-3 tracking-tight">
-              Modern Zoho Suite
+              Microsoft 365
             </h3>
             <p className="text-sm text-brand-dark/60 leading-relaxed mb-6 font-sans">
               A powerful, feature-rich office environment built for modern remote teams seeking optimal collaboration efficiency.
@@ -87,10 +87,10 @@ export const FloatingDashboard: React.FC<{ startAnimation?: boolean }> = ({ star
 
             <ul className="space-y-4 mb-8">
               {[
-                { icon: Mail, text: "Professional Zoho Mail with custom domain" },
-                { icon: Cloud, text: "Zoho WorkDrive collaborative cloud storage" },
+                { icon: Mail, text: "Professional Outlook Mail with custom domain" },
+                { icon: Cloud, text: "OneDrive collaborative cloud storage" },
                 { icon: ShieldCheck, text: "100% spam-free DNS routing (SPF, DKIM & DMARC)" },
-                { icon: MessageCircle, text: "Instant team chat & communication via Zoho Cliq" }
+                { icon: Users, text: "Instant team chat & communication via Microsoft Teams" }
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm text-brand-dark/70 font-sans">
                   <item.icon size={18} className="text-solar-orange shrink-0 mt-0.5" />
@@ -145,58 +145,3 @@ export const FloatingDashboard: React.FC<{ startAnimation?: boolean }> = ({ star
     </motion.div>
   );
 };
-
-// Alternative: Minimal glassmorphism version
-export const FloatingDashboardMinimal: React.FC = () => {
-  return (
-    <motion.div
-      className="relative w-full max-w-xl mx-auto px-4 py-12"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-    >
-      <motion.div
-        className="relative bg-white/10 backdrop-blur-3xl rounded-3xl border border-white/20 shadow-2xl p-8"
-        animate={{ y: [0, -15, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        whileHover={{ boxShadow: '0 25px 50px rgba(26, 115, 232, 0.3)' }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent rounded-3xl pointer-events-none" />
-
-        <div className="relative space-y-6">
-          <div>
-            <h3 className="text-2xl font-bold text-navy mb-2">Your Workspace</h3>
-            <p className="text-gray-600">Everything you need in one place</p>
-          </div>
-
-          <div className="space-y-3">
-            {['Gmail Pro', 'Google Meet', 'Unlimited Drive'].map((feature, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-              >
-                <CheckCircle2 size={20} className="text-google-green" />
-                <span className="font-medium text-navy">{feature}</span>
-              </div>
-            ))}
-          </div>
-
-          <button className="w-full py-3 rounded-lg bg-google-blue text-white font-semibold hover:shadow-lg hover:shadow-google-blue/50 transition-all">
-            Get Started
-          </button>
-        </div>
-      </motion.div>
-    </motion.div>
-  );
-};
-
-
-// USAGE:
-// Import and add to your hero section:
-// import { FloatingDashboard } from './components/FloatingDashboard';
-//
-// <FloatingDashboard />
-//
-// Or minimal version:
-// <FloatingDashboardMinimal />
