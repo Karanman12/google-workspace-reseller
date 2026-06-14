@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/seo/SEO';
 import { 
-  MessageCircle, ArrowRight, Mail, Users, FileText, HardDrive, Globe, ShieldCheck, Wallet, Zap, ChevronDown, CheckCircle2, Star
+  MessageCircle, ArrowRight, ArrowUpRight, Mail, Users, FileText, HardDrive, Globe, ShieldCheck, Wallet, Zap, ChevronDown, CheckCircle2, Star
 } from 'lucide-react';
 
 const Microsoft365 = () => {
@@ -19,6 +19,7 @@ const Microsoft365 = () => {
     { icon: FileText, title: 'Word, Excel & PowerPoint', desc: 'Create and edit documents collaboratively in real time.' },
     { icon: HardDrive, title: 'OneDrive Cloud Storage', desc: '1TB of cloud storage per user to securely store and share files.' },
     { icon: Globe, title: 'SharePoint & Collaboration', desc: 'Build an intranet to share resources and manage content.' },
+    { icon: Mail, title: 'Alias Functionality', desc: 'Create multiple email aliases per user at no extra cost to manage different roles.' },
     { icon: ShieldCheck, title: 'Advanced Security & Compliance', desc: 'Protect your data with enterprise-grade security features.' }
   ];
 
@@ -64,31 +65,45 @@ const Microsoft365 = () => {
 
   return (
     <>
-      <SEO title="Microsoft 365 | WorkspaceBays" description="Microsoft 365 for Business — Outlook, Teams & Office Apps. The full productivity suite for your business." />
+      <SEO title="Microsoft 365 Reseller India | Buy Office 365 Plans | WorkspaceBays" description="Empower your team with Microsoft 365. Access Outlook, Teams, OneDrive, and Office Apps with seamless email migration and local INR billing." />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="max-w-3xl">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">MICROSOFT 365</h2>
-              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Microsoft 365 for Business — Outlook, Teams & Office Apps</h1>
-              <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl">The full Microsoft productivity suite for your business. Outlook email, Teams collaboration, Word, Excel, PowerPoint, and OneDrive — all managed and billed in INR.</p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://wa.me/919654387865?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20Microsoft%20365."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
-                >
-                  <MessageCircle size={20} />
-                  WHATSAPP US
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </a>
-                <Link to="/contact" className="btn-solar-dark px-8 py-4 text-base shadow-none cursor-pointer flex items-center justify-center">
-                  VIEW PLANS
-                </Link>
-              </div>
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="max-w-3xl flex-1">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+                <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">MICROSOFT 365</h2>
+                <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Microsoft 365 for Business — Outlook, Teams & Office Apps</h1>
+                <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl">The full Microsoft productivity suite for your business. Outlook email, Teams collaboration, Word, Excel, PowerPoint, and OneDrive — all managed and billed in INR. Need help moving? We provide expert <Link to="/email-migration" className="text-solar-orange hover:underline font-medium">email migration</Link> from any platform.</p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="https://wa.me/919654387865?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20Microsoft%20365."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
+                  >
+                    <MessageCircle size={20} />
+                    WHATSAPP US
+                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  </a>
+                  <Link to="/contact" className="btn-solar-dark px-8 py-4 text-base shadow-none cursor-pointer flex items-center justify-center">
+                    VIEW PLANS
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }} 
+              animate={{ opacity: 1, x: 0 }} 
+              transition={{ delay: 0.2 }}
+              className="flex-1 w-full max-w-lg lg:max-w-none"
+            >
+              <img 
+                src="/microsoft_365_dashboard.png" 
+                alt="Product mockup showing the Microsoft 365 dashboard and enterprise collaboration tools" 
+                className="w-full h-auto rounded-2xl shadow-2xl border border-brand-dark/10"
+              />
             </motion.div>
           </div>
         </div>
@@ -230,6 +245,41 @@ const Microsoft365 = () => {
                 </div>
                 {openFaq === i && <p className="text-brand-dark/70 leading-relaxed mt-4 font-sans">{faq.a}</p>}
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Blogs Section */}
+      <section className="py-24 bg-transparent border-t border-brand-dark/5">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">RESOURCES</h2>
+              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-dark tracking-tight leading-tight">Related Articles</h3>
+            </motion.div>
+            <Link to="/blog" className="text-solar-orange font-bold hover:underline flex items-center gap-1 shrink-0">
+              View All Posts <ArrowRight size={16} />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { category: 'TUTORIAL', title: 'Maximizing Team Collaboration with Microsoft Teams', date: 'December 05, 2024' },
+              { category: 'TIPS', title: 'How to Manage Multiple Email Aliases in Outlook', date: 'November 20, 2024' },
+              { category: 'COMPARISON', title: 'Google Workspace vs Microsoft 365: Pricing & Features Compared', date: 'October 12, 2024' }
+            ].map((post, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }}>
+                <Link to="/blog" className="group block h-full p-8 card-concrete-glass hover:border-brand-dark/30 transition-all duration-300 flex flex-col">
+                  <span className="text-[11px] font-mono font-bold tracking-widest text-solar-orange uppercase mb-4">{post.category}</span>
+                  <h4 className="font-display text-xl font-bold text-brand-dark mb-3 leading-snug group-hover:text-solar-orange transition-colors">{post.title}</h4>
+                  <div className="mt-auto pt-6 border-t border-brand-dark/10 flex items-center justify-between">
+                    <span className="text-xs font-mono text-brand-dark/40">{post.date}</span>
+                    <span className="text-solar-orange font-bold text-sm hover:underline flex items-center gap-1">
+                      Read Article <ArrowUpRight size={14} />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>

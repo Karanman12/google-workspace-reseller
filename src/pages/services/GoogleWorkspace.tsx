@@ -5,6 +5,7 @@ import SEO from '../../components/seo/SEO';
 import { 
   MessageCircle, 
   ArrowRight, 
+  ArrowUpRight,
   Mail, 
   HardDrive, 
   Video, 
@@ -77,31 +78,45 @@ const GoogleWorkspace = () => {
 
   return (
     <>
-      <SEO title="Google Workspace | WorkspaceBays" description="Professional Email & Cloud Productivity for Your Business. Setup in 24 hours, INR billing, save up to 30% vs direct pricing." />
+      <SEO title="Google Workspace Reseller India | Buy Google Workspace Plans | WorkspaceBays" description="Get professional business email with Google Workspace. Expert email migration support, local INR billing, and 24/7 dedicated support. Save up to 30% today." />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="max-w-3xl">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">GOOGLE WORKSPACE</h2>
-              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Professional Email & Cloud Productivity for Your Business</h1>
-              <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl">Get Gmail, Google Drive, Google Meet, Docs, Sheets, and more — all under your company domain. Setup in 24 hours, INR billing, save up to 30% vs direct pricing.</p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://wa.me/919654387865?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20Google%20Workspace."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
-                >
-                  <MessageCircle size={20} />
-                  WHATSAPP US
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </a>
-                <Link to="/pricing" className="btn-solar-dark px-8 py-4 text-base shadow-none cursor-pointer flex items-center justify-center">
-                  VIEW PRICING PLANS
-                </Link>
-              </div>
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="max-w-3xl flex-1">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+                <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">GOOGLE WORKSPACE</h2>
+                <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Professional Email & Cloud Productivity for Your Business</h1>
+                <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl">Get Gmail, Google Drive, Google Meet, Docs, Sheets, and more — all under your company domain. We provide comprehensive <Link to="/email-migration" className="text-solar-orange hover:underline font-medium">migration support</Link> to ensure zero downtime. Setup in 24 hours, INR billing, save up to 30% vs direct pricing.</p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="https://wa.me/919654387865?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20Google%20Workspace."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
+                  >
+                    <MessageCircle size={20} />
+                    WHATSAPP US
+                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  </a>
+                  <Link to="/pricing" className="btn-solar-dark px-8 py-4 text-base shadow-none cursor-pointer flex items-center justify-center">
+                    VIEW PRICING PLANS
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }} 
+              animate={{ opacity: 1, x: 0 }} 
+              transition={{ delay: 0.2 }}
+              className="flex-1 w-full max-w-lg lg:max-w-none"
+            >
+              <img 
+                src="/google_workspace_dashboard.png" 
+                alt="Product mockup showing the Google Workspace dashboard and productivity tools" 
+                className="w-full h-auto rounded-2xl shadow-2xl border border-brand-dark/10"
+              />
             </motion.div>
           </div>
         </div>
@@ -243,6 +258,41 @@ const GoogleWorkspace = () => {
                 </div>
                 {openFaq === i && <p className="text-brand-dark/70 leading-relaxed mt-4 font-sans">{faq.a}</p>}
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Blogs Section */}
+      <section className="py-24 bg-transparent border-t border-brand-dark/5">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">RESOURCES</h2>
+              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-dark tracking-tight leading-tight">Related Articles</h3>
+            </motion.div>
+            <Link to="/blog" className="text-solar-orange font-bold hover:underline flex items-center gap-1 shrink-0">
+              View All Posts <ArrowRight size={16} />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { category: 'GUIDE', title: 'How to Set Up Google Workspace for Your Team in 30 Minutes', date: 'November 28, 2024' },
+              { category: 'SECURITY', title: '5 Essential Security Settings Every Google Workspace Admin Should Enable', date: 'November 15, 2024' },
+              { category: 'COMPARISON', title: 'Google Workspace vs Microsoft 365: Pricing & Features Compared', date: 'October 12, 2024' }
+            ].map((post, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }}>
+                <Link to="/blog" className="group block h-full p-8 card-concrete-glass hover:border-brand-dark/30 transition-all duration-300 flex flex-col">
+                  <span className="text-[11px] font-mono font-bold tracking-widest text-solar-orange uppercase mb-4">{post.category}</span>
+                  <h4 className="font-display text-xl font-bold text-brand-dark mb-3 leading-snug group-hover:text-solar-orange transition-colors">{post.title}</h4>
+                  <div className="mt-auto pt-6 border-t border-brand-dark/10 flex items-center justify-between">
+                    <span className="text-xs font-mono text-brand-dark/40">{post.date}</span>
+                    <span className="text-solar-orange font-bold text-sm hover:underline flex items-center gap-1">
+                      Read Article <ArrowUpRight size={14} />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
