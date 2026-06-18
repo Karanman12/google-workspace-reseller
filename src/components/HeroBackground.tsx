@@ -7,7 +7,7 @@ import React from 'react';
 
 export const HeroBackground: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="relative w-full min-h-screen">
+    <div className="relative w-full min-h-[70vh] h-full">
       {/* Subtle clean neutral ambient halo */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-5">
         <div 

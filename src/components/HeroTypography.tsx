@@ -25,7 +25,7 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
   startAnimation = true
 }) => {
   // Cinematic staggering coordinate definitions
-  const containerVariants = {
+  const containerVariants: any = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -36,7 +36,7 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
     }
   };
 
-  const badgeVariants = {
+  const badgeVariants: any = {
     hidden: { opacity: 0, scale: 0.95, x: 30, filter: 'blur(4px)' },
     visible: {
       opacity: 1,
@@ -51,7 +51,7 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
     }
   };
 
-  const headlineVariants = {
+  const headlineVariants: any = {
     hidden: { x: '10vw', opacity: 0, filter: 'blur(8px)' },
     visible: {
       x: '0vw',
@@ -65,7 +65,7 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
     }
   };
 
-  const subheadlineVariants = {
+  const subheadlineVariants: any = {
     hidden: { x: '8vw', opacity: 0, filter: 'blur(6px)', scale: 0.98 },
     visible: {
       x: '0vw',
@@ -80,7 +80,7 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
     }
   };
 
-  const descriptionVariants = {
+  const descriptionVariants: any = {
     hidden: { opacity: 0, x: 30, filter: 'blur(4px)' },
     visible: {
       opacity: 1,
@@ -94,7 +94,7 @@ export const HeroTypography: React.FC<HeroTypographyProps> = ({
     }
   };
 
-  const childrenVariants = {
+  const childrenVariants: any = {
     hidden: { opacity: 0, x: 30, filter: 'blur(4px)' },
     visible: {
       opacity: 1,
@@ -185,7 +185,7 @@ export const HeroTypographySplit: React.FC<{
   description,
   children
 }) => {
-  const containerVariants = {
+  const containerVariants: any = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -196,7 +196,7 @@ export const HeroTypographySplit: React.FC<{
     }
   };
 
-  const lineVariants = {
+  const lineVariants: any = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,

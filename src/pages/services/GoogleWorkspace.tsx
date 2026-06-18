@@ -100,7 +100,7 @@ const GoogleWorkspace = () => {
       />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-transparent">
+      <section className="pt-20 pb-12 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="max-w-3xl flex-1">
@@ -142,7 +142,7 @@ const GoogleWorkspace = () => {
       </section>
 
       {/* Dark Stats Section */}
-      <section className="relative py-28 md:py-36 overflow-hidden text-white" style={{ background: '#161616' }}>
+      <section className="relative py-16 md:py-24 overflow-hidden text-white" style={{ background: '#161616' }}>
         <div className="absolute inset-0 opacity-[0.22] pointer-events-none z-0" style={{
             backgroundImage: `linear-gradient(0deg, transparent 24%, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.04) 26%, transparent 27%, transparent 74%, rgba(255,255,255,0.04) 75%, rgba(255,255,255,0.04) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.04) 26%, transparent 27%, transparent 74%, rgba(255,255,255,0.04) 75%, rgba(255,255,255,0.04) 76%, transparent 77%, transparent)`,
             backgroundSize: '40px 40px'
@@ -172,7 +172,7 @@ const GoogleWorkspace = () => {
       </section>
 
       {/* Key Benefits Section */}
-      <section className="py-24 bg-transparent">
+      <section className="py-16 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -196,7 +196,7 @@ const GoogleWorkspace = () => {
       </section>
 
       {/* Plans Section */}
-      <section id="pricing" className="py-24 bg-transparent border-t border-brand-dark/5">
+      <section id="pricing" className="py-16 bg-transparent border-t border-brand-dark/5">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -253,7 +253,7 @@ const GoogleWorkspace = () => {
       </section>
 
       {/* Why Choose WorkspaceBays */}
-      <section className="py-24 bg-transparent border-t border-brand-dark/5">
+      <section className="py-16 bg-transparent border-t border-brand-dark/5">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -278,7 +278,7 @@ const GoogleWorkspace = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-transparent border-t border-brand-dark/5">
+      <section className="py-16 bg-transparent border-t border-brand-dark/5">
         <div className="max-w-3xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">FAQ</h2>
@@ -302,7 +302,7 @@ const GoogleWorkspace = () => {
       <RelatedPosts category="Google Workspace" />
 
       {/* CTA Section */}
-      <section className="relative py-24 overflow-hidden text-white text-center" style={{ background: '#161616' }}>
+      <section className="relative py-16 overflow-hidden text-white text-center" style={{ background: '#161616' }}>
         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8">
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[#FAF9F6] mb-6">Ready to Get Started with Google Workspace?</h2>
           <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Setup takes less than 24 hours. WhatsApp us now for the fastest response. Don't forget to protect your domains with our <Link to="/ssl-certificate" className="text-solar-orange hover:underline font-medium">SSL Certificates</Link>.</p>

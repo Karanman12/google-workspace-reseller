@@ -27,7 +27,7 @@ const About = () => {
       <SEO title="About Us | WorkspaceBays" description="India's Trusted Google Workspace & Cloud Services Partner. We help businesses get set up with professional cloud tools." canonical="/about" />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-transparent">
+      <section className="pt-20 pb-12 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
@@ -40,9 +40,9 @@ const About = () => {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-24 bg-transparent border-t border-brand-dark/5">
+      <section className="py-16 bg-transparent border-t border-brand-dark/5">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">OUR STORY</h2>
               <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-dark mb-6 tracking-tight">Making the cloud accessible.</h3>
@@ -70,7 +70,7 @@ const About = () => {
       </section>
 
       {/* Dark Stats Section */}
-      <section className="relative py-28 md:py-36 overflow-hidden text-white" style={{ background: '#161616' }}>
+      <section className="relative py-16 md:py-24 overflow-hidden text-white" style={{ background: '#161616' }}>
         <div className="absolute inset-0 opacity-[0.22] pointer-events-none z-0" style={{
             backgroundImage: `linear-gradient(0deg, transparent 24%, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.04) 26%, transparent 27%, transparent 74%, rgba(255,255,255,0.04) 75%, rgba(255,255,255,0.04) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.04) 26%, transparent 27%, transparent 74%, rgba(255,255,255,0.04) 75%, rgba(255,255,255,0.04) 76%, transparent 77%, transparent)`,
             backgroundSize: '40px 40px'
@@ -100,7 +100,7 @@ const About = () => {
       </section>
 
       {/* What We Offer Section */}
-      <section className="py-24 bg-transparent">
+      <section className="py-16 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -123,7 +123,7 @@ const About = () => {
       </section>
 
       {/* Our Values Section */}
-      <section className="py-24 bg-transparent border-t border-brand-dark/5">
+      <section className="py-16 bg-transparent border-t border-brand-dark/5">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -146,7 +146,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-24 overflow-hidden text-white text-center" style={{ background: '#161616' }}>
+      <section className="relative py-16 overflow-hidden text-white text-center" style={{ background: '#161616' }}>
         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8">
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[#FAF9F6] mb-6">Ready to Work with Us?</h2>
           <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Get your business set up with the right cloud tools today.</p>

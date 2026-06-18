@@ -8,7 +8,7 @@ import React from 'react';
 export const GridBackground: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return (
     <div 
-      className="relative w-full min-h-screen overflow-hidden"
+      className="relative w-full h-full overflow-hidden"
       style={{
         background: 'transparent'
       }}

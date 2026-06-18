@@ -8,7 +8,7 @@ import React from 'react';
 // VARIATION 1: Ultra Subtle (Most minimal, barely noticeable glow)
 export const HeroBackgroundSubtle: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="relative w-full min-h-screen bg-gradient-to-b from-[#FAFBFC] via-[#FCFCFD] to-[#F9FAFB] overflow-hidden">
+    <div className="relative w-full min-h-[70vh] h-full bg-gradient-to-b from-[#FAFBFC] via-[#FCFCFD] to-[#F9FAFB] overflow-hidden">
       {/* Minimal grid */}
       <div 
         className="absolute inset-0 opacity-[0.01]"
@@ -38,7 +38,7 @@ export const HeroBackgroundSubtle: React.FC<{ children?: React.ReactNode }> = ({
 // VARIATION 2: Intense (Bold cinematic effect with stronger glows)
 export const HeroBackgroundIntense: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="relative w-full min-h-screen bg-gradient-to-b from-[#F5F7FA] via-[#F8F9FC] to-[#F2F4F8] overflow-hidden">
+    <div className="relative w-full min-h-[70vh] h-full bg-gradient-to-b from-[#F5F7FA] via-[#F8F9FC] to-[#F2F4F8] overflow-hidden">
       {/* Visible grid */}
       <div 
         className="absolute inset-0 opacity-[0.06]"
@@ -101,7 +101,7 @@ export const HeroBackgroundIntense: React.FC<{ children?: React.ReactNode }> = (
 // VARIATION 3: Warm (Accent with warm color tones)
 export const HeroBackgroundWarm: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="relative w-full min-h-screen bg-gradient-to-b from-[#FAF9F7] via-[#FCFBF9] to-[#F8F7F5] overflow-hidden">
+    <div className="relative w-full min-h-[70vh] h-full bg-gradient-to-b from-[#FAF9F7] via-[#FCFBF9] to-[#F8F7F5] overflow-hidden">
       <div 
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -147,7 +147,7 @@ export const HeroBackgroundWarm: React.FC<{ children?: React.ReactNode }> = ({ c
 // VARIATION 4: Cool (Blue and purple accents)
 export const HeroBackgroundCool: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="relative w-full min-h-screen bg-gradient-to-b from-[#F7F9FC] via-[#FAFBFE] to-[#F6F8FC] overflow-hidden">
+    <div className="relative w-full min-h-[70vh] h-full bg-gradient-to-b from-[#F7F9FC] via-[#FAFBFE] to-[#F6F8FC] overflow-hidden">
       <div 
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -191,7 +191,7 @@ export const HeroBackgroundCool: React.FC<{ children?: React.ReactNode }> = ({ c
 // VARIATION 5: Energetic (Bright, vibrant)
 export const HeroBackgroundEnergetic: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="relative w-full min-h-screen bg-gradient-to-b from-[#FFFFFF] via-[#FCFDFF] to-[#F9FBFF] overflow-hidden">
+    <div className="relative w-full min-h-[70vh] h-full bg-gradient-to-b from-[#FFFFFF] via-[#FCFDFF] to-[#F9FBFF] overflow-hidden">
       <div 
         className="absolute inset-0 opacity-[0.04]"
         style={{

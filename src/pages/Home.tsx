@@ -46,10 +46,10 @@ const Typewriter = () => {
 
 const Hero = ({ startAnimation = true }: { startAnimation?: boolean }) => {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
+    <section className="relative pt-20 pb-12 overflow-hidden">
       <HeroBackground>
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex flex-col items-center text-center min-h-[80vh] justify-center">
+          <div className="flex flex-col items-center text-center min-h-[65vh] justify-center">
             <HeroTypography
               badge="AUTHORIZED CLOUD PARTNER"
               headline="Your Harbor for Cloud Solutions."
@@ -146,7 +146,7 @@ const ServiceSection = ({
   reverse?: boolean,
   highlights?: { text: string }[]
 }) => (
-  <section className="py-16 md:py-20 bg-transparent border-t border-brand-dark/5">
+  <section className="py-12 md:py-16 bg-transparent border-t border-brand-dark/5">
     <div className="max-w-7xl mx-auto px-4 md:px-8">
       <div className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-10 lg:gap-16`}>
         <motion.div 
@@ -196,14 +196,14 @@ const Stats = () => {
   ];
 
   return (
-    <section className="relative py-28 md:py-36 overflow-hidden text-white" style={{ background: '#161616' }}>
+    <section className="relative py-16 md:py-24 overflow-hidden text-white" style={{ background: '#161616' }}>
       <div className="absolute inset-0 opacity-[0.22] pointer-events-none z-0" style={{
           backgroundImage: `linear-gradient(0deg, transparent 24%, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.04) 26%, transparent 27%, transparent 74%, rgba(255,255,255,0.04) 75%, rgba(255,255,255,0.04) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.04) 26%, transparent 27%, transparent 74%, rgba(255,255,255,0.04) 75%, rgba(255,255,255,0.04) 76%, transparent 77%, transparent)`,
           backgroundSize: '40px 40px'
         }}
       />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-20 md:mb-24">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <motion.p initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-[11px] font-bold text-[#E65A28] uppercase tracking-[0.25em] mb-4">
             PROVEN TRACK RECORD
           </motion.p>
@@ -230,11 +230,11 @@ const Stats = () => {
 
 const ContactCTA = () => {
   return (
-    <section className="py-24 bg-transparent">
+    <section className="py-16 bg-transparent">
       <div className="max-w-4xl mx-auto px-4 md:px-8 text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="card-concrete-glass p-12 md:p-16 border-solar-orange/20 shadow-[0_20px_50px_rgba(255,113,32,0.04)]">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="card-concrete-glass p-8 md:p-12 border-solar-orange/20 shadow-[0_20px_50px_rgba(255,113,32,0.04)]">
           <h2 className="font-display text-3xl md:text-5xl font-extrabold text-brand-dark tracking-tight leading-tight mb-6">Need help choosing a solution?</h2>
-          <p className="text-gray-500 text-lg mb-10">Talk to the WorkspaceBays team today. We'll assess your needs and recommend the perfect setup.</p>
+          <p className="text-gray-500 text-lg mb-8">Talk to the WorkspaceBays team today. We'll assess your needs and recommend the perfect setup.</p>
           <Link to="/contact" className="btn-solar-orange px-10 py-5 text-lg inline-flex items-center gap-2 group shadow-none">
             TALK TO WORKSPACEBAYS <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </Link>

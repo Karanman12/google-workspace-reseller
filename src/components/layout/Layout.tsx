@@ -81,7 +81,7 @@ const Layout = () => {
         <Navbar startAnimation={startHomepageAnimation} />
         
         <GridBackground>
-          <main className="flex-grow pt-24 min-h-screen">
+          <main className="flex-grow pt-20 min-h-[65vh]">
             <Outlet context={{ startAnimation: startHomepageAnimation }} />
           </main>
         </GridBackground>
