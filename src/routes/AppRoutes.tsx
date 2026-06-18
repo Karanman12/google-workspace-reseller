@@ -8,6 +8,7 @@ import Contact from '../pages/Contact';
 import Blog from '../pages/Blog';
 import BlogPost from '../pages/BlogPost';
 import Pricing from '../pages/Pricing';
+import NotFound from '../pages/NotFound';
 
 import GoogleWorkspace from '../pages/services/GoogleWorkspace';
 import Microsoft365 from '../pages/services/Microsoft365';
@@ -35,6 +36,9 @@ const AppRoutes = () => {
         <Route path="ssl-certificate" element={<SSLCertificate />} />
         <Route path="website-design" element={<WebsiteDesign />} />
         <Route path="ecommerce-website" element={<EcommerceWebsite />} />
+        
+        {/* Catch-all 404 Route */}
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

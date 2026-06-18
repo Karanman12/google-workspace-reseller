@@ -166,27 +166,27 @@ const Contact = () => {
                   <form className="space-y-6 relative z-10" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="group flex flex-col gap-2">
-                        <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Your Name</label>
-                        <input required type="text" name="name" value={formData.name} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all placeholder:text-brand-dark/20 font-sans shadow-none" placeholder="Ravi Kumar" />
+                        <label htmlFor="name" className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Your Name</label>
+                        <input id="name" required type="text" name="name" value={formData.name} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all placeholder:text-brand-dark/20 font-sans shadow-none" placeholder="Ravi Kumar" />
                       </div>
                       <div className="group flex flex-col gap-2">
-                        <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Business Name</label>
-                        <input type="text" name="businessName" value={formData.businessName} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all placeholder:text-brand-dark/20 font-sans shadow-none" placeholder="Acme Pvt Ltd" />
+                        <label htmlFor="businessName" className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Business Name</label>
+                        <input id="businessName" type="text" name="businessName" value={formData.businessName} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all placeholder:text-brand-dark/20 font-sans shadow-none" placeholder="Acme Pvt Ltd" />
                       </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="group flex flex-col gap-2">
-                        <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Email</label>
-                        <input required type="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all placeholder:text-brand-dark/20 font-sans shadow-none" placeholder="ravi@company.com" />
+                        <label htmlFor="email" className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Email</label>
+                        <input id="email" required type="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all placeholder:text-brand-dark/20 font-sans shadow-none" placeholder="ravi@company.com" />
                       </div>
                       <div className="group flex flex-col gap-2">
-                        <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Phone</label>
-                        <input required type="tel" name="phone" value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all placeholder:text-brand-dark/20 font-sans shadow-none" placeholder="+91 96543 87865" />
+                        <label htmlFor="phone" className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Phone</label>
+                        <input id="phone" required type="tel" name="phone" value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all placeholder:text-brand-dark/20 font-sans shadow-none" placeholder="+91 96543 87865" />
                       </div>
                     </div>
                     <div className="group flex flex-col gap-2">
-                      <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Number of Users</label>
-                      <select name="numUsers" value={formData.numUsers} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all font-sans shadow-none">
+                      <label htmlFor="numUsers" className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Number of Users</label>
+                      <select id="numUsers" name="numUsers" value={formData.numUsers} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all font-sans shadow-none">
                         <option value="">Select team size</option>
                         <option value="1–5 users">1–5 users</option>
                         <option value="6–10 users">6–10 users</option>
@@ -196,8 +196,8 @@ const Contact = () => {
                       </select>
                     </div>
                     <div className="group flex flex-col gap-2">
-                      <label className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Plan Interest</label>
-                      <select name="planInterest" value={formData.planInterest} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all font-sans shadow-none">
+                      <label htmlFor="planInterest" className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Plan Interest</label>
+                      <select id="planInterest" name="planInterest" value={formData.planInterest} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all font-sans shadow-none">
                         <option value="">Select a plan</option>
                         <option value="Google Workspace Starter">Google Workspace Starter</option>
                         <option value="Google Workspace Standard">Google Workspace Standard</option>
