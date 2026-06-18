@@ -7,7 +7,7 @@ import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Blog from '../pages/Blog';
 import BlogPost from '../pages/BlogPost';
-import Pricing from '../pages/Pricing';
+
 import NotFound from '../pages/NotFound';
 
 import GoogleWorkspace from '../pages/services/GoogleWorkspace';
@@ -27,7 +27,7 @@ const AppRoutes = () => {
         <Route path="contact" element={<Contact />} />
         <Route path="blog" element={<Blog />} />
         <Route path="blog/:slug" element={<BlogPost />} />
-        <Route path="pricing" element={<Pricing />} />
+
         
         <Route path="google-workspace" element={<GoogleWorkspace />} />
         <Route path="microsoft-365" element={<Microsoft365 />} />

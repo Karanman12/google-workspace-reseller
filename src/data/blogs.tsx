@@ -259,7 +259,7 @@ export const blogs: BlogPost[] = [
         </ul>
 
         <p className="mt-8 font-medium">
-          Review our competitive <Link to="/pricing" className="text-solar-orange hover:underline">pricing plans</Link> and upgrade your business infrastructure today.
+          Review our competitive <Link to="/contact" className="text-solar-orange hover:underline">plans</Link> and upgrade your business infrastructure today.
         </p>
       </div>
     )

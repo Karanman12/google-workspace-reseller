@@ -5,8 +5,7 @@ import SEO from '../components/seo/SEO';
 import { 
   MessageCircle, ArrowRight, ChevronDown, CheckCircle2, Loader2, Mail, Clock
 } from 'lucide-react';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { db } from '../lib/firebase';
+// Firebase client-side database imports removed for security
 
 const Contact = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -19,6 +18,7 @@ const Contact = () => {
     planInterest: ''
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -34,13 +34,23 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
+    setErrorMessage('');
     
     try {
-      await addDoc(collection(db, 'leads'), {
-        ...formData,
-        createdAt: serverTimestamp(),
-        source: 'contact_page'
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
+      
+      const result = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit contact form.');
+      }
+      
       setStatus('success');
       setFormData({
         name: '',
@@ -52,6 +62,7 @@ const Contact = () => {
       });
     } catch (error) {
       console.error('Error submitting form:', error);
+      setErrorMessage(error instanceof Error ? error.message : 'Something went wrong. Please try again or message us on WhatsApp.');
       setStatus('error');
     }
   };
@@ -210,7 +221,7 @@ const Contact = () => {
                     </div>
                     
                     {status === 'error' && (
-                      <p className="text-google-red text-sm font-bold text-center">Something went wrong. Please try again or message us on WhatsApp.</p>
+                      <p className="text-google-red text-sm font-bold text-center">{errorMessage || 'Something went wrong. Please try again or message us on WhatsApp.'}</p>
                     )}
 
                     <button disabled={status === 'submitting'} className="w-full py-4 btn-solar-orange text-base cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-none font-bold uppercase tracking-wide active:scale-[0.98] transition-all duration-150">
