@@ -245,7 +245,7 @@ const Contact = () => {
       {/* FAQ Section */}
       <section className="py-16 bg-transparent border-t border-brand-dark/5">
         <div className="max-w-3xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">FAQ</h2>
             <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-dark tracking-tight leading-tight">Frequently Asked Questions</h3>
           </div>

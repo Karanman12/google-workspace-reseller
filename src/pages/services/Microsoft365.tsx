@@ -92,12 +92,12 @@ const Microsoft365 = () => {
       {/* Hero Section */}
       <section className="pt-20 pb-12 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-10">
             <div className="max-w-3xl flex-1">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
                 <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">MICROSOFT 365</h2>
                 <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Microsoft 365 for Business — Outlook, Teams & Office Apps</h1>
-                <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl">The full Microsoft productivity suite for your business. Outlook email, Teams collaboration, Word, Excel, PowerPoint, and OneDrive — all managed and billed in INR. Need help moving? We provide expert <Link to="/email-migration" className="text-solar-orange hover:underline font-medium">email migration</Link> from any platform.</p>
+                <p className="text-gray-500 text-lg mb-6 leading-relaxed max-w-2xl">The full Microsoft productivity suite for your business. Outlook email, Teams collaboration, Word, Excel, PowerPoint, and OneDrive — all managed and billed in INR. Need help moving? We provide expert <Link to="/email-migration" className="text-solar-orange hover:underline font-medium">email migration</Link> from any platform.</p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href="https://wa.me/919654387865?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20Microsoft%20365."
@@ -140,9 +140,9 @@ const Microsoft365 = () => {
         />
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
           <p className="text-[11px] font-bold text-[#E65A28] uppercase tracking-[0.25em] mb-4 text-center md:text-left">ENTERPRISE GRADE</p>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-[#FAF9F6] leading-[1.1] mb-16 text-center md:text-left">Work anywhere, anytime.</h2>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-[#FAF9F6] leading-[1.1] mb-10 text-center md:text-left">Work anywhere, anytime.</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pt-10 border-t border-white/[0.06]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 pt-8 border-t border-white/[0.06]">
             {[
               { label: 'Cloud Space', value: '1TB OneDrive Storage' },
               { label: 'Video Meetings', value: 'Up to 300 Participants' },
@@ -164,7 +164,7 @@ const Microsoft365 = () => {
       {/* Key Benefits Section */}
       <section className="py-16 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">KEY BENEFITS</h2>
               <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Empower your workforce</h3>
@@ -188,7 +188,7 @@ const Microsoft365 = () => {
       {/* Plans Section */}
       <section id="pricing" className="py-16 bg-transparent border-t border-brand-dark/5">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">PRICING</h2>
               <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-4 tracking-tight leading-tight">Our Pricing</h3>
@@ -235,7 +235,7 @@ const Microsoft365 = () => {
       {/* Why Choose WorkspaceBays */}
       <section className="py-16 bg-transparent border-t border-brand-dark/5">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">WHY US</h2>
               <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Why Choose WorkspaceBays</h3>
@@ -260,7 +260,7 @@ const Microsoft365 = () => {
       {/* FAQ Section */}
       <section className="py-16 bg-transparent border-t border-brand-dark/5">
         <div className="max-w-3xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">FAQ</h2>
             <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-dark tracking-tight leading-tight">Frequently Asked Questions</h3>
           </div>

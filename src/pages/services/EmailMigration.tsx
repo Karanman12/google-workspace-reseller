@@ -76,7 +76,7 @@ const EmailMigration = () => {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">EMAIL MIGRATION</h2>
               <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Zero-Downtime Email Migration Services</h1>
-              <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl">Moving to a new email platform? Our experts handle the entire technical transition from cPanel, GoDaddy, or Yahoo. Whether moving to <Link to="/google-workspace" className="text-solar-orange hover:underline font-medium">Google Workspace</Link> or <Link to="/microsoft-365" className="text-solar-orange hover:underline font-medium">Microsoft 365</Link>, we ensure zero downtime and zero data loss.</p>
+              <p className="text-gray-500 text-lg mb-6 leading-relaxed max-w-2xl">Moving to a new email platform? Our experts handle the entire technical transition from cPanel, GoDaddy, or Yahoo. Whether moving to <Link to="/google-workspace" className="text-solar-orange hover:underline font-medium">Google Workspace</Link> or <Link to="/microsoft-365" className="text-solar-orange hover:underline font-medium">Microsoft 365</Link>, we ensure zero downtime and zero data loss.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="https://wa.me/919654387865?text=Hi%2C%20I%20need%20help%20with%20email%20migration."
@@ -109,9 +109,9 @@ const EmailMigration = () => {
         />
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
           <p className="text-[11px] font-bold text-[#E65A28] uppercase tracking-[0.25em] mb-4 text-center md:text-left">EXPERTISE</p>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-[#FAF9F6] leading-[1.1] mb-16 text-center md:text-left">Flawless data transitions.</h2>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-[#FAF9F6] leading-[1.1] mb-10 text-center md:text-left">Flawless data transitions.</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pt-10 border-t border-white/[0.06]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 pt-8 border-t border-white/[0.06]">
             {[
               { label: 'Uptime', value: 'Zero Downtime' },
               { label: 'Experience', value: '500+ Migrations Done' },
@@ -133,7 +133,7 @@ const EmailMigration = () => {
       {/* What We Migrate Section */}
       <section id="features" className="py-16 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">WHAT WE MIGRATE</h2>
               <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Everything transfers smoothly</h3>
@@ -157,13 +157,13 @@ const EmailMigration = () => {
       {/* Process Section */}
       <section className="py-16 bg-transparent overflow-hidden border-t border-brand-dark/5">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">MIGRATION PROCESS</h2>
               <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark tracking-tight leading-tight">How It Works</h3>
             </motion.div>
           </div>
-          <div className="flex flex-col md:flex-row items-start justify-between gap-12 relative">
+          <div className="flex flex-col md:flex-row items-start justify-between gap-8 relative">
             <div className="hidden md:block absolute top-[32px] left-[15%] right-[15%] h-[1px] bg-brand-dark/20" />
             {steps.map((step, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.2 }} viewport={{ once: true }} className="flex-1 text-center relative z-10">
@@ -181,7 +181,7 @@ const EmailMigration = () => {
       {/* Supported Platforms Section */}
       <section className="py-16 bg-transparent border-t border-brand-dark/5">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">PLATFORMS</h2>
               <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Platforms We Support</h3>
@@ -200,7 +200,7 @@ const EmailMigration = () => {
       {/* FAQ Section */}
       <section className="py-16 bg-transparent border-t border-brand-dark/5">
         <div className="max-w-3xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">FAQ</h2>
             <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-dark tracking-tight leading-tight">Frequently Asked Questions</h3>
           </div>

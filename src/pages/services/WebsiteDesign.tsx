@@ -92,7 +92,7 @@ const WebsiteDesign = () => {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">WEB DESIGN</h2>
               <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">High-Performance Business Websites</h1>
-              <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-2xl">Beautiful, fast-loading, and SEO-optimized websites engineered specifically to convert visitors into customers. We also offer powerful <Link to="/ecommerce-website" className="text-solar-orange hover:underline">E-commerce</Link> features and <Link to="/ssl-certificate" className="text-solar-orange hover:underline">SSL Certificates</Link> to build trust. Perfect for modern Indian businesses.</p>
+              <p className="text-gray-500 text-lg mb-6 leading-relaxed max-w-2xl">Beautiful, fast-loading, and SEO-optimized websites engineered specifically to convert visitors into customers. We also offer powerful <Link to="/ecommerce-website" className="text-solar-orange hover:underline">E-commerce</Link> features and <Link to="/ssl-certificate" className="text-solar-orange hover:underline">SSL Certificates</Link> to build trust. Perfect for modern Indian businesses.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="https://wa.me/919654387865?text=Hi%2C%20I%20need%20a%20new%20website%20for%20my%20business."
@@ -122,9 +122,9 @@ const WebsiteDesign = () => {
         />
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
           <p className="text-[11px] font-bold text-[#E65A28] uppercase tracking-[0.25em] mb-4 text-center md:text-left">PERFORMANCE</p>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-[#FAF9F6] leading-[1.1] mb-16 text-center md:text-left">Built for the modern web.</h2>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-[#FAF9F6] leading-[1.1] mb-10 text-center md:text-left">Built for the modern web.</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pt-10 border-t border-white/[0.06]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 pt-8 border-t border-white/[0.06]">
             {[
               { label: 'Speed', value: 'Sub-Second Loading' },
               { label: 'Responsiveness', value: '100% Mobile Ready' },
@@ -146,7 +146,7 @@ const WebsiteDesign = () => {
       {/* Key Benefits Section */}
       <section className="py-16 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">CAPABILITIES</h2>
               <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Everything you need to succeed online</h3>
@@ -169,7 +169,7 @@ const WebsiteDesign = () => {
       {/* Packages Section */}
       <section className="py-16 bg-transparent border-t border-brand-dark/5">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">PACKAGES</h2>
               <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Transparent Pricing</h3>
@@ -210,7 +210,7 @@ const WebsiteDesign = () => {
       {/* Why Choose WorkspaceBays */}
       <section className="py-16 bg-transparent border-t border-brand-dark/5">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">WHY US</h2>
               <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Why Choose WorkspaceBays</h3>
@@ -235,7 +235,7 @@ const WebsiteDesign = () => {
       {/* FAQ Section */}
       <section className="py-16 bg-transparent border-t border-brand-dark/5">
         <div className="max-w-3xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">FAQ</h2>
             <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold text-brand-dark tracking-tight leading-tight">Frequently Asked Questions</h3>
           </div>

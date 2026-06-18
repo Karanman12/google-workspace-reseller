@@ -78,9 +78,9 @@ const About = () => {
         />
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
           <p className="text-[11px] font-bold text-[#E65A28] uppercase tracking-[0.25em] mb-4 text-center md:text-left">IMPACT</p>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-[#FAF9F6] leading-[1.1] mb-16 text-center md:text-left">By the numbers.</h2>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-[#FAF9F6] leading-[1.1] mb-10 text-center md:text-left">By the numbers.</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pt-10 border-t border-white/[0.06]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 pt-8 border-t border-white/[0.06]">
             {[
               { label: 'Trust', value: '500+ Businesses Served' },
               { label: 'Speed', value: '24-Hour Setup' },
@@ -102,7 +102,7 @@ const About = () => {
       {/* What We Offer Section */}
       <section className="py-16 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">SERVICES</h2>
               <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">What We Offer</h3>
@@ -125,7 +125,7 @@ const About = () => {
       {/* Our Values Section */}
       <section className="py-16 bg-transparent border-t border-brand-dark/5">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">PRINCIPLES</h2>
               <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Our Core Values</h3>

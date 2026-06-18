@@ -148,18 +148,18 @@ const ServiceSection = ({
 }) => (
   <section className="py-12 md:py-16 bg-transparent border-t border-brand-dark/5">
     <div className="max-w-7xl mx-auto px-4 md:px-8">
-      <div className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-10 lg:gap-16`}>
+      <div className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} items-center justify-between gap-8 lg:gap-10`}>
         <motion.div 
           initial={{ opacity: 0, x: reverse ? 30 : -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           className="flex-1"
         >
-          <div className="w-14 h-14 rounded-2xl bg-solar-orange/10 flex items-center justify-center mb-6 border border-solar-orange/20 text-solar-orange">
-            <Icon size={28} />
+          <div className="w-12 h-12 rounded-xl bg-solar-orange/10 flex items-center justify-center mb-4 border border-solar-orange/20 text-solar-orange">
+            <Icon size={24} />
           </div>
-          <h2 className="font-display text-2xl md:text-3xl font-extrabold text-brand-dark mb-4 tracking-tight leading-tight">{title}</h2>
-          <p className="text-gray-500 text-base leading-relaxed mb-6 max-w-lg">{description}</p>
+          <h2 className="font-display text-2xl md:text-3xl font-extrabold text-brand-dark mb-3 tracking-tight leading-tight">{title}</h2>
+          <p className="text-gray-500 text-base leading-relaxed mb-5 max-w-lg">{description}</p>
           <Link to={link} className="btn-solar-dark px-7 py-3.5 inline-flex items-center gap-2 group text-sm">
             LEARN MORE <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </Link>
@@ -170,9 +170,9 @@ const ServiceSection = ({
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex-1 w-full"
+            className="flex-1 w-full self-stretch flex flex-col justify-center"
           >
-            <div className="card-concrete-glass p-6 md:p-8 space-y-4">
+            <div className="card-concrete-glass p-6 md:p-8 space-y-3.5 h-full flex flex-col justify-center">
               {highlights.map((h, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <CheckCircle2 size={18} className="text-google-green shrink-0 mt-0.5" />
@@ -212,7 +212,7 @@ const Stats = () => {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pt-10 border-t border-white/[0.06]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 pt-8 border-t border-white/[0.06]">
           {stats.map((stat, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1, duration: 0.8 }} viewport={{ once: true }} className="flex flex-col items-center lg:items-start text-center lg:text-left">
               <h3 className="font-display font-bold text-lg text-[#FAF9F6] mb-2 tracking-tight flex items-center gap-2">
