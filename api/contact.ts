@@ -30,6 +30,7 @@ const app = express();
 
 // Use Helmet for basic HTTP header security
 app.use(helmet());
+app.disable('x-powered-by');
 
 // Configure CORS
 const allowedOrigins = [
@@ -94,7 +95,13 @@ const isValidEmail = (email: string): boolean => {
 // POST route for contact form submission
 app.post(['/api/contact', '/'], async (req: Request, res: Response) => {
   try {
-    const { name, businessName, email, phone, numUsers, planInterest } = req.body;
+    const { name, businessName, email, phone, numUsers, planInterest, a_password } = req.body;
+
+    // 0. Honeypot check for spam bots
+    if (a_password) {
+      // If honeypot field is filled, silently reject it as success to fool the bot
+      return res.status(200).json({ success: true, message: 'Lead submitted successfully.' });
+    }
 
     // 1. Validation
     const errors: string[] = [];

@@ -15,7 +15,8 @@ const Contact = () => {
     email: '',
     phone: '',
     numUsers: '',
-    planInterest: ''
+    planInterest: '',
+    a_password: ''
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -58,7 +59,8 @@ const Contact = () => {
         email: '',
         phone: '',
         numUsers: '',
-        planInterest: ''
+        planInterest: '',
+        a_password: ''
       });
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -175,6 +177,9 @@ const Contact = () => {
                   </motion.div>
                 ) : (
                   <form className="space-y-6 relative z-10" onSubmit={handleSubmit}>
+                    {/* Honeypot field to catch spam bots */}
+                    <input type="text" name="a_password" value={formData.a_password} onChange={handleChange} className="absolute opacity-0 -z-10" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+                    
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="group flex flex-col gap-2">
                         <label htmlFor="name" className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Your Name</label>
