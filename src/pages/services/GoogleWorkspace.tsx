@@ -39,17 +39,17 @@ const GoogleWorkspace = () => {
 
   const plans = [
     {
-      name: 'Starter',
-      price: '₹140*',
-      tagline: 'Per User / Month + Tax',
-      features: ['Professional business email with custom domain', 'Google Meet video meetings for up to 100 participants', '30 GB cloud storage per user', 'Security and admin management controls', 'Standard customer support', 'Google Gemini AI productivity features'],
-      popular: false
-    },
-    {
       name: 'Standard',
       price: '₹845*',
       tagline: 'Per User / Month + Tax',
       features: ['Secure business email with custom domain', 'Google Meet meetings for up to 150 participants with recording', '2 TB cloud storage per user', 'Advanced security and management controls', 'Standard support with optional Enhanced Support upgrade', 'Gemini AI assistance across Gmail, Docs, Meet, and more'],
+      popular: false
+    },
+    {
+      name: 'Starter',
+      price: '₹140*',
+      tagline: 'Per User / Month + Tax',
+      features: ['Professional business email with custom domain', 'Google Meet video meetings for up to 100 participants', '30 GB cloud storage per user', 'Security and admin management controls', 'Standard customer support', 'Google Gemini AI productivity features'],
       popular: true
     },
     {
@@ -110,7 +110,7 @@ const GoogleWorkspace = () => {
                 <p className="text-gray-500 text-lg mb-6 leading-relaxed max-w-2xl">Get Gmail, Google Drive, Google Meet, Docs, Sheets, and more — all under your company domain. We provide comprehensive <Link to="/email-migration" className="text-solar-orange hover:underline font-medium">migration support</Link> to ensure zero downtime. Setup in 24 hours, INR billing, save up to 30% vs direct pricing.</p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://wa.me/919654387865?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20Google%20Workspace."
+                    href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
@@ -308,7 +308,7 @@ const GoogleWorkspace = () => {
           <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Setup takes less than 24 hours. WhatsApp us now for the fastest response. Don't forget to protect your domains with our <Link to="/ssl-certificate" className="text-solar-orange hover:underline font-medium">SSL Certificates</Link>.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/919654387865?text=Hi%2C%20I%20am%20ready%20to%20get%20started%20with%20Google%20Workspace."
+              href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"

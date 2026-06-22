@@ -19,26 +19,25 @@ const Microsoft365 = () => {
     { icon: Users, title: 'Microsoft Teams', desc: 'Host online meetings and video calls for up to 300 people.' },
     { icon: FileText, title: 'Word, Excel & PowerPoint', desc: 'Create and edit documents collaboratively in real time.' },
     { icon: HardDrive, title: 'OneDrive Cloud Storage', desc: '1TB of cloud storage per user to securely store and share files.' },
-    { icon: Globe, title: 'SharePoint & Collaboration', desc: 'Build an intranet to share resources and manage content.' },
     { icon: Mail, title: 'Alias Functionality', desc: 'Create multiple email aliases per user at no extra cost to manage different roles.' },
     { icon: ShieldCheck, title: 'Advanced Security & Compliance', desc: 'Protect your data with enterprise-grade security features.' }
   ];
 
   const plans = [
     {
-      name: 'Basic',
-      price: '₹140*',
-      tagline: 'Per User / Month + Tax',
-      desc: 'Essential cloud tools for email, collaboration, and secure online work.',
-      features: ['Professional business email with custom domain', 'Web and mobile versions of Office apps', 'Microsoft Teams chat and meetings', '1 TB cloud storage per user', 'Basic security and spam protection', 'File sharing and collaboration tools'],
-      popular: false
-    },
-    {
       name: 'Standard',
       price: '₹765*',
       tagline: 'Per User / Month + Tax',
       desc: 'Complete productivity package with desktop apps and advanced collaboration tools.',
       features: ['Everything in Business Basic', 'Desktop versions of Word, Excel, PowerPoint and Outlook', 'Business-class email and calendar', 'Microsoft Teams meetings and collaboration', '1 TB cloud storage per user', 'Additional productivity applications'],
+      popular: false
+    },
+    {
+      name: 'Basic',
+      price: '₹140*',
+      tagline: 'Per User / Month + Tax',
+      desc: 'Essential cloud tools for email, collaboration, and secure online work.',
+      features: ['Professional business email with custom domain', 'Web and mobile versions of Office apps', 'Microsoft Teams chat and meetings', '1 TB cloud storage per user', 'Basic security and spam protection', 'File sharing and collaboration tools'],
       popular: true
     },
     {
@@ -100,7 +99,7 @@ const Microsoft365 = () => {
                 <p className="text-gray-500 text-lg mb-6 leading-relaxed max-w-2xl">The full Microsoft productivity suite for your business. Outlook email, Teams collaboration, Word, Excel, PowerPoint, and OneDrive — all managed and billed in INR. Need help moving? We provide expert <Link to="/email-migration" className="text-solar-orange hover:underline font-medium">email migration</Link> from any platform.</p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="https://wa.me/919654387865?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20Microsoft%20365."
+                    href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
@@ -288,7 +287,7 @@ const Microsoft365 = () => {
           <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Upgrade your team's productivity today. WhatsApp us to get started. Ensure your infrastructure is fully secure with our <Link to="/ssl-certificate" className="text-solar-orange hover:underline font-medium">SSL Certificates</Link>.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/919654387865?text=Hi%2C%20I%20am%20ready%20to%20get%20started%20with%20Microsoft%20365."
+              href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"

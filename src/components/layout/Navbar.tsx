@@ -96,7 +96,7 @@ const Navbar = ({ startAnimation = true }) => {
               <motion.div className="w-1.5 h-1.5 rounded-full bg-google-yellow" />
               <motion.div className="w-1.5 h-1.5 rounded-full bg-google-green" />
             </div>
-            <span className="font-display font-extrabold text-[15px] tracking-tight text-[#1B1B1B] uppercase">
+            <span className="font-display font-extrabold text-[15px] tracking-tight text-[#1B1B1B]">
               Workspace<span className="text-[#FF7120]">Bays</span>
             </span>
           </Link>
@@ -191,7 +191,7 @@ const Navbar = ({ startAnimation = true }) => {
             <div className="w-1.5 h-1.5 rounded-full bg-google-yellow" />
             <div className="w-1.5 h-1.5 rounded-full bg-google-green" />
           </div>
-          <span className="font-display font-extrabold text-xs tracking-tight text-brand-dark uppercase">
+          <span className="font-display font-extrabold text-xs tracking-tight text-brand-dark">
             Workspace<span className="text-[#FF7120]">Bays</span>
           </span>
         </Link>

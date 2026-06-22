@@ -64,7 +64,7 @@ const Hero = ({ startAnimation = true }: { startAnimation?: boolean }) => {
                 transition={{ duration: 0.65, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
                 <a 
-                  href="https://wa.me/919654387865?text=Hi%2C%20I%20would%20like%20to%20explore%20your%20cloud%20services."
+                  href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
@@ -271,7 +271,7 @@ const Home = () => {
   return (
     <>
       <SEO 
-        title="WorkspaceBays | Google Workspace & Microsoft 365 Reseller India" 
+        title="WorkspaceBays" 
         description="Premium, fully-managed Google Workspace and Microsoft 365 licenses at the best prices in India with 24/7 support and 24-hour setup." 
         canonical="/"
         schema={schemas}

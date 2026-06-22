@@ -95,7 +95,7 @@ const SSLCertificate = () => {
               <p className="text-gray-500 text-lg mb-6 leading-relaxed max-w-2xl">Build customer trust, encrypt sensitive data, and boost your Google rankings. We offer DV, OV, and EV certificates with free installation. Essential for <Link to="/ecommerce-website" className="text-solar-orange hover:underline">E-commerce</Link> and professional <Link to="/website-design" className="text-solar-orange hover:underline">Website Design</Link>.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://wa.me/919654387865?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20SSL%20Certificates."
+                  href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
@@ -264,7 +264,7 @@ const SSLCertificate = () => {
           <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Protect your website today. WhatsApp us to get started.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/919654387865?text=Hi%2C%20I%20need%20an%20SSL%20certificate."
+              href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"

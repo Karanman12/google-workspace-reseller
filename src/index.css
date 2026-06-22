@@ -23,6 +23,11 @@
   html {
     font-size: 87.5%;
     scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
   }
 
   body,

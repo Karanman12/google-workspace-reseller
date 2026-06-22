@@ -94,7 +94,7 @@ const EcommerceWebsite = () => {
               <p className="text-gray-500 text-lg mb-6 leading-relaxed max-w-2xl">Launch a robust, secure, and high-converting online store. We provide complete e-commerce solutions including product catalogs, secure payment gateways, and seamless order management. Pair your store with <Link to="/google-workspace" className="text-solar-orange hover:underline">Google Workspace</Link> for professional email, and secure it with our <Link to="/ssl-certificate" className="text-solar-orange hover:underline">SSL Certificates</Link>.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://wa.me/919654387865?text=Hi%2C%20I%20want%20to%20build%20an%20ecommerce%20website."
+                  href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
@@ -259,7 +259,7 @@ const EcommerceWebsite = () => {
           <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Launch your e-commerce store with our expert developers.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/919654387865?text=Hi%2C%20I%20am%20interested%20in%20building%20an%20ecommerce%20store."
+              href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"

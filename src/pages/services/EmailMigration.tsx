@@ -79,7 +79,7 @@ const EmailMigration = () => {
               <p className="text-gray-500 text-lg mb-6 leading-relaxed max-w-2xl">Moving to a new email platform? Our experts handle the entire technical transition from cPanel, GoDaddy, or Yahoo. Whether moving to <Link to="/google-workspace" className="text-solar-orange hover:underline font-medium">Google Workspace</Link> or <Link to="/microsoft-365" className="text-solar-orange hover:underline font-medium">Microsoft 365</Link>, we ensure zero downtime and zero data loss.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://wa.me/919654387865?text=Hi%2C%20I%20need%20help%20with%20email%20migration."
+                  href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
@@ -225,7 +225,7 @@ const EmailMigration = () => {
           <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">WhatsApp us now for a seamless transition.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/919654387865?text=Hi%2C%20I%20am%20ready%20for%20email%20migration."
+              href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"

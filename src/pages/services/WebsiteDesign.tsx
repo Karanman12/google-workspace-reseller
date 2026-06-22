@@ -95,7 +95,7 @@ const WebsiteDesign = () => {
               <p className="text-gray-500 text-lg mb-6 leading-relaxed max-w-2xl">Beautiful, fast-loading, and SEO-optimized websites engineered specifically to convert visitors into customers. We also offer powerful <Link to="/ecommerce-website" className="text-solar-orange hover:underline">E-commerce</Link> features and <Link to="/ssl-certificate" className="text-solar-orange hover:underline">SSL Certificates</Link> to build trust. Perfect for modern Indian businesses.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://wa.me/919654387865?text=Hi%2C%20I%20need%20a%20new%20website%20for%20my%20business."
+                  href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
@@ -260,7 +260,7 @@ const WebsiteDesign = () => {
           <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Contact us today to discuss your vision and get a free quote.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/919654387865?text=Hi%2C%20I%20am%20looking%20for%20website%20design%20services."
+              href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"

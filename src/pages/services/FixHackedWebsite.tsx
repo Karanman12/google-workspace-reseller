@@ -77,7 +77,7 @@ const FixHackedWebsite = () => {
               <p className="text-gray-500 text-lg mb-6 leading-relaxed max-w-2xl">Website hacked? Blacklisted by Google? Showing spam content? We clean malware, remove backdoors, and restore your website to a secure state — usually within 24 hours. After recovery, secure your site with an <Link to="/ssl-certificate" className="text-solar-orange hover:underline">SSL Certificate</Link> or upgrade your <Link to="/website-design" className="text-solar-orange hover:underline">Website Design</Link> for better security.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://wa.me/919654387865?text=Emergency:%20My%20website%20is%20hacked."
+                  href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer bg-red-600 hover:bg-red-700 border-red-600"
@@ -222,7 +222,7 @@ const FixHackedWebsite = () => {
           <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Don't wait. WhatsApp us now for immediate recovery.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/919654387865?text=Emergency:%20My%20website%20is%20hacked."
+              href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer bg-red-600 border-red-600"

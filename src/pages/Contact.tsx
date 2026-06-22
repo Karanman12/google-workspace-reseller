@@ -5,7 +5,8 @@ import SEO from '../components/seo/SEO';
 import { 
   MessageCircle, ArrowRight, ChevronDown, CheckCircle2, Loader2, Mail, Clock
 } from 'lucide-react';
-// Firebase client-side database imports removed for security
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../lib/firebase';
 
 const Contact = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -38,19 +39,28 @@ const Contact = () => {
     setErrorMessage('');
     
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-      
-      const result = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to submit contact form.');
+      // 1. Validation
+      if (!formData.name || !formData.email || !formData.phone || !formData.planInterest) {
+        throw new Error('Please fill out all required fields.');
       }
+
+      // 2. Honeypot check for bots
+      if (formData.a_password) {
+        setStatus('success');
+        return;
+      }
+
+      // 3. Save to Firebase directly using the frontend SDK
+      await addDoc(collection(db, 'leads'), {
+        name: formData.name,
+        businessName: formData.businessName || '',
+        email: formData.email,
+        phone: formData.phone,
+        numUsers: Number(formData.numUsers) || 1,
+        planInterest: formData.planInterest,
+        createdAt: serverTimestamp(),
+        source: 'contact_page'
+      });
       
       setStatus('success');
       setFormData({
@@ -127,7 +137,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-display font-bold text-xl text-brand-dark mb-2 uppercase tracking-wide">WhatsApp Us</h4>
                   <p className="text-brand-dark/70 font-sans mb-4">Fastest Response. Message us directly.</p>
-                  <a href="https://wa.me/919654387865" target="_blank" rel="noopener noreferrer" className="text-solar-orange font-bold font-mono tracking-wider hover:underline flex items-center gap-2">
+                  <a href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" className="text-solar-orange font-bold font-mono tracking-wider hover:underline flex items-center gap-2">
                     +91 96543 87865 <ArrowRight size={16} />
                   </a>
                 </div>
@@ -140,8 +150,8 @@ const Contact = () => {
                 <div>
                   <h4 className="font-display font-bold text-xl text-brand-dark mb-2 uppercase tracking-wide">Email Us</h4>
                   <p className="text-brand-dark/70 font-sans mb-4">For detailed inquiries and support.</p>
-                  <a href="mailto:karanmandal9654@gmail.com" className="text-solar-orange font-bold font-mono tracking-wider hover:underline flex items-center gap-2">
-                    karanmandal9654@gmail.com <ArrowRight size={16} />
+                  <a href="mailto:Team@workspacebays.com?subject=WorkspaceBays%20Inquiry&body=Hello%20WorkspaceBays%20Team,%0D%0A%0D%0AI%20would%20like%20to%20know%20more%20about%20your%20services.%0D%0A%0D%0AThank%20you." className="text-solar-orange font-bold font-mono tracking-wider hover:underline flex items-center gap-2">
+                    Team@workspacebays.com <ArrowRight size={16} />
                   </a>
                 </div>
               </div>
@@ -274,7 +284,7 @@ const Contact = () => {
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[#FAF9F6] mb-6">Prefer WhatsApp? Message Us Directly</h2>
           <div className="flex justify-center mt-10">
             <a
-              href="https://wa.me/919654387865?text=Hi%2C%20I%20have%20an%20inquiry."
+              href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
