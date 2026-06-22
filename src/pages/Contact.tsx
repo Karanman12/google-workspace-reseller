@@ -150,7 +150,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-display font-bold text-xl text-brand-dark mb-2 uppercase tracking-wide">Email Us</h4>
                   <p className="text-brand-dark/70 font-sans mb-4">For detailed inquiries and support.</p>
-                  <a href="mailto:Team@workspacebays.com?subject=WorkspaceBays%20Inquiry&body=Hello%20WorkspaceBays%20Team,%0D%0A%0D%0AI%20would%20like%20to%20know%20more%20about%20your%20services.%0D%0A%0D%0AThank%20you." className="text-solar-orange font-bold font-mono tracking-wider hover:underline flex items-center gap-2 cursor-pointer relative z-10 w-fit">
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Team@workspacebays.com&su=WorkspaceBays%20Inquiry&body=Hello%20WorkspaceBays%20Team,%0D%0A%0D%0AI%20would%20like%20to%20know%20more%20about%20your%20services.%0D%0A%0D%0AThank%20you." target="_blank" rel="noopener noreferrer" className="text-solar-orange font-bold font-mono tracking-wider hover:underline flex items-center gap-2 cursor-pointer relative z-10 w-fit">
                     Team@workspacebays.com <ArrowRight size={16} />
                   </a>
                 </div>
