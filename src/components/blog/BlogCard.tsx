@@ -7,7 +7,7 @@ import BlogCategory from './BlogCategory';
 
 const BlogCard = ({ post, index = 0 }: { post: BlogPost; index?: number; key?: React.Key }) => {
   return (
-    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.1 }} viewport={{ once: true }} className="h-full">
+    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: (index % 3) * 0.1 }} viewport={{ once: true }} className="h-full">
       <Link to={`/blog/${post.slug}`} className="group block h-full p-8 card-concrete-glass hover:border-brand-dark/30 transition-all duration-300 flex flex-col">
         <div className="flex gap-2 flex-wrap mb-4">
           {post.categories.map(cat => (
