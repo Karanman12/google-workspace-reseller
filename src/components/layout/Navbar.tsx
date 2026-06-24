@@ -90,12 +90,7 @@ const Navbar = ({ startAnimation = true }) => {
             onClick={handleScrollToTop}
             className="flex items-center gap-2 rounded-[10px] hover:bg-black/[0.02] transition-all group cursor-pointer"
           >
-            <div className="flex gap-1">
-              <motion.div className="w-1.5 h-1.5 rounded-full bg-google-blue" />
-              <motion.div className="w-1.5 h-1.5 rounded-full bg-google-red" />
-              <motion.div className="w-1.5 h-1.5 rounded-full bg-google-yellow" />
-              <motion.div className="w-1.5 h-1.5 rounded-full bg-google-green" />
-            </div>
+            <img src="/wb-logo.png" alt="WorkspaceBays Logo" className="h-16 w-auto object-contain" style={{ mixBlendMode: 'multiply' }} />
             <span className="font-display font-extrabold text-[15px] tracking-tight text-[#1B1B1B]">
               Workspace<span className="text-[#FF7120]">Bays</span>
             </span>
@@ -185,12 +180,7 @@ const Navbar = ({ startAnimation = true }) => {
           onClick={handleScrollToTop}
           className="flex items-center gap-2 flex-1"
         >
-          <div className="flex gap-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-google-blue" />
-            <div className="w-1.5 h-1.5 rounded-full bg-google-red" />
-            <div className="w-1.5 h-1.5 rounded-full bg-google-yellow" />
-            <div className="w-1.5 h-1.5 rounded-full bg-google-green" />
-          </div>
+          <img src="/wb-logo.png" alt="WorkspaceBays Logo" className="h-12 w-auto object-contain" style={{ mixBlendMode: 'multiply' }} />
           <span className="font-display font-extrabold text-xs tracking-tight text-brand-dark">
             Workspace<span className="text-[#FF7120]">Bays</span>
           </span>

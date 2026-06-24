@@ -13,12 +13,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start gap-10 mb-16 pb-16 border-b border-white/10">
           <div className="md:w-1/3">
             <Link to="/" className="flex items-center gap-2 mb-4 hover:opacity-80 transition-opacity">
-              <div className="flex gap-1">
-                <div className="w-2 h-2 rounded-full bg-google-blue" />
-                <div className="w-2 h-2 rounded-full bg-google-red" />
-                <div className="w-2 h-2 rounded-full bg-google-yellow" />
-                <div className="w-2 h-2 rounded-full bg-google-green" />
-              </div>
+              <img src="/wb-logo.png" alt="WorkspaceBays Logo" className="h-16 w-auto object-contain" style={{ mixBlendMode: 'multiply' }} />
               <span className="font-display font-bold text-2xl tracking-tight">
                 Workspace<span className="text-[#FF7120]">Bays</span>
               </span>
