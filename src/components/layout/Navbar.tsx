@@ -88,10 +88,10 @@ const Navbar = ({ startAnimation = true }) => {
           <Link
             to="/"
             onClick={handleScrollToTop}
-            className="flex items-center gap-2 rounded-[10px] hover:bg-black/[0.02] transition-all group cursor-pointer"
+            className="flex items-center gap-0 rounded-[10px] hover:bg-black/[0.02] transition-all group cursor-pointer"
           >
             <img src="/wb-logo.png" alt="WorkspaceBays Logo" className="h-16 w-auto object-contain" style={{ mixBlendMode: 'multiply' }} />
-            <span className="font-display font-extrabold text-[15px] tracking-tight text-[#1B1B1B]">
+            <span className="font-display font-extrabold text-[15px] tracking-tight text-[#1B1B1B] -ml-2">
               Workspace<span className="text-[#FF7120]">Bays</span>
             </span>
           </Link>
@@ -178,10 +178,10 @@ const Navbar = ({ startAnimation = true }) => {
         <Link
           to="/"
           onClick={handleScrollToTop}
-          className="flex items-center gap-2 flex-1"
+          className="flex items-center gap-0 flex-1"
         >
           <img src="/wb-logo.png" alt="WorkspaceBays Logo" className="h-12 w-auto object-contain" style={{ mixBlendMode: 'multiply' }} />
-          <span className="font-display font-extrabold text-xs tracking-tight text-brand-dark">
+          <span className="font-display font-extrabold text-xs tracking-tight text-brand-dark -ml-1">
             Workspace<span className="text-[#FF7120]">Bays</span>
           </span>
         </Link>
