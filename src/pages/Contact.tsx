@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/seo/SEO';
+import Breadcrumbs from '../components/navigation/Breadcrumbs';
 import { 
   MessageCircle, ArrowRight, ChevronDown, CheckCircle2, Loader2, Mail, Clock
 } from 'lucide-react';
@@ -87,6 +88,34 @@ const Contact = () => {
     { q: 'Do you offer emergency support?', a: 'Yes, for critical issues like hacked websites or server downtime, we offer 24/7 emergency WhatsApp support.' }
   ];
 
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'WorkspaceBays',
+    image: 'https://workspacebays.com/wb-logo.png',
+    '@id': 'https://workspacebays.com',
+    url: 'https://workspacebays.com',
+    telephone: '+919654387865',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'India',
+      addressCountry: 'IN'
+    },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday'
+      ],
+      opens: '09:00',
+      closes: '20:00'
+    }
+  };
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -103,15 +132,16 @@ const Contact = () => {
   return (
     <>
       <SEO 
-        title="Contact Us | WorkspaceBays" 
-        description="Contact WorkspaceBays for Google Workspace, Microsoft 365, and Cloud Services. We respond within 2 hours." 
+        title="Contact WorkspaceBays | Google Workspace & Microsoft 365" 
+        description="Contact the WorkspaceBays team for expert Google Workspace, Microsoft 365, and cloud services support. Fast responses, expert setup, and dedicated assistance." 
         canonical="/contact"
-        schema={faqSchema}
+        schema={[localBusinessSchema, faqSchema]}
       />
       
       {/* Hero Section */}
       <section className="pt-20 pb-12 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <Breadcrumbs />
           <div className="max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">GET IN TOUCH</h2>

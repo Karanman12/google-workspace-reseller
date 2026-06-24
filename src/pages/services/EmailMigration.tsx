@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/seo/SEO';
+import Breadcrumbs from '../../components/navigation/Breadcrumbs';
 import { 
   MessageCircle, ArrowRight, Mail, Users, Calendar, FileText, List, Settings, ChevronDown
 } from 'lucide-react';
@@ -63,8 +64,8 @@ const EmailMigration = () => {
   return (
     <>
       <SEO 
-        title="Email Migration | WorkspaceBays" 
-        description="Seamless Email Migration — Zero Downtime, Zero Data Loss. Moving to Google Workspace or Microsoft 365." 
+        title="Expert Business Email Migration Services | WorkspaceBays" 
+        description="Ensure a seamless transition with our expert email migration services. Move to Google Workspace or Microsoft 365 with zero downtime and complete data security." 
         canonical="/email-migration"
         schema={faqSchema}
       />
@@ -72,6 +73,7 @@ const EmailMigration = () => {
       {/* Hero Section */}
       <section className="pt-20 pb-12 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <Breadcrumbs />
           <div className="max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">EMAIL MIGRATION</h2>

@@ -271,8 +271,8 @@ const Home = () => {
   return (
     <>
       <SEO 
-        title="WorkspaceBays" 
-        description="Premium, fully-managed Google Workspace and Microsoft 365 licenses at the best prices in India with 24/7 support and 24-hour setup." 
+        title="WorkspaceBays | Google Workspace & Microsoft 365 Reseller" 
+        description="Get premium Google Workspace and Microsoft 365 licenses at the best prices in India. Expert email migration, INR billing, and 24/7 dedicated support." 
         canonical="/"
         schema={schemas}
       />

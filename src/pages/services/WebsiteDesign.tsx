@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/seo/SEO';
+import Breadcrumbs from '../../components/navigation/Breadcrumbs';
 import { 
   MessageCircle, ArrowRight, MonitorSmartphone, Zap, Search, Target, Users, Palette, CheckCircle2, Star, Rocket, Clock, ChevronDown
 } from 'lucide-react';
@@ -79,8 +80,8 @@ const WebsiteDesign = () => {
   return (
     <>
       <SEO 
-        title="Website Design | WorkspaceBays" 
-        description="Professional Business Websites, Responsive Design, Fast Loading, and SEO-Friendly Structure." 
+        title="Professional Business Website Design Services | WorkspaceBays" 
+        description="Elevate your brand with professional business website design. We build fast-loading, mobile-responsive, and SEO-friendly sites that drive customer engagement." 
         canonical="/website-design"
         schema={faqSchema}
       />
@@ -88,6 +89,7 @@ const WebsiteDesign = () => {
       {/* Hero Section */}
       <section className="pt-20 pb-12 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <Breadcrumbs />
           <div className="max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">WEB DESIGN</h2>

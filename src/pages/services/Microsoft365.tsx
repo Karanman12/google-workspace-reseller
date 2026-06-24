@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/seo/SEO';
+import Breadcrumbs from '../../components/navigation/Breadcrumbs';
 import RelatedPosts from '../../components/blog/RelatedPosts';
 import { 
   MessageCircle, ArrowRight, ArrowUpRight, Mail, Users, FileText, HardDrive, Globe, ShieldCheck, Wallet, Zap, ChevronDown, CheckCircle2, Star
@@ -82,7 +83,7 @@ const Microsoft365 = () => {
   return (
     <>
       <SEO 
-        title="Microsoft 365 Reseller India | Buy Office 365 Plans | WorkspaceBays" 
+        title="Microsoft 365 Reseller India | Office 365 Setup Experts" 
         description="Empower your team with Microsoft 365. Access Outlook, Teams, OneDrive, and Office Apps with seamless email migration and local INR billing." 
         canonical="/microsoft-365"
         schema={faqSchema}
@@ -91,6 +92,7 @@ const Microsoft365 = () => {
       {/* Hero Section */}
       <section className="pt-20 pb-12 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <Breadcrumbs />
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-10">
             <div className="max-w-3xl flex-1">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
@@ -121,7 +123,7 @@ const Microsoft365 = () => {
               className="flex-1 w-full max-w-lg lg:max-w-none"
             >
               <img 
-                src="/microsoft_365_dashboard.png" 
+                src="/microsoft_365_dashboard.webp" 
                 alt="Product mockup showing the Microsoft 365 dashboard and enterprise collaboration tools" 
                 className="w-full h-auto rounded-2xl shadow-2xl border border-brand-dark/10"
               />

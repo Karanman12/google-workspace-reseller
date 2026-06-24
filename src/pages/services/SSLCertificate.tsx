@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/seo/SEO';
+import Breadcrumbs from '../../components/navigation/Breadcrumbs';
 import RelatedPosts from '../../components/blog/RelatedPosts';
 import { 
   MessageCircle, ArrowRight, ShieldCheck, Lock, Globe, CheckCircle2, Star, ShieldAlert, CreditCard, Zap, ChevronDown
@@ -79,8 +80,8 @@ const SSLCertificate = () => {
   return (
     <>
       <SEO 
-        title="SSL Certificates | WorkspaceBays" 
-        description="Secure your website with DV, OV, and EV SSL Certificates. HTTPS Security, Browser Trust, and Free Installation." 
+        title="Buy Premium SSL Certificates for Website Security & Trust" 
+        description="Protect your website and build customer trust with premium SSL certificates. Get DV, OV, and EV SSLs with fast issuance, HTTPS security, and free installation." 
         canonical="/ssl-certificate"
         schema={faqSchema}
       />
@@ -88,6 +89,7 @@ const SSLCertificate = () => {
       {/* Hero Section */}
       <section className="pt-20 pb-12 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <Breadcrumbs />
           <div className="max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">SECURITY</h2>

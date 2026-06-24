@@ -14,7 +14,7 @@ const Blog = () => {
 
   return (
     <>
-      <SEO title="Blog & Insights | WorkspaceBays" description="Tips, tutorials, and industry insights to help your business get the most out of cloud tools like Google Workspace and Microsoft 365." canonical="/blog" />
+      <SEO title="Cloud Computing Blog & Expert Insights | WorkspaceBays" description="Read the WorkspaceBays blog for expert tips, tutorials, and insights on maximizing business productivity with Google Workspace, Microsoft 365, and cloud tools." canonical="/blog" />
       
       {/* Hero Section */}
       <section className="pt-20 pb-12 bg-transparent">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/seo/SEO';
+import Breadcrumbs from '../../components/navigation/Breadcrumbs';
 import RelatedPosts from '../../components/blog/RelatedPosts';
 import { 
   MessageCircle, 
@@ -93,7 +94,7 @@ const GoogleWorkspace = () => {
   return (
     <>
       <SEO 
-        title="Google Workspace Reseller India | Buy Google Workspace Plans | WorkspaceBays" 
+        title="Google Workspace Reseller India | Buy Plans | WorkspaceBays" 
         description="Get professional business email with Google Workspace. Expert email migration support, local INR billing, and 24/7 dedicated support. Save up to 30% today." 
         canonical="/google-workspace"
         schema={faqSchema}
@@ -102,6 +103,7 @@ const GoogleWorkspace = () => {
       {/* Hero Section */}
       <section className="pt-20 pb-12 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <Breadcrumbs />
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-10">
             <div className="max-w-3xl flex-1">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
@@ -132,7 +134,7 @@ const GoogleWorkspace = () => {
               className="flex-1 w-full max-w-lg lg:max-w-none"
             >
               <img 
-                src="/google_workspace_dashboard.png" 
+                src="/google_workspace_dashboard.webp" 
                 alt="Product mockup showing the Google Workspace dashboard and productivity tools" 
                 className="w-full h-auto rounded-2xl shadow-2xl border border-brand-dark/10"
               />

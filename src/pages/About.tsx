@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/seo/SEO';
+import Breadcrumbs from '../components/navigation/Breadcrumbs';
 import { 
   MessageCircle, ArrowRight, Mail, Briefcase, Monitor, ArrowRightLeft, ShieldCheck, Globe, Quote, Users
 } from 'lucide-react';
@@ -24,11 +25,12 @@ const About = () => {
 
   return (
     <>
-      <SEO title="About Us | WorkspaceBays" description="India's Trusted Google Workspace & Cloud Services Partner. We help businesses get set up with professional cloud tools." canonical="/about" />
+      <SEO title="About WorkspaceBays | Cloud Solutions Reseller Partner India" description="Discover WorkspaceBays, India's trusted authorized partner for Google Workspace and Microsoft 365. We offer seamless cloud setups, migrations, and INR billing." canonical="/about" />
       
       {/* Hero Section */}
       <section className="pt-20 pb-12 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <Breadcrumbs />
           <div className="max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">ABOUT US</h2>

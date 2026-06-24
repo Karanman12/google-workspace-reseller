@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/seo/SEO';
+import Breadcrumbs from '../../components/navigation/Breadcrumbs';
 import RelatedPosts from '../../components/blog/RelatedPosts';
 import { 
   MessageCircle, ArrowRight, ShieldCheck, Search, Globe, Trash2, Database, Lock, AlertTriangle, UserX, AlertCircle, Clock, ChevronDown
@@ -62,14 +63,15 @@ const FixHackedWebsite = () => {
   return (
     <>
       <SEO 
-        title="Fix Hacked Website | WorkspaceBays" 
-        description="Website hacked? We clean malware, remove backdoors, and restore your website to a secure state — usually within 24 hours." 
+        title="Fix Hacked Website & Secure Malware Removal | WorkspaceBays" 
+        description="Has your website been hacked? We provide fast, professional malware cleaning, backdoor removal, and security hardening to restore your site within 24 hours." 
         canonical="/fix-hacked-website"
         schema={faqSchema}
       />
       
       <section className="pt-20 pb-12 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <Breadcrumbs />
           <div className="max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">WEBSITE SECURITY</h2>

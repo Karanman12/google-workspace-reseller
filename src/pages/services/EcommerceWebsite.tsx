@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/seo/SEO';
+import Breadcrumbs from '../../components/navigation/Breadcrumbs';
 import { 
   MessageCircle, ArrowRight, ShoppingCart, CreditCard, Package, Smartphone, ShieldCheck, TrendingUp, CheckCircle2, Star, Zap, Settings, ChevronDown
 } from 'lucide-react';
@@ -78,8 +79,8 @@ const EcommerceWebsite = () => {
   return (
     <>
       <SEO 
-        title="E-commerce Website Development | WorkspaceBays" 
-        description="Professional Online Store Development, Product Catalogs, Payment Gateways, and Mobile Commerce solutions." 
+        title="Professional E-commerce Website Development | WorkspaceBays" 
+        description="Boost sales with our professional e-commerce website development services. We build secure online stores with product catalogs, payment gateways, and fast UI." 
         canonical="/ecommerce-website"
         schema={faqSchema}
       />
@@ -87,6 +88,7 @@ const EcommerceWebsite = () => {
       {/* Hero Section */}
       <section className="pt-20 pb-12 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <Breadcrumbs />
           <div className="max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <h2 className="text-xs sm:text-sm font-mono tracking-[0.2em] text-solar-orange uppercase mb-3">E-COMMERCE</h2>
