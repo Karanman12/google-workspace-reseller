@@ -80,18 +80,9 @@ const Blog = () => {
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[#FAF9F6] mb-6">Need Help Choosing the Right Plan?</h2>
           <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Our team can help you find the perfect workspace solution.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
-            >
-              <MessageCircle size={20} />
-              WHATSAPP US
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <Link to="/contact" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 text-base rounded-[10px] font-bold font-mono tracking-wide transition-all cursor-pointer flex items-center justify-center">
+            <Link to="/contact" className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer">
               CONTACT US
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>

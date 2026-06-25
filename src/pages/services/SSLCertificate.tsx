@@ -5,7 +5,7 @@ import SEO from '../../components/seo/SEO';
 import Breadcrumbs from '../../components/navigation/Breadcrumbs';
 import RelatedPosts from '../../components/blog/RelatedPosts';
 import { 
-  MessageCircle, ArrowRight, ShieldCheck, Lock, Globe, CheckCircle2, Star, ShieldAlert, CreditCard, Zap, ChevronDown
+  MessageCircle, ArrowRight, ShieldCheck, Lock, Globe, CheckCircle2, Star, ShieldAlert, CreditCard, Zap, ChevronDown, Mail
 } from 'lucide-react';
 
 const SSLCertificate = () => {
@@ -52,7 +52,7 @@ const SSLCertificate = () => {
     { icon: CreditCard, title: 'INR Billing', desc: 'Pay locally via UPI or Bank Transfer with full GST invoices.' },
     { icon: Zap, title: 'Free Installation', desc: 'Our experts will install the certificate on your server at no extra cost.' },
     { icon: ShieldCheck, title: 'Top Certificate Authorities', desc: 'We partner with leading CAs like Sectigo, DigiCert, and GeoTrust.' },
-    { icon: MessageCircle, title: 'Dedicated Support', desc: 'Get direct WhatsApp support for any installation or renewal issues.' }
+    { icon: MessageCircle, title: 'Dedicated Support', desc: 'Get direct priority support for any installation or renewal issues.' }
   ];
 
   const faqs = [
@@ -96,16 +96,14 @@ const SSLCertificate = () => {
               <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Secure Your Website with Premium SSL</h1>
               <p className="text-gray-500 text-lg mb-6 leading-relaxed max-w-2xl">Build customer trust, encrypt sensitive data, and boost your Google rankings. We offer DV, OV, and EV certificates with free installation. Essential for <Link to="/ecommerce-website" className="text-solar-orange hover:underline">E-commerce</Link> and professional <Link to="/website-design" className="text-solar-orange hover:underline">Website Design</Link>.</p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
-                >
-                  <MessageCircle size={20} />
-                  WHATSAPP US
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </a>
+                  <Link 
+                    to="/contact"
+                    className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
+                  >
+                    <Mail size={20} />
+                    CONTACT US
+                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 <Link to="/contact" className="btn-solar-dark px-8 py-4 text-base shadow-none cursor-pointer flex items-center justify-center">
                   REQUEST A QUOTE
                 </Link>
@@ -263,20 +261,11 @@ const SSLCertificate = () => {
       <section className="relative py-16 overflow-hidden text-white text-center" style={{ background: '#161616' }}>
         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8">
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[#FAF9F6] mb-6">Need an SSL Certificate?</h2>
-          <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Protect your website today. WhatsApp us to get started.</p>
+          <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Protect your website today. Contact us to get started.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
-            >
-              <MessageCircle size={20} />
-              WHATSAPP US
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <Link to="/contact" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 text-base rounded-[10px] font-bold font-mono tracking-wide transition-all cursor-pointer flex items-center justify-center">
+            <Link to="/contact" className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer">
               CONTACT US
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>

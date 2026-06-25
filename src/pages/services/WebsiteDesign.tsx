@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import SEO from '../../components/seo/SEO';
 import Breadcrumbs from '../../components/navigation/Breadcrumbs';
 import { 
-  MessageCircle, ArrowRight, MonitorSmartphone, Zap, Search, Target, Users, Palette, CheckCircle2, Star, Rocket, Clock, ChevronDown
+  MessageCircle, ArrowRight, MonitorSmartphone, Zap, Search, Target, Users, Palette, CheckCircle2, Star, Rocket, Clock, ChevronDown, Mail
 } from 'lucide-react';
 
 const WebsiteDesign = () => {
@@ -51,7 +51,7 @@ const WebsiteDesign = () => {
     { icon: Rocket, title: 'Modern Tech Stack', desc: 'We build using React, Next.js, and modern tools for blazing fast performance.' },
     { icon: Clock, title: 'On-Time Delivery', desc: 'Strict adherence to project timelines and transparent milestone updates.' },
     { icon: Search, title: 'SEO Out-of-the-Box', desc: 'We do not just build pretty sites; we build sites that rank on Google.' },
-    { icon: MessageCircle, title: 'Ongoing Support', desc: 'Post-launch maintenance and support available directly via WhatsApp.' }
+    { icon: MessageCircle, title: 'Ongoing Support', desc: 'Post-launch maintenance and support available directly from our team.' }
   ];
 
   const faqs = [
@@ -96,16 +96,14 @@ const WebsiteDesign = () => {
               <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">High-Performance Business Websites</h1>
               <p className="text-gray-500 text-lg mb-6 leading-relaxed max-w-2xl">Beautiful, fast-loading, and SEO-optimized websites engineered specifically to convert visitors into customers. We also offer powerful <Link to="/ecommerce-website" className="text-solar-orange hover:underline">E-commerce</Link> features and <Link to="/ssl-certificate" className="text-solar-orange hover:underline">SSL Certificates</Link> to build trust. Perfect for modern Indian businesses.</p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
-                >
-                  <MessageCircle size={20} />
-                  DISCUSS YOUR PROJECT
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </a>
+                  <Link 
+                    to="/contact"
+                    className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
+                  >
+                    <Mail size={20} />
+                    CONTACT US
+                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 <Link to="/contact" className="btn-solar-dark px-8 py-4 text-base shadow-none cursor-pointer flex items-center justify-center">
                   GET A QUOTE
                 </Link>
@@ -261,18 +259,9 @@ const WebsiteDesign = () => {
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[#FAF9F6] mb-6">Ready to Build Your New Website?</h2>
           <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Contact us today to discuss your vision and get a free quote.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
-            >
-              <MessageCircle size={20} />
-              WHATSAPP US
+            <Link to="/contact" className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer">
+              CONTACT US
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <Link to="/contact" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 text-base rounded-[10px] font-bold font-mono tracking-wide transition-all cursor-pointer flex items-center justify-center">
-              GET A QUOTE
             </Link>
           </div>
         </div>

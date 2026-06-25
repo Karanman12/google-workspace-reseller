@@ -21,7 +21,7 @@ Premium, fully-managed cloud workspace licenses at the best prices in India with
 
 ## 📖 About the Project
 
-**WorkspaceBays** is a modern, high-performance landing page and lead-generation website for an authorized **Google Workspace** and **Zoho Workplace** reseller in India. The site allows Indian businesses to explore pricing plans, learn about workspace features, and submit contact/setup requests — all with INR billing, official tax invoices, and dedicated WhatsApp support.
+**WorkspaceBays** is a modern, high-performance landing page and lead-generation website for an authorized **Google Workspace** and **Zoho Workplace** reseller in India. The site allows Indian businesses to explore pricing plans, learn about workspace features, and submit contact/setup requests — all with INR billing, official tax invoices, and dedicated expert support.
 
 The website is designed with a premium, editorial aesthetic featuring smooth animations, a brutalist-inspired card design system, and a concrete-glass UI language.
 
@@ -61,7 +61,7 @@ The website is designed with a premium, editorial aesthetic featuring smooth ani
 - **Typewriter Effect** — Animated text cycling through target audiences (Growing Companies, Indian Enterprises, Startups, Remote Teams)
 - **Floating Dashboard Mockup** — 3D perspective dashboard UI for visual impact
 - **Hero Typography Component** — Reusable animated headline with badge, heading, and description
-- **CTA Buttons** — WhatsApp quick-connect and pricing plan navigation
+- **CTA Buttons** — Quick-connect and pricing plan navigation
 
 ### 📊 Stats Section
 - Displays key value propositions: Official Partner, Instant INR Billing, 24-Hour Setup, Priority Support
@@ -90,7 +90,7 @@ The website is designed with a premium, editorial aesthetic featuring smooth ani
   - Save 30% vs Direct pricing
   - INR Billing (UPI, NEFT, bank transfer)
   - 24-Hour Activation
-  - Dedicated WhatsApp Support
+  - Dedicated Expert Support
 
 ### 📝 How It Works
 - **3-Step Process** with numbered circle indicators and connecting line:
@@ -105,16 +105,13 @@ The website is designed with a premium, editorial aesthetic featuring smooth ani
 
 ### 📬 Contact / Lead Generation Form
 - **Firebase-powered contact form** with fields for:
-  - Name, Business Name, Email, Phone
+  - Name, Business Name, Email
   - Number of Users (dropdown: 1–5, 6–10, 11–25, 26–50, 50+)
   - Plan Interest (all Google & Zoho plans)
 - **Form submission** stored in Firestore `contacts` collection
 - Success/error state handling with animated feedback
-- Direct contact options: WhatsApp, Email, Business Hours
+- Direct contact options: Email, Business Hours
 
-### 💬 Floating WhatsApp Button
-- Fixed bottom-right WhatsApp CTA with pulse animation
-- Pre-filled WhatsApp message for quick engagement
 - Notification badge with bounce animation
 
 ### 🦶 Footer
@@ -251,7 +248,6 @@ workspacebay---google-workspace-reseller/
 - `.btn-solar-orange` — Orange pill button with hover-to-transparent effect
 - `.btn-solar-dark` — Dark pill button with hover-to-orange effect
 - `.hero-grid` — Grid pattern background overlay
-- `.pulse-whatsapp` — Breathing pulse animation for WhatsApp button
 
 ---
 
@@ -291,6 +287,6 @@ This project is licensed under the **Apache-2.0 License**.
 
 **Built with ❤️ by WorkspaceBays**
 
-[WhatsApp](https://wa.me/919654387865) · [Email](mailto:karanmandal9654@gmail.com)
+[Email](mailto:karanmandal9654@gmail.com)
 
 </div>

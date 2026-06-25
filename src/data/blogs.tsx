@@ -973,7 +973,7 @@ export const blogs: BlogPost[] = [
       <strong>Up to 30% Savings:</strong> As an authorized Google Cloud Partner, we receive partner-tier pricing and pass significant discounts to our customers. A 50-seat Business Standard deployment through us can save you over ₹2,00,000/year compared to buying direct.
     </li>
     <li>
-      <strong>Dedicated Human Support:</strong> Instead of navigating Google's generic support ticketing system, you get a dedicated account manager who knows your setup. Need to add 10 licenses at 11 PM before a Monday morning onboarding? Call us.
+      <strong>Dedicated Human Support:</strong> Instead of navigating Google's generic support ticketing system, you get a dedicated account manager who knows your setup. Need to add 10 licenses at 11 PM before a Monday morning onboarding? Contact us.
     </li>
     <li>
       <strong>Free Email Migration:</strong> We handle the entire <Link to="/email-migration" className="text-solar-orange hover:underline">email migration</Link> process — from cPanel, GoDaddy, Zoho, Microsoft 365, or any IMAP-based system — at zero additional cost. No data loss, no downtime, no stress.
@@ -1014,7 +1014,7 @@ export const blogs: BlogPost[] = [
   {/* Section 7: CTA */}
   <h2 id="cta" className="text-2xl font-display font-extrabold text-brand-dark mt-10 mb-4 tracking-tight">Ready to Upgrade Your Business Email?</h2>
   <p>
-    Whether you're a 5-person startup looking for your first professional email address or a 200-seat enterprise needing advanced security and compliance, <Link to="/google-workspace" className="text-solar-orange hover:underline">Google Workspace</Link> has a plan that fits. And when you purchase through WorkspaceBays, you get the best of both worlds — Google's world-class platform at India's best prices, with local support that actually picks up the phone.
+    Whether you're a 5-person startup looking for your first professional email address or a 200-seat enterprise needing advanced security and compliance, <Link to="/google-workspace" className="text-solar-orange hover:underline">Google Workspace</Link> has a plan that fits. And when you purchase through WorkspaceBays, you get the best of both worlds — Google's world-class platform at India's best prices, with local support that actually responds.
   </p>
   <div className="p-8 bg-solar-orange/10 border-l-4 border-solar-orange rounded-r-xl mt-12">
     <p className="font-medium text-xl text-brand-dark">Get a personalized Google Workspace quote with INR pricing, GST invoices, and up to 30% off. <Link to="/contact" className="text-solar-orange hover:underline font-bold">Contact WorkspaceBays</Link> today — our team typically responds within 2 hours during business hours.</p>

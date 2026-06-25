@@ -55,7 +55,7 @@ const Microsoft365 = () => {
     { icon: Wallet, title: 'Competitive INR Pricing', desc: 'Pay via local Indian methods with official GST invoices.' },
     { icon: Zap, title: 'Complete Setup & Migration', desc: 'We handle your entire migration and domain configuration.' },
     { icon: Users, title: 'Dedicated Account Manager', desc: 'Direct access to your account manager for any administrative needs.' },
-    { icon: MessageCircle, title: '24/7 WhatsApp Support', desc: 'Immediate support when you need it most, directly on WhatsApp.' }
+    { icon: MessageCircle, title: '24/7 Priority Support', desc: 'Immediate support when you need it most, directly from our experts.' }
   ];
 
   const faqs = [
@@ -100,16 +100,14 @@ const Microsoft365 = () => {
                 <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Microsoft 365 for Business — Outlook, Teams & Office Apps</h1>
                 <p className="text-gray-500 text-lg mb-6 leading-relaxed max-w-2xl">The full Microsoft productivity suite for your business. Outlook email, Teams collaboration, Word, Excel, PowerPoint, and OneDrive — all managed and billed in INR. Need help moving? We provide expert <Link to="/email-migration" className="text-solar-orange hover:underline font-medium">email migration</Link> from any platform.</p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link 
+                    to="/contact"
                     className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
                   >
-                    <MessageCircle size={20} />
-                    WHATSAPP US
+                    <Mail size={20} />
+                    CONTACT US
                     <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </Link>
                   <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' }); }} className="btn-solar-dark px-8 py-4 text-base shadow-none cursor-pointer flex items-center justify-center">
                     VIEW PLANS
                   </a>
@@ -286,20 +284,11 @@ const Microsoft365 = () => {
       <section className="relative py-16 overflow-hidden text-white text-center" style={{ background: '#161616' }}>
         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8">
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[#FAF9F6] mb-6">Ready to Move to Microsoft 365?</h2>
-          <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Upgrade your team's productivity today. WhatsApp us to get started. Ensure your infrastructure is fully secure with our <Link to="/ssl-certificate" className="text-solar-orange hover:underline font-medium">SSL Certificates</Link>.</p>
+          <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Upgrade your team's productivity today. Contact us to get started. Ensure your infrastructure is fully secure with our <Link to="/ssl-certificate" className="text-solar-orange hover:underline font-medium">SSL Certificates</Link>.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
-            >
-              <MessageCircle size={20} />
-              WHATSAPP US
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <Link to="/contact" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 text-base rounded-[10px] font-bold font-mono tracking-wide transition-all cursor-pointer flex items-center justify-center">
+            <Link to="/contact" className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer">
               CONTACT US
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>

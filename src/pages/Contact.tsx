@@ -41,7 +41,7 @@ const Contact = () => {
     
     try {
       // 1. Validation
-      if (!formData.name || !formData.email || !formData.phone || !formData.planInterest) {
+      if (!formData.name || !formData.email || !formData.planInterest) {
         throw new Error('Please fill out all required fields.');
       }
 
@@ -75,17 +75,17 @@ const Contact = () => {
       });
     } catch (error) {
       console.error('Error submitting form:', error);
-      setErrorMessage(error instanceof Error ? error.message : 'Something went wrong. Please try again or message us on WhatsApp.');
+      setErrorMessage(error instanceof Error ? error.message : 'Something went wrong. Please try again or email us.');
       setStatus('error');
     }
   };
 
   const faqs = [
     { q: 'How quickly will I get a response?', a: 'We aim to respond to all inquiries within 2 hours during our business days (Mon–Sat, 9 AM – 8 PM IST).' },
-    { q: 'Can I call instead of WhatsApp?', a: 'Yes! The phone number listed is also available for direct calls during business hours.' },
+    { q: 'How can I reach support?', a: 'You can reach us anytime via the contact form or by emailing Team@workspacebays.com during business hours.' },
     { q: 'Do you offer demos before purchase?', a: 'We can arrange a screen-sharing session to walk you through the admin console and features.' },
     { q: 'What information should I have ready?', a: 'It helps to know if you already have a domain name, how many users you need, and if you have existing emails to migrate.' },
-    { q: 'Do you offer emergency support?', a: 'Yes, for critical issues like hacked websites or server downtime, we offer 24/7 emergency WhatsApp support.' }
+    { q: 'Do you offer emergency support?', a: 'Yes, for critical issues like hacked websites or server downtime, we offer 24/7 priority support.' }
   ];
 
   const localBusinessSchema = {
@@ -95,7 +95,7 @@ const Contact = () => {
     image: 'https://workspacebays.com/wb-logo.png',
     '@id': 'https://workspacebays.com',
     url: 'https://workspacebays.com',
-    telephone: '+919654387865',
+    email: 'Team@workspacebays.com',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'India',
@@ -160,18 +160,7 @@ const Contact = () => {
             {/* Left Side - Contact Info */}
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-6">
               
-              <div className="p-8 card-concrete-glass flex flex-col gap-4">
-                <div className="w-14 h-14 rounded-xl border border-brand-dark flex items-center justify-center bg-white text-solar-orange">
-                  <MessageCircle size={28} />
-                </div>
-                <div>
-                  <h4 className="font-display font-bold text-xl text-brand-dark mb-2 uppercase tracking-wide">WhatsApp Us</h4>
-                  <p className="text-brand-dark/70 font-sans mb-4">Fastest Response. Message us directly.</p>
-                  <a href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" className="text-solar-orange font-bold font-mono tracking-wider hover:underline flex items-center gap-2">
-                    +91 96543 87865 <ArrowRight size={16} />
-                  </a>
-                </div>
-              </div>
+
 
               <div className="p-8 card-concrete-glass flex flex-col gap-4">
                 <div className="w-14 h-14 rounded-xl border border-brand-dark flex items-center justify-center bg-white text-solar-orange">
@@ -210,7 +199,7 @@ const Contact = () => {
                       <CheckCircle2 className="text-google-green w-10 h-10" />
                     </div>
                     <h3 className="text-2xl font-display font-bold text-brand-dark mb-4 uppercase tracking-wide">Request Received!</h3>
-                    <p className="text-brand-dark/60 font-sans mb-8">We will contact you via WhatsApp or Email shortly to finalize your setup.</p>
+                    <p className="text-brand-dark/60 font-sans mb-8">We will contact you via Email shortly to finalize your setup.</p>
                     <button onClick={() => setStatus('idle')} className="btn-solar-dark px-8 py-3 text-sm">
                       Send another request
                     </button>
@@ -230,15 +219,9 @@ const Contact = () => {
                         <input id="businessName" type="text" name="businessName" value={formData.businessName} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all placeholder:text-brand-dark/20 font-sans shadow-none" placeholder="Acme Pvt Ltd" />
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div className="group flex flex-col gap-2">
-                        <label htmlFor="email" className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Email</label>
-                        <input id="email" required type="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all placeholder:text-brand-dark/20 font-sans shadow-none" placeholder="ravi@company.com" />
-                      </div>
-                      <div className="group flex flex-col gap-2">
-                        <label htmlFor="phone" className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Phone</label>
-                        <input id="phone" required type="tel" name="phone" value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all placeholder:text-brand-dark/20 font-sans shadow-none" placeholder="+91 96543 87865" />
-                      </div>
+                    <div className="group flex flex-col gap-2">
+                      <label htmlFor="email" className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Email</label>
+                      <input id="email" required type="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-brand-dark bg-white/60 focus:bg-white focus:border-solar-orange outline-none transition-all placeholder:text-brand-dark/20 font-sans shadow-none" placeholder="ravi@company.com" />
                     </div>
                     <div className="group flex flex-col gap-2">
                       <label htmlFor="numUsers" className="block text-xs font-mono tracking-wider text-brand-dark/60 uppercase transition-colors duration-200 group-focus-within:text-solar-orange">Number of Users</label>
@@ -266,7 +249,7 @@ const Contact = () => {
                     </div>
                     
                     {status === 'error' && (
-                      <p className="text-google-red text-sm font-bold text-center">{errorMessage || 'Something went wrong. Please try again or message us on WhatsApp.'}</p>
+                      <p className="text-google-red text-sm font-bold text-center">{errorMessage || 'Something went wrong. Please try again or email us.'}</p>
                     )}
 
                     <button disabled={status === 'submitting'} className="w-full py-4 btn-solar-orange text-base cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-none font-bold uppercase tracking-wide active:scale-[0.98] transition-all duration-150">
@@ -311,16 +294,14 @@ const Contact = () => {
       {/* CTA Section */}
       <section className="relative py-16 overflow-hidden text-white text-center" style={{ background: '#161616' }}>
         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8">
-          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[#FAF9F6] mb-6">Prefer WhatsApp? Message Us Directly</h2>
+          <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[#FAF9F6] mb-6">Still Have Questions? Get in Touch</h2>
           <div className="flex justify-center mt-10">
             <a
-              href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:Team@workspacebays.com"
               className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
             >
-              <MessageCircle size={20} />
-              WHATSAPP US
+              <Mail size={20} />
+              EMAIL SUPPORT
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
           </div>

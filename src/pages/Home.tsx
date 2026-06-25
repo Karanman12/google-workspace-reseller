@@ -63,16 +63,14 @@ const Hero = ({ startAnimation = true }: { startAnimation?: boolean }) => {
                 animate={startAnimation ? { opacity: 1, x: 0, filter: 'blur(0px)' } : { opacity: 0, x: 30, filter: 'blur(4px)' }}
                 transition={{ duration: 0.65, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
-                <a 
-                  href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link 
+                  to="/contact"
                   className="w-full sm:w-auto btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
                 >
-                  <MessageCircle size={20} />
-                  WHATSAPP US
+                  <Mail size={20} />
+                  CONTACT US
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
                 <button 
                   onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
                   className="w-full sm:w-auto btn-solar-dark px-8 py-4 text-base shadow-none cursor-pointer"
@@ -256,7 +254,7 @@ const Home = () => {
       logo: `${SITE_URL}/logo.png`,
       contactPoint: {
         '@type': 'ContactPoint',
-        telephone: '+91-9654387865',
+        email: 'Team@workspacebays.com',
         contactType: 'customer service'
       }
     },

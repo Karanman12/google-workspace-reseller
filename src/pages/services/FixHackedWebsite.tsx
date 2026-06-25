@@ -5,7 +5,7 @@ import SEO from '../../components/seo/SEO';
 import Breadcrumbs from '../../components/navigation/Breadcrumbs';
 import RelatedPosts from '../../components/blog/RelatedPosts';
 import { 
-  MessageCircle, ArrowRight, ShieldCheck, Search, Globe, Trash2, Database, Lock, AlertTriangle, UserX, AlertCircle, Clock, ChevronDown
+  MessageCircle, ArrowRight, ShieldCheck, Search, Globe, Trash2, Database, Lock, AlertTriangle, UserX, AlertCircle, Clock, ChevronDown, Mail
 } from 'lucide-react';
 
 const FixHackedWebsite = () => {
@@ -78,16 +78,14 @@ const FixHackedWebsite = () => {
               <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Fix Your Hacked Website — Fast Recovery & Protection</h1>
               <p className="text-gray-500 text-lg mb-6 leading-relaxed max-w-2xl">Website hacked? Blacklisted by Google? Showing spam content? We clean malware, remove backdoors, and restore your website to a secure state — usually within 24 hours. After recovery, secure your site with an <Link to="/ssl-certificate" className="text-solar-orange hover:underline">SSL Certificate</Link> or upgrade your <Link to="/website-design" className="text-solar-orange hover:underline">Website Design</Link> for better security.</p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/contact"
                   className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer bg-red-600 hover:bg-red-700 border-red-600"
                 >
-                  <MessageCircle size={20} />
+                  <Mail size={20} />
                   EMERGENCY HELP
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
                 <Link to="/contact" className="btn-solar-dark px-8 py-4 text-base shadow-none cursor-pointer flex items-center justify-center">
                   REQUEST SECURITY AUDIT
                 </Link>
@@ -221,20 +219,11 @@ const FixHackedWebsite = () => {
       <section className="relative py-16 overflow-hidden text-white text-center" style={{ background: '#161616' }}>
         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8">
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-red-500 mb-6">Website Hacked? Get Emergency Help Now</h2>
-          <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Don't wait. WhatsApp us now for immediate recovery.</p>
+          <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Don't wait. Contact us now for immediate recovery.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer bg-red-600 border-red-600"
-            >
-              <MessageCircle size={20} />
-              WHATSAPP US
+            <Link to="/contact" className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer bg-red-600 hover:bg-red-700 border-red-600">
+              EMERGENCY HELP
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <Link to="/contact" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 text-base rounded-[10px] font-bold font-mono tracking-wide transition-all cursor-pointer flex items-center justify-center">
-              CONTACT US
             </Link>
           </div>
         </div>

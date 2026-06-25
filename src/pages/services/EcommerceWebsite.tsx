@@ -95,18 +95,9 @@ const EcommerceWebsite = () => {
               <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Start Selling Online with Powerful E-commerce</h1>
               <p className="text-gray-500 text-lg mb-6 leading-relaxed max-w-2xl">Launch a robust, secure, and high-converting online store. We provide complete e-commerce solutions including product catalogs, secure payment gateways, and seamless order management. Pair your store with <Link to="/google-workspace" className="text-solar-orange hover:underline">Google Workspace</Link> for professional email, and secure it with our <Link to="/ssl-certificate" className="text-solar-orange hover:underline">SSL Certificates</Link>.</p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
-                >
-                  <MessageCircle size={20} />
-                  WHATSAPP US
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </a>
-                <Link to="/contact" className="btn-solar-dark px-8 py-4 text-base shadow-none cursor-pointer flex items-center justify-center">
+                <Link to="/contact" className="btn-solar-orange px-8 py-4 text-base shadow-none cursor-pointer flex items-center justify-center gap-2 group">
                   START YOUR STORE
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </motion.div>
@@ -260,18 +251,9 @@ const EcommerceWebsite = () => {
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[#FAF9F6] mb-6">Ready to Start Selling Online?</h2>
           <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Launch your e-commerce store with our expert developers.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
-            >
-              <MessageCircle size={20} />
-              WHATSAPP US
+            <Link to="/contact" className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer">
+              CONTACT US
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <Link to="/contact" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 text-base rounded-[10px] font-bold font-mono tracking-wide transition-all cursor-pointer flex items-center justify-center">
-              GET A QUOTE
             </Link>
           </div>
         </div>

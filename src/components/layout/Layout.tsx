@@ -87,21 +87,6 @@ const Layout = () => {
         </GridBackground>
         
         <Footer />
-        
-        {/* Floating WhatsApp Button */}
-        <motion.a
-          href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-          target="_blank"
-          rel="noopener noreferrer"
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="fixed bottom-8 right-8 z-[60] w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:shadow-[0_0_30px_rgba(37,211,102,0.4)] transition-all pulse-whatsapp"
-        >
-          <MessageCircle size={32} />
-          <div className="absolute -top-1 -right-1 w-5 h-5 bg-google-red rounded-full flex items-center justify-center text-[10px] font-bold animate-bounce shadow-lg">1</div>
-        </motion.a>
       </motion.div>
     </>
   );

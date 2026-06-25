@@ -59,7 +59,7 @@ const About = () => {
               {[
                 { title: 'Transparency', desc: 'No hidden costs, no surprise renewals.' },
                 { title: 'Speed', desc: '24-hour setup guarantee.' },
-                { title: 'Support', desc: 'Direct WhatsApp access to your account manager.' }
+                { title: 'Support', desc: 'Direct access to your account manager.' }
               ].map((val, i) => (
                 <div key={i} className="p-6 card-concrete-glass border-l-4 border-solar-orange">
                   <h4 className="font-display font-bold text-xl text-brand-dark mb-2 uppercase tracking-wide">{val.title}</h4>
@@ -153,18 +153,9 @@ const About = () => {
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[#FAF9F6] mb-6">Ready to Work with Us?</h2>
           <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Get your business set up with the right cloud tools today.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
-            >
-              <MessageCircle size={20} />
-              WHATSAPP US
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <Link to="/contact" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 text-base rounded-[10px] font-bold font-mono tracking-wide transition-all cursor-pointer flex items-center justify-center">
+            <Link to="/contact" className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer">
               CONTACT US
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>

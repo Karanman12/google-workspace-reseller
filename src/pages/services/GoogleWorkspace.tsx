@@ -66,16 +66,16 @@ const GoogleWorkspace = () => {
     { icon: Wallet, title: 'Save 30% vs Direct', desc: 'Get genuine Google Workspace licenses at significantly lower rates than buying direct from Google.' },
     { icon: CreditCard, title: 'INR Billing', desc: 'Pay via UPI, NEFT, or bank transfer in Indian Rupees and receive official GST invoices instantly.' },
     { icon: Zap, title: '24-Hour Activation', desc: 'We guarantee a rapid setup. Once payment is confirmed, your workspace is ready within 24 hours.' },
-    { icon: MessageCircle, title: 'Dedicated WhatsApp Support', desc: 'No bots or endless ticketing systems. Get direct WhatsApp access to your account manager.' }
+    { icon: MessageCircle, title: 'Dedicated Support', desc: 'No bots or endless ticketing systems. Get direct access to your account manager.' }
   ];
 
   const faqs = [
     { q: 'What is Google Workspace?', a: 'Google Workspace is a suite of cloud computing, productivity, and collaboration tools, software, and products developed by Google. It includes Gmail, Drive, Docs, Meet, and more.' },
-    { q: 'How is WorkspaceBays different from buying directly from Google?', a: 'We offer the exact same genuine Google licenses, but with local INR billing (UPI/NEFT), official GST invoices, dedicated WhatsApp support, and lower pricing (saving up to 30%).' },
+    { q: 'How is WorkspaceBays different from buying directly from Google?', a: 'We offer the exact same genuine Google licenses, but with local INR billing (UPI/NEFT), official GST invoices, dedicated support, and lower pricing (saving up to 30%).' },
     { q: 'Can I migrate my existing emails?', a: 'Yes! We offer comprehensive email migration services to move your data from cPanel, Microsoft 365, or other platforms to Google Workspace with zero downtime.' },
     { q: 'What payment methods do you accept?', a: 'We accept all major Indian payment methods including UPI, NEFT, IMPS, RTGS, and direct bank transfers.' },
     { q: 'How long does setup take?', a: 'Standard setups are completed within 24 hours of payment confirmation. Migration timelines depend on data size but are planned to ensure zero downtime.' },
-    { q: 'What happens if I need help later?', a: 'We provide dedicated support via phone, email, and WhatsApp for all our Google Workspace clients at no extra cost.' }
+    { q: 'What happens if I need help later?', a: 'We provide dedicated support via email for all our Google Workspace clients at no extra cost.' }
   ];
 
   const faqSchema = {
@@ -111,16 +111,14 @@ const GoogleWorkspace = () => {
                 <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">Professional Email & Cloud Productivity for Your Business</h1>
                 <p className="text-gray-500 text-lg mb-6 leading-relaxed max-w-2xl">Get Gmail, Google Drive, Google Meet, Docs, Sheets, and more — all under your company domain. We provide comprehensive <Link to="/email-migration" className="text-solar-orange hover:underline font-medium">migration support</Link> to ensure zero downtime. Setup in 24 hours, INR billing, save up to 30% vs direct pricing.</p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link 
+                    to="/contact"
                     className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
                   >
-                    <MessageCircle size={20} />
-                    WHATSAPP US
+                    <Mail size={20} />
+                    CONTACT US
                     <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </Link>
                   <a href="#pricing" onClick={(e) => { e.preventDefault(); document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' }); }} className="btn-solar-dark px-8 py-4 text-base shadow-none cursor-pointer flex items-center justify-center">
                     VIEW PRICING PLANS
                   </a>
@@ -307,20 +305,11 @@ const GoogleWorkspace = () => {
       <section className="relative py-16 overflow-hidden text-white text-center" style={{ background: '#161616' }}>
         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8">
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight text-[#FAF9F6] mb-6">Ready to Get Started with Google Workspace?</h2>
-          <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Setup takes less than 24 hours. WhatsApp us now for the fastest response. Don't forget to protect your domains with our <Link to="/ssl-certificate" className="text-solar-orange hover:underline font-medium">SSL Certificates</Link>.</p>
+          <p className="text-lg text-[#FAF9F6]/60 font-medium leading-relaxed mb-10">Setup takes less than 24 hours. Contact us now for the fastest response. Don't forget to protect your domains with our <Link to="/ssl-certificate" className="text-solar-orange hover:underline font-medium">SSL Certificates</Link>.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://wa.me/919654387865?text=Hello%20WorkspaceBays%20Team,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer"
-            >
-              <MessageCircle size={20} />
-              WHATSAPP US
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-            <Link to="/contact" className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 text-base rounded-[10px] font-bold font-mono tracking-wide transition-all cursor-pointer flex items-center justify-center">
+            <Link to="/contact" className="btn-solar-orange px-8 py-4 text-base flex items-center justify-center gap-2 group shadow-none cursor-pointer">
               CONTACT US
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
